@@ -1,0 +1,108 @@
+/**
+ * Inner phone frame from @signalsafe/simulator-react PhoneSimulatorShell.
+ */
+
+.simulator-shell__frame {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--simulator-border-strong);
+    border-radius: 0.75rem;
+    background: var(--simulator-bg);
+    overflow: hidden;
+    box-shadow: var(--simulator-shadow);
+    max-height: var(--simulator-device-max-height);
+}
+
+.simulator-shell__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    background: var(--simulator-bg);
+    padding: 0.75rem;
+    overflow: auto;
+}
+
+.simulator-shell__body .simulator-flex-grow-1.simulator-min-h-0 {
+    min-height: 12rem;
+    max-height: none;
+}
+
+.simulator-shell__body .simulator-overflow-auto {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Inside device shell — host nav mode: grow with content; screen column scrolls */
+.simulator-device-shell--host-nav .simulator-shell__frame {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 0 1 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible !important;
+}
+
+.simulator-device-shell:not(.simulator-device-shell--host-nav) .simulator-shell__frame {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: 100% !important;
+    aspect-ratio: auto !important;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.simulator-device-shell--host-nav .simulator-shell__body {
+    flex: 0 1 auto;
+    min-height: 0;
+    overflow: visible !important;
+    padding: 0.5rem var(--simulator-phone-content-pad-x) !important;
+    box-sizing: border-box;
+}
+
+.simulator-device-shell--host-nav .simulator-shell__body .simulator-flex-grow-1.simulator-min-h-0,
+.simulator-device-shell--host-nav .simulator-shell__body .simulator-overflow-auto,
+.simulator-device-shell--host-nav .simulator-overflow-auto {
+    flex: 0 1 auto;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: var(--simulator-phone-section-gap);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.simulator-device-shell:not(.simulator-device-shell--host-nav) .simulator-shell__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.simulator-device-shell .simulator-shell__body .simulator-flex-grow-1.simulator-min-h-0 {
+    min-height: 0;
+    max-height: none;
+}

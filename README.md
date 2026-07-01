@@ -20,8 +20,9 @@ import { SimulatorDevice } from '@signalsafe/simulator-device';
 
 ## What this package includes
 
-- **Slice 1 (current):** design tokens on `.simulator-root` and primitive utility classes (`simulator-btn*`, `simulator-input`, `simulator-list*`, `simulator-badge*`, layout/spacing/surface helpers).
-- **Not included yet:** device shell layout, bottom nav chrome, app-specific screen layout, or host bridge selectors. Those remain in the consuming app until later extraction slices.
+- **Slice 1:** design tokens on `.simulator-root` and primitive utility classes.
+- **Slice 2 (current):** device shell (`.simulator-device-shell*`), inner frame (`.simulator-shell__frame` / `__body`), package nav (`.simulator-device-nav*`), shell nav tabs, and local nav segments.
+- **Not included yet:** app-specific screen layout, host bridge selectors, or DeliveryPlus page/preview chrome.
 
 ## Requirements
 

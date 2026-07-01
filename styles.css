@@ -1,5 +1,5 @@
 /**
- * @signalsafe/simulator-theme-bootstrap — slice 1: design tokens and primitive utilities.
+ * @signalsafe/simulator-theme-bootstrap
  * Import after Bootstrap/Bootswatch so --bs-* variables resolve.
  */
 @import './src/tokens.css';
@@ -10,3 +10,17 @@
 @import './src/primitives/typography.css';
 @import './src/primitives/surfaces.css';
 @import './src/primitives/spacing.css';
+@import './src/device-shell.css';
+@import './src/frame.css';
+@import './src/nav.css';
+@import './src/apps/screen-chrome.css';
+@import './src/apps/phone-shared.css';
+@import './src/apps/phone-history.css';
+@import './src/apps/phone-contacts.css';
+@import './src/apps/phone-dial.css';
+@import './src/apps/phone-incoming-call.css';
+@import './src/apps/phone-contact-detail.css';
+@import './src/apps/email.css';
+@import './src/apps/messages.css';
+@import './src/diagnostics.css';
+@import './src/modals.css';

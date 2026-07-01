@@ -1,0 +1,98 @@
+/**
+ * Phone > Contacts wireframe rows (package avatar + row semantic classes).
+ */
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-list {
+    width: 100%;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.75rem;
+    border: 0;
+    border-bottom: 1px solid var(--simulator-border);
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row-avatar {
+    grid-column: 1;
+    grid-row: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    border: 1px solid var(--simulator-border);
+    border-radius: 0;
+    background: var(--bs-primary-bg-subtle, #cfe2ff);
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row
+    > .simulator-flex-grow-1,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row
+    > .simulator-min-w-0 {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    width: 100%;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row
+    .simulator-text--truncate {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    min-width: 0;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row
+    > .simulator-flex-grow-1
+    > .simulator-text--medium {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-contacts,
+        .simulator-device-shell--screen-phone-contacts
+    )
+    .simulator-phone__contact-row
+    > .simulator-flex-grow-1
+    > .simulator-muted {
+    color: var(--simulator-muted);
+}

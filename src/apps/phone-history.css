@@ -1,0 +1,111 @@
+/**
+ * Phone > History / Calls list density and status badges.
+ */
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > button,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > div {
+    display: grid;
+    grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    min-width: 0;
+    padding: 0.75rem 0.5rem;
+    border: 0;
+    border-bottom: 1px solid var(--simulator-border);
+    border-radius: 0;
+    background: var(--simulator-bg);
+    text-align: start;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > button
+    > .simulator-flex-grow-1,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > button
+    > .simulator-min-w-0,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > div
+    > .simulator-flex-grow-1,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > div
+    > .simulator-min-w-0 {
+    min-width: 0;
+    width: 100%;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > button
+    .simulator-text--truncate,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > div
+    .simulator-text--truncate {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    overflow-wrap: anywhere;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > button
+    > .simulator-badge,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-list--flush
+    > div
+    > .simulator-badge,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-history,
+        .simulator-device-shell--screen-phone-history
+    )
+    .simulator-call-status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4.5rem;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.2;
+    justify-self: end;
+}

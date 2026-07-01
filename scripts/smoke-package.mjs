@@ -14,6 +14,20 @@ const required = [
     'src/primitives/typography.css',
     'src/primitives/surfaces.css',
     'src/primitives/spacing.css',
+    'src/device-shell.css',
+    'src/frame.css',
+    'src/nav.css',
+    'src/apps/screen-chrome.css',
+    'src/apps/phone-shared.css',
+    'src/apps/phone-history.css',
+    'src/apps/phone-contacts.css',
+    'src/apps/phone-dial.css',
+    'src/apps/phone-incoming-call.css',
+    'src/apps/phone-contact-detail.css',
+    'src/apps/email.css',
+    'src/apps/messages.css',
+    'src/diagnostics.css',
+    'src/modals.css',
 ];
 
 for (const file of required) {

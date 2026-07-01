@@ -1,0 +1,131 @@
+/**
+ * Device bezel and screen column from @signalsafe/simulator-device SimulatorPhoneShell.
+ */
+
+.simulator-device-shell {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 420px);
+    height: min(78vh, 760px);
+    min-height: var(--simulator-device-min-height);
+    max-height: var(--simulator-device-max-height);
+    margin-inline: auto;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border: 1.5px solid var(--simulator-border-strong);
+    border-radius: 0.75rem;
+    background: var(--simulator-bg);
+    box-shadow: var(--simulator-shadow);
+    overflow: hidden;
+}
+
+.simulator-device-shell__screen {
+    flex: 1 1 auto;
+    min-height: 0;
+    min-width: 0;
+    background: var(--simulator-bg);
+}
+
+.simulator-device-shell__session-column {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+}
+
+.simulator-device-shell__session-column > .simulator-runtime,
+.simulator-device-shell__screen > .simulator-runtime {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: 100%;
+}
+
+.simulator-device-shell--host-nav .simulator-device-shell__screen {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+}
+
+.simulator-device-shell--host-nav {
+    --simulator-phone-content-max: 22rem;
+    --simulator-phone-content-pad-x: 0.75rem;
+    --simulator-phone-section-gap: 0.75rem;
+    --simulator-phone-card-pad: 0.75rem;
+}
+
+.simulator-device-shell--host-nav > .simulator-device-nav {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.simulator-device-shell:not(.simulator-device-shell--host-nav) .simulator-device-shell__screen {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.simulator-device-shell--host-nav [data-simulator-app] {
+    align-items: stretch;
+    width: 100%;
+}
+
+.simulator-device-shell:not(.simulator-device-shell--host-nav) .simulator-device-shell__screen [data-simulator-app] {
+    align-items: stretch;
+}
+
+.simulator-device-shell .simulator-shell__nav {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.simulator-device-shell--host-nav .simulator-shell__nav {
+    display: none !important;
+}
+
+/* Runtime diagnostics band + app root rhythm inside host-nav shells */
+.simulator-device-shell--host-nav .simulator-runtime__diagnostics-band {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    max-height: min(18vh, 160px);
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+    overflow: auto;
+    border-bottom: 1px solid var(--simulator-border);
+    background: var(--simulator-panel-bg);
+    font-size: 0.75rem;
+    box-sizing: border-box;
+}
+
+.simulator-device-shell--host-nav .simulator-runtime__app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: 0;
+    max-height: none;
+    width: 100%;
+    align-items: stretch;
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+}
+
+.simulator-device-shell:not(.simulator-device-shell--host-nav) .simulator-runtime__app-root {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100%;
+    width: 100%;
+    align-items: stretch;
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+}

@@ -1,0 +1,129 @@
+/**
+ * Phone > Dial keypad layout and CALL button (@signalsafe/simulator-react dialer hooks).
+ */
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-screen__header {
+    width: 100%;
+    margin-bottom: var(--simulator-phone-section-gap);
+    box-sizing: border-box;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer {
+    align-items: center;
+    width: min(100%, var(--simulator-phone-content-max));
+    max-width: var(--simulator-phone-content-max);
+    margin-inline: auto;
+    gap: var(--simulator-phone-section-gap);
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer
+    > .simulator-flex--row:first-child {
+    width: 100%;
+    min-height: 2.75rem;
+    align-items: stretch;
+    border: 1px solid var(--simulator-border);
+    background: var(--simulator-bg);
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer
+    > .simulator-flex--column {
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer
+    .simulator-flex--row {
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer
+    .simulator-btn--dark-outline {
+    width: 4.5rem;
+    height: 3.25rem;
+    padding: 0.25rem;
+    border-radius: 0.375rem;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer-call-button {
+    display: block;
+    width: 100%;
+    margin-top: 0.75rem;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer-call-button:not(:disabled):not([aria-disabled='true']) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5rem;
+    width: min(100%, 12rem);
+    max-width: 12rem;
+    margin-inline: auto;
+    padding: 0.6rem 1rem;
+    border: 1px solid #198754;
+    border-radius: var(--simulator-radius, 0);
+    background: #198754;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+    cursor: pointer;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer-call-button:disabled,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-phone-dial,
+        .simulator-device-shell--screen-phone-dial
+    )
+    .simulator-phone__dialer-call-button[aria-disabled='true'] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5rem;
+    width: min(100%, 12rem);
+    max-width: 12rem;
+    margin-inline: auto;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--simulator-border);
+    background: var(--simulator-panel-bg);
+    color: var(--simulator-muted);
+    opacity: 1;
+    cursor: not-allowed;
+}

@@ -1,0 +1,193 @@
+/**
+ * Messages thread list and thread detail bubbles/actions.
+ */
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-threads,
+        .simulator-device-shell--screen-messages-threads
+    )
+    .simulator-messages__thread-row {
+    display: grid;
+    grid-template-columns: 3.25rem minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    column-gap: 0.75rem;
+    row-gap: 0.25rem;
+    align-items: start;
+    width: 100%;
+    min-width: 0;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-threads,
+        .simulator-device-shell--screen-messages-threads
+    )
+    .simulator-messages__thread-row
+    > .simulator-avatar {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: start;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-threads,
+        .simulator-device-shell--screen-messages-threads
+    )
+    .simulator-messages__thread-row
+    > .simulator-min-w-0 {
+    display: contents;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-threads,
+        .simulator-device-shell--screen-messages-threads
+    )
+    .simulator-messages__thread-row
+    > .simulator-min-w-0
+    > span:first-child {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    font-weight: 700;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-threads,
+        .simulator-device-shell--screen-messages-threads
+    )
+    .simulator-messages__thread-row
+    > span {
+    grid-column: 3;
+    grid-row: 1;
+    white-space: nowrap;
+    color: var(--simulator-muted);
+    justify-self: end;
+    align-self: start;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-threads,
+        .simulator-device-shell--screen-messages-threads
+    )
+    .simulator-messages__thread-row
+    > .simulator-min-w-0
+    > span:nth-child(2) {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    min-width: 0;
+    color: var(--simulator-muted);
+    overflow-wrap: anywhere;
+    line-height: 1.25;
+}
+
+.simulator-shell__body .simulator-list--plain {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.simulator-shell__body .simulator-list--plain > li {
+    display: flex;
+    flex-direction: column;
+    max-width: 88%;
+}
+
+.simulator-shell__body .simulator-list--plain > li[style*='flex-end'] {
+    align-self: flex-end;
+}
+
+.simulator-shell__body .simulator-list--plain > li[style*='flex-start'] {
+    align-self: flex-start;
+}
+
+.simulator-shell__body .simulator-list--plain > li > div {
+    padding: 0.5rem 0.625rem;
+    border: 1px solid var(--simulator-border);
+    border-radius: 0;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-screen__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-screen__header
+    .simulator-avatar {
+    margin-inline: auto;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-screen__header
+    > div {
+    width: 100%;
+    text-align: center;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-list--plain {
+    width: 100%;
+    gap: 0.625rem;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-spacing--mt-auto
+    .simulator-flex--row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-spacing--mt-auto
+    .simulator-flex--row
+    > * {
+    width: 100%;
+    min-width: 0;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__thread-detail
+    .simulator-spacing--mt-auto
+    .simulator-flex--row
+    .simulator-btn--block {
+    width: 100%;
+}

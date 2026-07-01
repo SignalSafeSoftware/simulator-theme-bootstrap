@@ -1,0 +1,77 @@
+/**
+ * Phone app shared layout under host-nav device shells.
+ */
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-screen__header {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 var(--simulator-phone-section-gap);
+    box-sizing: border-box;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body .simulator-flex--between.simulator-border--bottom {
+    width: 100%;
+    max-width: none;
+    margin-bottom: var(--simulator-phone-section-gap);
+    box-sizing: border-box;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body .simulator-input[type='search'],
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body .simulator-input[data-simulator-search],
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body [data-simulator-search] .simulator-input {
+    width: 100%;
+    max-width: none;
+    margin-bottom: var(--simulator-phone-section-gap);
+    box-sizing: border-box;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-list--flush {
+    width: 100%;
+    max-width: none;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body .simulator-list--flush > button,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body .simulator-list--flush > div {
+    width: 100%;
+    max-width: none;
+    padding: 0.75rem 0.5rem;
+    box-sizing: border-box;
+}
+
+/* Host secondary nav provides Back — hide in-content screen back control */
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-btn--screen-back {
+    display: none !important;
+}
+
+/* Call history status badge tones */
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge.simulator-badge--success,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge--success,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-call-status-badge--incoming {
+    border-color: var(--simulator-success);
+    background: var(--bs-success-bg-subtle, #d1e7dd);
+    color: var(--bs-success-text-emphasis, var(--simulator-success));
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge.simulator-badge--danger,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge--danger,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-call-status-badge--missed {
+    border-color: var(--simulator-danger);
+    background: var(--bs-danger-bg-subtle, #f8d7da);
+    color: var(--bs-danger-text-emphasis, var(--simulator-danger));
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge.simulator-badge--primary,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge--primary,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-call-status-badge--outbound {
+    border-color: var(--simulator-accent);
+    background: var(--bs-primary-bg-subtle, #cfe2ff);
+    color: var(--bs-primary-text-emphasis, var(--simulator-accent));
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge.simulator-badge--neutral,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-badge--neutral,
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-call-status-badge--unknown {
+    border-color: var(--simulator-border);
+    background: var(--simulator-panel-bg);
+    color: var(--simulator-muted);
+}
