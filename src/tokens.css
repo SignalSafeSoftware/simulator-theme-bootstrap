@@ -1,0 +1,26 @@
+/**
+ * Simulator design tokens mapped from Bootstrap / Bootswatch CSS variables.
+ * Host apps should load Bootstrap/Bootswatch before this theme.
+ */
+
+.simulator-root {
+    --simulator-bg: var(--bs-body-bg);
+    --simulator-text: var(--bs-body-color);
+    --simulator-muted: var(--bs-secondary-color);
+    --simulator-panel-bg: var(--bs-tertiary-bg);
+    --simulator-border: var(--bs-border-color);
+    --simulator-border-strong: #222;
+    --simulator-accent: var(--bs-primary);
+    --simulator-danger: var(--bs-danger, #dc3545);
+    --simulator-success: var(--bs-success, #198754);
+    --simulator-radius: var(--bs-border-radius);
+    --simulator-radius-lg: var(--bs-border-radius-lg);
+    --simulator-shadow: var(--bs-box-shadow-sm);
+    --simulator-device-width: min(100%, 420px);
+    --simulator-device-height: min(78vh, 760px);
+    --simulator-device-max-height: min(78vh, 760px);
+    --simulator-device-min-height: min(560px, 78vh);
+    color: var(--simulator-text);
+    font-family: var(--bs-body-font-family);
+    min-width: 0;
+}

@@ -1,0 +1,107 @@
+.simulator-border {
+    border: var(--bs-border-width, 1px) solid var(--simulator-border);
+}
+
+.simulator-border--secondary {
+    border-color: var(--simulator-border);
+}
+
+.simulator-border--bottom {
+    border-bottom: var(--bs-border-width, 1px) solid var(--simulator-border);
+}
+
+.simulator-border--top {
+    border-top: var(--bs-border-width, 1px) solid var(--simulator-border);
+}
+
+.simulator-border--top-none {
+    border-top: 0;
+}
+
+.simulator-border--dark {
+    border-color: var(--simulator-border-strong);
+}
+
+.simulator-border--danger {
+    border-color: var(--simulator-danger);
+}
+
+.simulator-border--warning {
+    border-color: var(--bs-warning, #ffc107);
+}
+
+.simulator-rounded--none {
+    border-radius: 0;
+}
+
+.simulator-spacing--section {
+    margin-bottom: 0.75rem;
+}
+
+.simulator-spacing--px-2 {
+    padding-inline: 0.5rem;
+}
+
+.simulator-spacing--px-3 {
+    padding-inline: 0.75rem;
+}
+
+.simulator-spacing--py-1 {
+    padding-block: 0.25rem;
+}
+
+.simulator-spacing--py-2 {
+    padding-block: 0.5rem;
+}
+
+.simulator-spacing--py-3 {
+    padding-block: 0.75rem;
+}
+
+.simulator-spacing--p-2 {
+    padding: 0.5rem;
+}
+
+.simulator-spacing--p-3 {
+    padding: 0.75rem;
+}
+
+.simulator-spacing--mb-0 {
+    margin-bottom: 0;
+}
+
+.simulator-spacing--mb-1 {
+    margin-bottom: 0.25rem;
+}
+
+.simulator-spacing--mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.simulator-spacing--mb-3 {
+    margin-bottom: 0.75rem;
+}
+
+.simulator-spacing--mt-1 {
+    margin-top: 0.25rem;
+}
+
+.simulator-spacing--mt-2 {
+    margin-top: 0.5rem;
+}
+
+.simulator-spacing--mt-3 {
+    margin-top: 0.75rem;
+}
+
+.simulator-spacing--mt-auto {
+    margin-top: auto;
+}
+
+.simulator-spacing--gap {
+    gap: 0.5rem;
+}
+
+.simulator-spacing--stack-gap {
+    gap: 0.5rem;
+}

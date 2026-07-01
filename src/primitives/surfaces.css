@@ -1,0 +1,27 @@
+.simulator-surface--white {
+    background: var(--simulator-bg);
+}
+
+.simulator-surface--body-tertiary {
+    background: var(--simulator-panel-bg);
+}
+
+.simulator-surface--light {
+    background: var(--simulator-panel-bg);
+}
+
+.simulator-surface--avatar {
+    background: var(--bs-primary-bg-subtle, #cfe2ff);
+}
+
+.simulator-surface--secondary {
+    background: var(--simulator-panel-bg);
+}
+
+.simulator-surface--success-light {
+    background: var(--bs-success-bg-subtle, #dff0d8);
+}
+
+.simulator-surface--selected {
+    background: var(--bs-primary-bg-subtle, #e7f1ff);
+}

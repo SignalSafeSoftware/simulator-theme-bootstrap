@@ -1,0 +1,72 @@
+.simulator-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5;
+    border-radius: 0;
+    border: 1px solid transparent;
+    cursor: pointer;
+    background: var(--bs-secondary-bg, #e9ecef);
+    color: var(--simulator-text);
+}
+
+.simulator-btn--sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8125rem;
+}
+
+.simulator-btn--block {
+    display: flex;
+    width: 100%;
+}
+
+.simulator-btn--primary {
+    background: var(--simulator-accent);
+    border-color: var(--simulator-accent);
+    color: #fff;
+}
+
+.simulator-btn--primary-outline {
+    background: transparent;
+    border-color: var(--simulator-accent);
+    color: var(--simulator-accent);
+}
+
+.simulator-btn--neutral-outline {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.25);
+    color: var(--simulator-text);
+}
+
+.simulator-btn--danger {
+    background: var(--simulator-danger);
+    border-color: var(--simulator-danger);
+    color: #fff;
+}
+
+.simulator-btn--success {
+    background: var(--simulator-success);
+    border-color: var(--simulator-success);
+    color: #fff;
+}
+
+.simulator-btn--success:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.simulator-btn--dark-outline {
+    background: var(--simulator-bg);
+    border-color: var(--simulator-border-strong);
+    color: var(--simulator-text);
+}
+
+.simulator-btn--link {
+    background: transparent;
+    border-color: transparent;
+    color: var(--bs-link-color, #0d6efd);
+    text-decoration: underline;
+}

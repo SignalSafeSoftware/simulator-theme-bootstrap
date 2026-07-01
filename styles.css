@@ -1,0 +1,12 @@
+/**
+ * @signalsafe/simulator-theme-bootstrap — slice 1: design tokens and primitive utilities.
+ * Import after Bootstrap/Bootswatch so --bs-* variables resolve.
+ */
+@import './src/tokens.css';
+@import './src/primitives/buttons.css';
+@import './src/primitives/forms.css';
+@import './src/primitives/lists.css';
+@import './src/primitives/badges.css';
+@import './src/primitives/typography.css';
+@import './src/primitives/surfaces.css';
+@import './src/primitives/spacing.css';

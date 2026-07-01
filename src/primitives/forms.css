@@ -1,0 +1,28 @@
+.simulator-field {
+    margin-bottom: 0.75rem;
+}
+
+.simulator-field__label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.simulator-input,
+.simulator-textarea {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid var(--simulator-border);
+    border-radius: 0;
+    background: var(--simulator-bg);
+    color: var(--simulator-text);
+    font-size: 0.9375rem;
+}
+
+.simulator-input--sm {
+    font-size: 0.875rem;
+    padding: 0.25rem 0.5rem;
+}

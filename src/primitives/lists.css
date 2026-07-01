@@ -1,0 +1,23 @@
+.simulator-list,
+.simulator-choice-list,
+.simulator-list--flush {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.simulator-list__item--action,
+.simulator-list__item-button {
+    cursor: pointer;
+}
+
+.simulator-list__item--active,
+.simulator-list__item--active.simulator-surface--selected,
+.simulator-surface--selected {
+    background: var(--bs-primary-bg-subtle, #e7f1ff);
+}
+
+.simulator-choice {
+    cursor: pointer;
+}
