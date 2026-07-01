@@ -12,12 +12,23 @@
     box-sizing: border-box;
 }
 
-.simulator-list__item > .simulator-list__item-button {
+/* Inner button owns row layout; do not squeeze it into screen-chrome grid columns. */
+.simulator-shell__body .simulator-list__item:has(> .simulator-list__item-button),
+.simulator-list__item:has(> .simulator-list__item-button) {
+    display: block;
+    grid-template-columns: unset;
+}
+
+.simulator-list__item-button {
+    width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    width: 100%;
+    text-align: left;
+}
+
+.simulator-list__item > .simulator-list__item-button {
     min-width: 0;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
     border: 0;
@@ -25,9 +36,12 @@
     color: inherit;
     font: inherit;
     line-height: inherit;
-    text-align: left;
     appearance: none;
     cursor: pointer;
+}
+
+.simulator-list__item-button > * {
+    min-width: 0;
 }
 
 .simulator-list__item--action,

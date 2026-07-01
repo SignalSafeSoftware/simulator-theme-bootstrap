@@ -33,6 +33,15 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row:has(> .simulator-list__item-button),
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row:has(> .simulator-list__item-button) {
+    display: block;
+}
+
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list--flush
     > button.simulator-phone__contact-row,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
@@ -70,6 +79,7 @@
     gap: 0.75rem;
     width: 100%;
     min-width: 0;
+    box-sizing: border-box;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-avatar,
@@ -95,36 +105,78 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
+    .simulator-list__item-button
     .simulator-phone__contact-row-main,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
+    .simulator-list__item-button
     .simulator-phone__contact-row-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
 }
 
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
+    .simulator-phone__contact-row-main,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
+    .simulator-phone__contact-row-main {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.125rem;
+}
+
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-name,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-name {
     display: block;
+    flex: 1 1 auto;
     min-width: 0;
     max-width: 100%;
     font-weight: 600;
     line-height: 1.2;
     overflow-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-number,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-number {
     display: block;
+    flex: 0 1 auto;
     min-width: 0;
     max-width: 100%;
     color: var(--simulator-muted);
     font-size: 0.875rem;
     line-height: 1.2;
     overflow-wrap: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
+    .simulator-phone__contact-row-name,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
+    .simulator-phone__contact-row-name,
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
+    .simulator-phone__contact-row-number,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
+    .simulator-phone__contact-row-number {
+    flex: unset;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
