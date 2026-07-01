@@ -191,3 +191,25 @@
     .simulator-btn--block {
     width: 100%;
 }
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__message-timeline
+    .simulator-messages__bubble--them {
+    background: var(--simulator-panel-bg, #f3f3f3);
+    border: 1px solid var(--simulator-border);
+    color: var(--simulator-text);
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+        .simulator-phone-shell--screen-messages-thread-detail,
+        .simulator-device-shell--screen-messages-thread-detail
+    )
+    .simulator-messages__message-timeline
+    .simulator-messages__bubble--me {
+    background: var(--bs-success-bg-subtle, #dff0d8);
+    border: 1px solid var(--simulator-success);
+    color: var(--simulator-text);
+}

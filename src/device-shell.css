@@ -129,3 +129,59 @@
     padding: 0;
     overflow: hidden;
 }
+
+/* Developer-tools panel rendered outside diagnostics-band (legacy path) */
+.simulator-device-shell--host-nav .simulator-runtime > *:not(.simulator-runtime__app-root):not(:last-child) {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    width: 100%;
+    max-height: min(18vh, 160px);
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+    overflow: auto;
+    border-bottom: 1px solid var(--simulator-border);
+    background: var(--simulator-panel-bg);
+    font-size: 0.75rem;
+    box-sizing: border-box;
+}
+
+.simulator-device-shell--host-nav .simulator-runtime__diagnostics-band > .simulator-card,
+.simulator-device-shell--host-nav
+    .simulator-runtime__diagnostics-band
+    > div[class*='simulator-flex']:not(.simulator-surface--body-tertiary) {
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    max-height: min(18vh, 160px);
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+    overflow: auto;
+    border-bottom: 1px solid var(--simulator-border);
+    background: var(--simulator-panel-bg);
+    font-size: 0.75rem;
+}
+
+.simulator-device-shell--host-nav .simulator-surface--body-tertiary {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 auto;
+    min-height: 0;
+    max-height: none;
+    width: 100%;
+    align-items: stretch;
+    background: transparent;
+    padding: 0;
+    overflow: visible;
+}
+
+.simulator-device-shell:not(.simulator-device-shell--host-nav) .simulator-surface--body-tertiary {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 100%;
+    width: 100%;
+    align-items: stretch;
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+}
