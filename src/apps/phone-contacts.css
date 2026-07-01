@@ -1,5 +1,7 @@
 /**
- * Phone > Contacts wireframe rows (package avatar + row semantic classes).
+ * Phone > Contacts list rows (device-shell contacts screen).
+ * Overrides generic screen-chrome list-item grid so names/numbers are not squeezed
+ * into the avatar column.
  */
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-list,
@@ -11,18 +13,18 @@
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list--flush
-    > .simulator-list__item.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-list--flush
-    > .simulator-list__item.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list--flush
     > button.simulator-phone__contact-row,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
     .simulator-list--flush
-    > button.simulator-phone__contact-row {
-    display: grid;
-    grid-template-columns: 3.25rem minmax(0, 1fr) auto;
+    > button.simulator-phone__contact-row,
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 0.75rem;
     width: 100%;
@@ -33,21 +35,12 @@
     box-sizing: border-box;
     text-align: start;
     cursor: pointer;
-}
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list--flush
-    > button.simulator-phone__contact-row:not(:has(.simulator-btn)),
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-list--flush
-    > button.simulator-phone__contact-row:not(:has(.simulator-btn)) {
-    grid-template-columns: 3.25rem minmax(0, 1fr);
+    grid-template-columns: unset;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-avatar,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-avatar {
-    grid-column: 1;
-    grid-row: 1;
+    flex: 0 0 auto;
     width: 2.5rem;
     height: 2.5rem;
     font-size: 1.25rem;
@@ -55,39 +48,47 @@
     border: 1px solid var(--simulator-border);
     border-radius: 0;
     background: var(--bs-primary-bg-subtle, #cfe2ff);
-    flex-shrink: 0;
+}
+
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-main,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-main {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.125rem;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-flex-grow-1,
+    .simulator-list__item.simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
+    .simulator-phone__contact-row-main,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-flex-grow-1,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-min-w-0,
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-min-w-0 {
-    grid-column: 2;
-    grid-row: 1;
-    min-width: 0;
-    width: 100%;
+    .simulator-list__item.simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
+    .simulator-phone__contact-row-main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-phone__contact-row-avatar
-    + span:not(.simulator-btn),
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-phone__contact-row-avatar
-    + span:not(.simulator-btn) {
-    grid-column: 2;
-    grid-row: 1;
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-name,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-name {
+    display: block;
     min-width: 0;
+    max-width: 100%;
     font-weight: 600;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-number,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-number {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+    color: var(--simulator-muted);
+    font-size: 0.875rem;
     line-height: 1.2;
     overflow-wrap: anywhere;
 }
@@ -98,10 +99,9 @@
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
     .simulator-phone__contact-row
     > .simulator-btn {
-    grid-column: 3;
-    grid-row: 1;
+    flex: 0 0 auto;
+    margin-left: auto;
     align-self: center;
-    justify-self: end;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
@@ -110,35 +110,7 @@
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
     .simulator-phone__contact-row
     .simulator-text--truncate {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    min-width: 0;
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
-    overflow-wrap: anywhere;
-}
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-flex-grow-1
-    > .simulator-text--medium,
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-flex-grow-1
-    > .simulator-text--medium {
-    font-weight: 600;
-    line-height: 1.2;
-}
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-flex-grow-1
-    > .simulator-muted,
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    > .simulator-flex-grow-1
-    > .simulator-muted {
-    color: var(--simulator-muted);
 }
