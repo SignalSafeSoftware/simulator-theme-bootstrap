@@ -7,6 +7,29 @@
     width: 100%;
 }
 
+.simulator-list__item {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.simulator-list__item > .simulator-list__item-button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    text-align: left;
+    appearance: none;
+    cursor: pointer;
+}
+
 .simulator-list__item--action,
 .simulator-list__item-button {
     cursor: pointer;

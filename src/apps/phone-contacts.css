@@ -1,7 +1,7 @@
 /**
  * Phone > Contacts list rows (device-shell contacts screen).
  * Overrides generic screen-chrome list-item grid so names/numbers are not squeezed
- * into the avatar column.
+ * into the avatar column. Clickable rows use full-width .simulator-list__item-button.
  */
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-list,
@@ -9,8 +9,6 @@
     width: 100%;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list--flush
     > button.simulator-phone__contact-row,
@@ -23,10 +21,6 @@
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
     .simulator-list
     > .simulator-list__item.simulator-phone__contact-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.75rem;
     width: 100%;
     min-width: 0;
     padding: 0.75rem;
@@ -36,6 +30,46 @@
     text-align: start;
     cursor: pointer;
     grid-template-columns: unset;
+}
+
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-list--flush
+    > button.simulator-phone__contact-row,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-list--flush
+    > button.simulator-phone__contact-row,
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row:not(:has(> .simulator-list__item-button)),
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row:not(:has(> .simulator-list__item-button)) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row
+    > .simulator-list__item-button,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-list
+    > .simulator-list__item.simulator-phone__contact-row
+    > .simulator-list__item-button,
+.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
+    .simulator-list--flush
+    > button.simulator-phone__contact-row,
+.simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
+    .simulator-list--flush
+    > button.simulator-phone__contact-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+    min-width: 0;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-avatar,
@@ -52,7 +86,7 @@
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-main,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts .simulator-phone__contact-row-main {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     min-width: 0;
     display: flex;
     flex-direction: column;
@@ -61,10 +95,10 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list__item.simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
+    .simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
     .simulator-phone__contact-row-main,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contacts
-    .simulator-list__item.simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
+    .simulator-phone__contact-row:not(:has(.simulator-phone__contact-row-avatar))
     .simulator-phone__contact-row-main {
     flex-direction: row;
     align-items: center;
@@ -79,7 +113,7 @@
     max-width: 100%;
     font-weight: 600;
     line-height: 1.2;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-number,
@@ -90,7 +124,7 @@
     color: var(--simulator-muted);
     font-size: 0.875rem;
     line-height: 1.2;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
