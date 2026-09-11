@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-shell__body .simulator-flex--between.simulator-border--bottom {
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav) .simulator-screen__header-row {
     width: 100%;
     max-width: none;
     margin-bottom: var(--simulator-phone-section-gap);

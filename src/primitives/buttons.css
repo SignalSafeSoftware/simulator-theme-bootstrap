@@ -3,14 +3,20 @@
     align-items: center;
     justify-content: center;
     padding: 0.375rem 0.75rem;
-    font-size: 0.875rem;
-    font-weight: 500;
+    min-height: var(--simulator-button-min-height);
+    font-size: var(--simulator-button-font-size);
+    font-weight: var(--simulator-button-font-weight);
     line-height: 1.5;
-    border-radius: 0;
+    border-radius: var(--simulator-button-radius);
     border: 1px solid transparent;
     cursor: pointer;
     background: var(--bs-secondary-bg, #e9ecef);
     color: var(--simulator-text);
+    box-shadow: var(--simulator-button-shadow);
+}
+
+.simulator-btn:hover:not(:disabled) {
+    filter: var(--simulator-button-hover-filter);
 }
 
 .simulator-btn--sm {
@@ -36,9 +42,9 @@
 }
 
 .simulator-btn--neutral-outline {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(0, 0, 0, 0.25);
-    color: var(--simulator-text);
+    background: var(--simulator-neutral-button-bg);
+    border-color: var(--simulator-neutral-button-border);
+    color: var(--simulator-neutral-button-color);
 }
 
 .simulator-btn--danger {

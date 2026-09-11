@@ -1,0 +1,64 @@
+/* Opt-in host bezel, leaving existing SimulatorPhoneShell defaults unchanged. */
+.simulator-host-device {
+  width: var(--simulator-host-width, 390px);
+  max-width: 100%;
+  height: var(--simulator-host-height, 740px);
+  border: var(
+    --simulator-host-border,
+    7px solid var(--simulator-border-strong)
+  );
+  border-radius: var(--simulator-host-radius, 38px);
+  background: var(--simulator-bg);
+  box-shadow: var(--simulator-host-shadow, none);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.simulator-host-device__content {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+.simulator-host-device__content[hidden] {
+  display: none;
+}
+.simulator-host-device__content > div {
+  height: 100%;
+  min-height: 0;
+}
+.simulator-host-device .simulator-device-shell {
+  height: 100%;
+  max-height: none;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+.simulator-host-device .simulator-runtime {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.simulator-host-device .simulator-runtime__app-root {
+  flex: 1;
+}
+.simulator-host-device .simulator-shell__frame {
+  border: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.simulator-host-device .simulator-device-shell__screen {
+  overflow: auto;
+}
+.simulator-host-device .simulator-runtime__screen {
+  padding: var(--simulator-host-screen-padding, 12px);
+}
+.simulator-host-device .simulator-shell__body {
+  overflow: visible;
+}
+@media (max-width: 720px) {
+  .simulator-host-device {
+    height: var(--simulator-host-mobile-height, 720px);
+  }
+}

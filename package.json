@@ -1,14 +1,22 @@
 {
   "name": "@signalsafe/simulator-theme-bootstrap",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "type": "module",
   "description": "Bootstrap-token simulator theme for @signalsafe/simulator-device and @signalsafe/simulator-react semantic classes.",
   "license": "MIT",
-  "sideEffects": ["*.css", "**/*.css"],
+  "sideEffects": [
+    "*.css",
+    "**/*.css"
+  ],
   "exports": {
     "./styles.css": "./styles.css"
   },
-  "files": ["styles.css", "src/**/*.css", "README.md", "LICENSE"],
+  "files": [
+    "styles.css",
+    "src/**/*.css",
+    "README.md",
+    "LICENSE"
+  ],
   "publishConfig": {
     "access": "public"
   },

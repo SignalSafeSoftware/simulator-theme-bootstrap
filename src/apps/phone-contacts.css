@@ -23,9 +23,11 @@
     > .simulator-list__item.simulator-phone__contact-row {
     width: 100%;
     min-width: 0;
-    padding: 0.75rem;
+    padding: var(--simulator-contact-row-padding);
     border: 0;
-    border-bottom: 1px solid var(--simulator-border);
+    border-bottom: 1px solid var(--simulator-contact-row-border-color);
+    border-radius: var(--simulator-contact-row-radius);
+    background: var(--simulator-contact-row-bg);
     box-sizing: border-box;
     text-align: start;
     cursor: pointer;
@@ -90,8 +92,9 @@
     font-size: 1.25rem;
     line-height: 1;
     border: 1px solid var(--simulator-border);
-    border-radius: 0;
-    background: var(--bs-primary-bg-subtle, #cfe2ff);
+    border-radius: var(--simulator-avatar-radius);
+    background: var(--simulator-avatar-bg);
+    color: var(--simulator-avatar-color);
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-main,

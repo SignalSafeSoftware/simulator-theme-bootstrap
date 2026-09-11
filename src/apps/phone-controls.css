@@ -1,0 +1,226 @@
+/* Optional controlled phone views. All rules are scoped to simulator components. */
+.simulator-call-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 17px;
+}
+.simulator-call-key {
+  height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--simulator-neutral-button-bg, var(--bs-secondary-bg, #eee));
+  color: var(--simulator-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.simulator-call-key:hover {
+  filter: brightness(0.96);
+}
+.simulator-call-key span {
+  font-size: 23px;
+  line-height: 1;
+}
+.simulator-call-key small {
+  font-size: 8px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+}
+.simulator-call-label {
+  font-size: 9px;
+  letter-spacing: 1.9px;
+  font-weight: 650;
+  color: var(--simulator-muted);
+}
+.simulator-call-number {
+  color: var(--simulator-muted);
+}
+.simulator-call-view {
+  text-align: center;
+  padding: 20px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.simulator-caller-avatar {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  background: var(--simulator-call-avatar-bg, var(--bs-secondary-bg, #eee));
+  color: var(--simulator-call-avatar-color, var(--simulator-accent));
+  border-radius: 50%;
+  margin: 30px 0 21px;
+}
+.simulator-caller-avatar.ringing {
+  animation: simulator-call-pulse 2s infinite;
+}
+.simulator-call-view h2 {
+  word-break: break-word;
+}
+.simulator-call-status {
+  font-size: 12px;
+  color: var(--simulator-call-status-color, var(--simulator-muted));
+  margin: 14px 0 20px;
+}
+.simulator-call-actions {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: auto;
+  padding-top: 22px;
+}
+.simulator-call-round {
+  border: 0;
+  display: grid;
+  place-items: center;
+  width: 53px;
+  height: 53px;
+  border-radius: 50%;
+  background: var(--simulator-call-control-bg, var(--bs-secondary-bg, #eee));
+  color: var(--simulator-call-control-color, var(--simulator-text));
+}
+.simulator-call-round.danger {
+  background: var(--simulator-call-danger, var(--simulator-danger));
+  color: white;
+}
+.simulator-call-round.success {
+  background: var(--simulator-success);
+  color: white;
+}
+.simulator-call-round.selected {
+  background: var(--simulator-call-selected, var(--simulator-accent));
+  color: white;
+}
+.simulator-call-view .simulator-call-keypad {
+  width: 100%;
+  gap: 5px 18px;
+}
+.simulator-call-view .simulator-call-key {
+  height: 40px;
+}
+.simulator-call-view .simulator-call-key span {
+  font-size: 20px;
+}
+.simulator-call-view .simulator-call-key small {
+  display: none;
+}
+.simulator-call-view:has(.simulator-call-keypad) .simulator-caller-avatar {
+  width: 48px;
+  height: 48px;
+  margin: 14px 0 12px;
+}
+.simulator-call-view:has(.simulator-call-keypad) .simulator-caller-avatar svg {
+  width: 24px;
+}
+.simulator-call-view:has(.simulator-call-keypad) .simulator-call-status {
+  margin: 8px 0;
+}
+.simulator-sent-digits {
+  font-size: 11px;
+  color: var(--simulator-call-digits-color, var(--simulator-muted));
+  min-height: 22px;
+  max-width: 240px;
+  overflow: hidden;
+}
+.simulator-contact-editor {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+.simulator-contact-editor label {
+  display: grid;
+  gap: 6px;
+  text-align: left;
+  font-size: 12px;
+}
+.simulator-contact-editor input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: var(--simulator-input-padding, 10px);
+  border: 1px solid var(--simulator-input-border, var(--bs-border-color, #ddd));
+  border-radius: var(--simulator-input-radius, 10px);
+  background: var(--simulator-input-bg, var(--bs-body-bg, white));
+  color: var(--simulator-input-color, inherit);
+  font: inherit;
+}
+.simulator-editor-actions,
+.simulator-history-actions {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+.simulator-editor-actions button,
+.simulator-history-load-more {
+  padding: 10px 14px;
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-button-radius, 10px);
+  font: inherit;
+  cursor: pointer;
+}
+.simulator-editor-cancel,
+.simulator-history-load-more {
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+}
+.simulator-editor-save {
+  background: var(--simulator-accent);
+  color: white;
+}
+.simulator-contact-editor button:disabled,
+.simulator-call-view button:disabled,
+.simulator-history-load-more:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.simulator-history-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.simulator-history-actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+}
+.simulator-screen-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 112px;
+  min-height: 112px;
+  margin-top: 18px;
+  padding: 16px;
+  background: var(--bs-secondary-bg, #eee);
+  color: var(--simulator-accent);
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius-lg, 16px);
+  font-size: 14px;
+}
+.simulator-screen-tile:hover {
+  filter: brightness(0.96);
+}
+.simulator-contact-editor :focus-visible,
+.simulator-call-view :focus-visible,
+.simulator-screen-tile:focus-visible,
+.simulator-history-load-more:focus-visible {
+  outline: 3px solid var(--simulator-accent);
+  outline-offset: 3px;
+}
+@keyframes simulator-call-pulse {
+  50% {
+    box-shadow: 0 0 0 12px
+      color-mix(in srgb, var(--simulator-accent) 10%, transparent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .simulator-caller-avatar.ringing {
+    animation: none;
+  }
+}

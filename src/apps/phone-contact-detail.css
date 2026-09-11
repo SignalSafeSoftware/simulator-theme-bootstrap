@@ -19,14 +19,17 @@
     .simulator-phone-contact-detail__header,
 .simulator-device-shell--host-nav.simulator-phone-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__header {
-    display: grid;
+    display: var(--simulator-contact-detail-header-display);
     grid-template-columns: 1fr;
     align-items: center;
     width: 100%;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--simulator-border-strong);
-    border-radius: 0;
-    background: var(--simulator-bg);
+    min-height: var(--simulator-contact-detail-header-min-height);
+    margin: var(--simulator-contact-detail-header-margin);
+    padding: var(--simulator-contact-detail-header-padding);
+    border: var(--simulator-contact-detail-header-border-width) solid var(--simulator-contact-detail-header-border);
+    border-radius: var(--simulator-contact-detail-header-radius);
+    background: var(--simulator-contact-detail-header-bg);
+    color: var(--simulator-contact-detail-header-color);
     box-sizing: border-box;
 }
 
@@ -36,10 +39,10 @@
     .simulator-phone-contact-detail__title {
     margin: 0;
     text-align: center;
-    font-weight: 600;
-    font-size: 0.9375rem;
-    line-height: 1.3;
-    color: var(--simulator-text);
+    font-weight: var(--simulator-contact-detail-title-font-weight);
+    font-size: var(--simulator-contact-detail-title-font-size);
+    line-height: var(--simulator-contact-detail-title-line-height);
+    letter-spacing: var(--simulator-contact-detail-title-letter-spacing);
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail

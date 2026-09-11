@@ -6,21 +6,14 @@
         .simulator-phone-shell--screen-phone-history,
         .simulator-device-shell--screen-phone-history
     )
-    .simulator-list--flush
-    > button,
-:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
-        .simulator-phone-shell--screen-phone-history,
-        .simulator-device-shell--screen-phone-history
-    )
-    .simulator-list--flush
-    > div {
+    .simulator-phone-history-row {
     display: grid;
-    grid-template-columns: 2.5rem minmax(0, 1fr) auto;
+    grid-template-columns: var(--simulator-phone-history-row-columns);
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--simulator-phone-history-row-gap);
     width: 100%;
     min-width: 0;
-    padding: 0.75rem 0.5rem;
+    padding: var(--simulator-phone-history-row-padding);
     border: 0;
     border-bottom: 1px solid var(--simulator-border);
     border-radius: 0;
@@ -32,30 +25,12 @@
         .simulator-phone-shell--screen-phone-history,
         .simulator-device-shell--screen-phone-history
     )
-    .simulator-list--flush
-    > button
-    > .simulator-flex-grow-1,
+    .simulator-phone-history-row > .simulator-flex-grow-1,
 :is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
         .simulator-phone-shell--screen-phone-history,
         .simulator-device-shell--screen-phone-history
     )
-    .simulator-list--flush
-    > button
-    > .simulator-min-w-0,
-:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
-        .simulator-phone-shell--screen-phone-history,
-        .simulator-device-shell--screen-phone-history
-    )
-    .simulator-list--flush
-    > div
-    > .simulator-flex-grow-1,
-:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
-        .simulator-phone-shell--screen-phone-history,
-        .simulator-device-shell--screen-phone-history
-    )
-    .simulator-list--flush
-    > div
-    > .simulator-min-w-0 {
+    .simulator-phone-history-row > .simulator-min-w-0 {
     min-width: 0;
     width: 100%;
 }
@@ -64,16 +39,7 @@
         .simulator-phone-shell--screen-phone-history,
         .simulator-device-shell--screen-phone-history
     )
-    .simulator-list--flush
-    > button
-    .simulator-text--truncate,
-:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
-        .simulator-phone-shell--screen-phone-history,
-        .simulator-device-shell--screen-phone-history
-    )
-    .simulator-list--flush
-    > div
-    .simulator-text--truncate {
+    .simulator-phone-history-row .simulator-text--truncate {
     white-space: normal;
     overflow: visible;
     text-overflow: clip;
@@ -84,16 +50,7 @@
         .simulator-phone-shell--screen-phone-history,
         .simulator-device-shell--screen-phone-history
     )
-    .simulator-list--flush
-    > button
-    > .simulator-badge,
-:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
-        .simulator-phone-shell--screen-phone-history,
-        .simulator-device-shell--screen-phone-history
-    )
-    .simulator-list--flush
-    > div
-    > .simulator-badge,
+    .simulator-phone-history-row > .simulator-badge,
 :is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
         .simulator-phone-shell--screen-phone-history,
         .simulator-device-shell--screen-phone-history
@@ -108,4 +65,33 @@
     font-weight: 600;
     line-height: 1.2;
     justify-self: end;
+}
+
+.simulator-phone-history-search {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.simulator-phone-history-entry {
+    display: flex;
+    align-items: center;
+    gap: var(--simulator-phone-history-actions-gap);
+    width: 100%;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid var(--simulator-border);
+    background: var(--simulator-bg);
+}
+
+.simulator-phone-history-entry > .simulator-phone-history-row {
+    flex: 1 1 auto;
+    min-width: 0;
+    border-bottom: 0;
+}
+
+.simulator-phone-history-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--simulator-phone-history-actions-gap);
 }

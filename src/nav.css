@@ -7,8 +7,9 @@
     width: 100%;
     position: relative;
     z-index: 2;
-    border-top: 1px solid var(--simulator-border-strong);
-    background: var(--simulator-panel-bg);
+    border-top: 1px solid var(--simulator-nav-border-color);
+    background: var(--simulator-nav-bg);
+    padding: var(--simulator-nav-padding);
 }
 
 .simulator-device-nav__list {
@@ -30,16 +31,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.125rem;
+    gap: var(--simulator-nav-button-gap);
     width: 100%;
     min-width: 0;
-    min-height: 2.75rem;
-    padding: 0.375rem 0.25rem;
+    min-height: var(--simulator-nav-button-min-height);
+    padding: var(--simulator-nav-button-padding);
     border: 0;
-    border-right: 1px solid var(--simulator-border);
-    border-radius: 0;
+    border-right: 1px solid var(--simulator-nav-button-border-color);
+    border-radius: var(--simulator-nav-button-radius);
     cursor: pointer;
-    font-size: clamp(0.625rem, 2.5vw, 0.75rem);
+    font-size: var(--simulator-nav-button-font-size);
+    font-weight: var(--simulator-nav-button-font-weight);
     line-height: 1.2;
     text-align: center;
 }
@@ -49,18 +51,18 @@
 }
 
 .simulator-device-nav__button--inactive {
-    color: var(--simulator-muted);
-    background: var(--simulator-panel-bg);
+    color: var(--simulator-nav-color);
+    background: var(--simulator-nav-bg);
 }
 
 .simulator-device-nav__button--active {
-    background: var(--simulator-border-strong);
-    color: #fff;
-    font-weight: 600;
+    background: var(--simulator-nav-active-bg);
+    color: var(--simulator-nav-active-color);
+    font-weight: var(--simulator-nav-active-font-weight);
 }
 
 .simulator-device-nav__icon {
-    font-size: 1rem;
+    font-size: var(--simulator-nav-icon-font-size);
     line-height: 1;
 }
 
@@ -80,7 +82,7 @@
     width: 100%;
     margin-top: auto;
     border-top: 1px solid var(--simulator-border-strong);
-    background: var(--simulator-panel-bg);
+    background: var(--simulator-nav-bg);
 }
 
 .simulator-shell__nav-tab {
@@ -94,9 +96,9 @@
     padding: 0.375rem 0.25rem;
     border: 0;
     border-right: 1px solid var(--simulator-border);
-    border-radius: 0;
-    background: var(--simulator-panel-bg);
-    color: var(--simulator-muted);
+    border-radius: var(--simulator-nav-button-radius);
+    background: var(--simulator-nav-bg);
+    color: var(--simulator-nav-color);
     cursor: pointer;
     font-size: clamp(0.625rem, 2.5vw, 0.75rem);
     line-height: 1.2;
@@ -112,13 +114,13 @@
 }
 
 .simulator-shell__nav-tab--inactive {
-    color: var(--simulator-muted);
-    background: var(--simulator-panel-bg);
+    color: var(--simulator-nav-color);
+    background: var(--simulator-nav-bg);
 }
 
 .simulator-shell__nav-tab--active {
-    background: var(--simulator-border-strong);
-    color: #fff;
+    background: var(--simulator-nav-active-bg);
+    color: var(--simulator-nav-active-color);
     font-weight: 600;
 }
 
@@ -132,7 +134,7 @@
     grid-auto-columns: 1fr;
     flex-shrink: 0;
     border-top: 1px solid var(--simulator-border-strong);
-    background: var(--simulator-panel-bg);
+    background: var(--simulator-nav-bg);
 }
 
 .simulator-local-nav__segment {
@@ -140,8 +142,8 @@
     padding: 0.375rem 0.25rem;
     border: 0;
     border-right: 1px solid var(--simulator-border);
-    background: var(--simulator-panel-bg);
-    color: var(--simulator-muted);
+    background: var(--simulator-nav-bg);
+    color: var(--simulator-nav-color);
     cursor: pointer;
     font-size: 0.75rem;
     text-align: center;
@@ -152,12 +154,12 @@
 }
 
 .simulator-local-nav__segment--inactive {
-    color: var(--simulator-muted);
+    color: var(--simulator-nav-color);
 }
 
 .simulator-local-nav__segment--active {
-    background: var(--simulator-border-strong);
-    color: #fff;
+    background: var(--simulator-nav-active-bg);
+    color: var(--simulator-nav-active-color);
     font-weight: 600;
     border-bottom: 0;
 }

@@ -3,33 +3,78 @@
  */
 
 .simulator-screen__header {
-    display: block;
+    display: var(--simulator-screen-header-display);
+    position: var(--simulator-screen-header-position);
+    align-items: var(--simulator-screen-header-align-items);
+    justify-content: var(--simulator-screen-header-justify-content);
     width: 100%;
-    margin: 0 0 0.75rem;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--simulator-border-strong);
-    border-radius: 0;
-    background: var(--simulator-bg);
-    color: var(--simulator-text);
-    font-size: 0.9375rem;
-    font-weight: 600;
-    line-height: 1.3;
+    min-height: var(--simulator-screen-header-min-height);
+    margin: var(--simulator-screen-header-margin);
+    padding: var(--simulator-screen-header-padding);
+    border: var(--simulator-screen-header-border-width) solid var(--simulator-screen-header-border);
+    border-radius: var(--simulator-screen-header-radius);
+    background: var(--simulator-screen-header-bg);
+    color: var(--simulator-screen-header-color);
+    font-size: var(--simulator-screen-header-font-size);
+    font-weight: var(--simulator-screen-header-font-weight);
+    line-height: var(--simulator-screen-header-line-height);
+    letter-spacing: var(--simulator-screen-header-letter-spacing);
     text-align: center;
 }
 
-.simulator-shell__body .simulator-flex--between.simulator-border--bottom {
+.simulator-screen__header-row {
+    display: var(--simulator-screen-header-row-display);
+    position: var(--simulator-screen-header-position);
+    align-items: var(--simulator-screen-header-align-items);
+    justify-content: var(--simulator-screen-header-justify-content);
     width: 100%;
-    margin-bottom: 0.75rem;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid var(--simulator-border-strong);
-    border-bottom: 1px solid var(--simulator-border-strong);
-    background: var(--simulator-bg);
-    font-weight: 600;
+    min-height: var(--simulator-screen-header-min-height);
+    margin: var(--simulator-screen-header-margin);
+    padding: var(--simulator-screen-header-padding);
+    border: var(--simulator-screen-header-border-width) solid var(--simulator-screen-header-border);
+    border-radius: var(--simulator-screen-header-radius);
+    background: var(--simulator-screen-header-bg);
+    color: var(--simulator-screen-header-color);
+    font-weight: var(--simulator-screen-header-font-weight);
+    font-size: var(--simulator-screen-header-row-font-size);
+    line-height: var(--simulator-screen-header-row-line-height);
+    letter-spacing: var(--simulator-screen-header-letter-spacing);
 }
 
-.simulator-shell__body .simulator-flex--between.simulator-border--bottom > span:first-child {
+.simulator-screen__header-row > :is(h2, span):first-child {
     flex: 1 1 auto;
     text-align: center;
+    padding-inline: var(--simulator-screen-header-title-padding-inline);
+}
+
+.simulator-screen__header-row > button {
+    position: var(--simulator-screen-header-action-position);
+    inset-inline-end: var(--simulator-screen-header-action-inline-end);
+    top: var(--simulator-screen-header-action-top);
+    transform: var(--simulator-screen-header-action-transform);
+}
+
+:is(.simulator-email__compose-action, .simulator-messages__compose-action) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--simulator-compose-action-size);
+    height: var(--simulator-compose-action-size);
+    padding: var(--simulator-compose-action-padding);
+    font-size: var(--simulator-compose-action-font-size);
+}
+
+:is(.simulator-email__compose-action, .simulator-messages__compose-action)::before {
+    content: '';
+    display: block;
+    width: var(--simulator-compose-icon-size);
+    height: var(--simulator-compose-icon-size);
+    background: currentColor;
+    mask: var(--simulator-compose-icon-mask);
+}
+
+.simulator-home-settings__back-bar {
+    display: var(--simulator-home-settings-back-bar-display);
 }
 
 .simulator-shell__body .simulator-input[type='search'],
@@ -51,8 +96,7 @@
 }
 
 .simulator-shell__body .simulator-list--flush > button,
-.simulator-shell__body .simulator-list--flush > div,
-.simulator-shell__body button.simulator-w-full:not([aria-label='Call']),
+.simulator-shell__body .simulator-list--flush > div:where(:not(.simulator-phone-history-entry)),
 .simulator-shell__body .simulator-list__item,
 .simulator-list__item,
 .simulator-choice {

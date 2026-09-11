@@ -24,3 +24,5 @@
 @import './src/apps/messages.css';
 @import './src/diagnostics.css';
 @import './src/modals.css';
+@import './src/apps/phone-controls.css';
+@import './src/host-device.css';

@@ -40,8 +40,9 @@
     width: 2.5rem;
     height: 2.5rem;
     border: 1px solid var(--simulator-border);
-    border-radius: 0;
-    background: var(--bs-primary-bg-subtle, #cfe2ff);
+    border-radius: var(--simulator-avatar-radius);
+    background: var(--simulator-avatar-bg);
+    color: var(--simulator-avatar-color);
     flex-shrink: 0;
 }
 

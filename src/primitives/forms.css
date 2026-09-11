@@ -14,12 +14,16 @@
     display: block;
     width: 100%;
     box-sizing: border-box;
-    padding: 0.375rem 0.75rem;
-    border: 1px solid var(--simulator-border);
-    border-radius: 0;
-    background: var(--simulator-bg);
-    color: var(--simulator-text);
-    font-size: 0.9375rem;
+    padding: var(--simulator-input-padding);
+    border: 1px solid var(--simulator-input-border);
+    border-radius: var(--simulator-input-radius);
+    background: var(--simulator-input-bg);
+    color: var(--simulator-input-color);
+    font-size: var(--simulator-input-font-size);
+}
+
+:is(.simulator-input, .simulator-textarea)::placeholder {
+    color: var(--simulator-input-placeholder-color);
 }
 
 .simulator-input--sm {
