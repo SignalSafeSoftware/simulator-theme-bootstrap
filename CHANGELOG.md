@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.1 — 2026-09-11
+
+- Make native heading text inside shared header rows inherit the row typography tokens and reset heading margins, avoiding competing browser defaults.
+
 ## 0.4.0 — 2026-09-11
 
 - Add opt-in host bezel/scrolling and scoped controlled call, contact editor, history and Home tile styles.

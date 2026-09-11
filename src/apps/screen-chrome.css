@@ -42,6 +42,9 @@
 }
 
 .simulator-screen__header-row > :is(h2, span):first-child {
+    margin: 0;
+    font: inherit;
+    letter-spacing: inherit;
     flex: 1 1 auto;
     text-align: center;
     padding-inline: var(--simulator-screen-header-title-padding-inline);
