@@ -72,9 +72,10 @@ This abbreviated recipe captures PhoneMe's approved soft-green banners, compose 
 
 ## What this package includes
 
-- **Slice 1:** design tokens on `.simulator-root` and primitive utility classes.
-- **Slice 2 (current):** device shell (`.simulator-device-shell*`), inner frame (`.simulator-shell__frame` / `__body`), package nav (`.simulator-device-nav*`), shell nav tabs, and local nav segments.
-- **Not included yet:** app-specific screen layout, host bridge selectors, or DeliveryPlus page/preview chrome.
+- Design tokens, primitive controls and semantic list groups.
+- Device shell, inner frame, navigation and optional host bezel.
+- Shared phone, contact, history, dialing, message, email and appearance layouts.
+- Application branding, workspace/sidebar chrome and business logic remain host-owned.
 
 ## Requirements
 
@@ -97,3 +98,9 @@ The stylesheet includes scoped `.simulator-call-*`, `.simulator-contact-editor`,
 Wrap a device in `.simulator-host-device` with a `.simulator-host-device__content` child to opt into a fixed host bezel and content scrolling. Configure `--simulator-host-width` (390px), `--simulator-host-height` (740px), `--simulator-host-mobile-height` (720px), `--simulator-host-border`, `--simulator-host-radius` (38px), `--simulator-host-shadow` and `--simulator-host-screen-padding` (12px). These rules do not affect consumers that omit this wrapper.
 
 Call color overrides: `--simulator-call-avatar-bg`, `--simulator-call-avatar-color`, `--simulator-call-status-color`, `--simulator-call-control-bg`, `--simulator-call-control-color`, `--simulator-call-danger`, `--simulator-call-selected`, `--simulator-call-digits-color`. Form fields use existing `--simulator-input-*` tokens. Branding, workspace layout and sidebar tools belong to the host. Keyboard focus is visible and call animation honors reduced motion.
+
+## Contact editor layout (0.9.2)
+
+Use `.simulator-contact-editor-layout` around a host-controlled editor inside a contact screen. Its width uses `--simulator-phone-content-pad-x` (12px by default), preventing centered flex shells from shrinking the form. Contact value groups have separate panels; photo actions are 44px square buttons. Icons come from simulator-react, not from this CSS package. The theme does not fetch data, upload photos, store settings, or call providers.
+
+See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md). This documentation patch follows 0.9.1 without moving its published tag.
