@@ -156,3 +156,64 @@
     background: var(--simulator-panel-bg);
     color: var(--simulator-text);
 }
+
+/* Repeated labeled endpoints share the available contact-detail width. */
+.simulator-device-shell--host-nav .simulator-phone-contact-detail__values {
+    width: min(90%, 22rem);
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+.simulator-phone-contact-detail__values > legend {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.simulator-device-shell--host-nav .simulator-phone-contact-detail__values .simulator-phone-contact-detail__field {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.35rem 0.75rem;
+    width: 100%;
+    max-width: none;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--simulator-border);
+}
+.simulator-phone-contact-detail__values .simulator-phone-contact-detail__label,
+.simulator-phone-contact-detail__values label {
+    grid-column: 1 / -1;
+}
+.simulator-phone-contact-detail__values input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+}
+.simulator-phone-contact-detail__values .simulator-phone-contact-detail__value {
+    overflow-wrap: anywhere;
+}
+.simulator-contact-values-editor {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.simulator-contact-value-editor {
+  min-width: 0;
+  display: grid;
+  gap: 0.5rem;
+  padding-block: 0.5rem;
+}
+.simulator-contact-value-editor :is(input, select, textarea) {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.simulator-contact-value-editor input[type="checkbox"] {
+  width: auto;
+  flex: 0 0 auto;
+}

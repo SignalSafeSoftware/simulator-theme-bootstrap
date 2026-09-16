@@ -17,6 +17,7 @@
         .simulator-device-shell--screen-phone-dial
     )
     .simulator-phone__dialer {
+    container-type: inline-size;
     align-items: center;
     width: min(100%, var(--simulator-phone-content-max));
     max-width: var(--simulator-phone-content-max);
@@ -219,4 +220,113 @@
     i {
     color: var(--simulator-danger);
     fill: currentColor;
+}
+
+/* Editable entry and responsive keypad geometry. */
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer
+  .simulator-btn--dark-outline {
+  width: min(var(--simulator-phone-dialer-key-size, 4.5rem), calc((100cqw - 2 * min(var(--simulator-phone-dialer-key-gap, 0.75rem), 12px)) / 3));
+  min-width: 0;
+  min-height: 0;
+  --simulator-phone-dialer-letters-font-size: min(0.65rem, 4cqw);
+  height: auto;
+  aspect-ratio: var(--simulator-phone-dialer-key-aspect, 1);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer
+  > .simulator-flex--column
+  > .simulator-flex--row {
+  gap: min(var(--simulator-phone-dialer-key-gap, 0.75rem), 12px);
+}
+
+/* Match the dial controls to the shared form and button theme. */
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer {
+  --simulator-phone-dialer-call-radius: var(--simulator-input-radius);
+  --simulator-phone-dialer-call-font-size: 0.875rem;
+  --simulator-phone-dialer-call-font-weight: 600;
+  --simulator-phone-dialer-call-letter-spacing: normal;
+  --simulator-phone-dialer-entry-margin-bottom: 0.5rem;
+}
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer
+  > .simulator-flex--row:first-child {
+  border: 1px solid var(--simulator-input-border);
+  border-radius: var(--simulator-input-radius);
+  background: var(--simulator-input-bg);
+  padding: 0.25rem;
+  align-items: center;
+}
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer
+  .simulator-phone__dialer-number {
+  color: var(--simulator-input-color);
+  font-weight: 500;
+}
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer
+  .simulator-phone__dialer-backspace {
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: var(--simulator-input-radius);
+  color: var(--simulator-input-color);
+}
+:is(.simulator-phone-shell--host-nav, .simulator-device-shell--host-nav):is(
+    .simulator-phone-shell--screen-phone-dial,
+    .simulator-device-shell--screen-phone-dial
+  )
+  .simulator-phone__dialer
+  .simulator-phone__dialer-call-button {
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: normal;
+}
+
+input.simulator-phone__dialer-number {
+  min-width: 0;
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: var(--simulator-input-radius);
+  background: transparent;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+input.simulator-phone__dialer-number::placeholder {
+  color: var(--simulator-muted);
+  opacity: 1;
+}
+
+/* Focus surrounds the complete number entry, including its backspace control. */
+.simulator-phone__dialer
+  > .simulator-flex--row:first-child:has(input:focus-visible) {
+  outline: var(--simulator-phone-dialer-focus-width, 2px) solid var(--simulator-accent);
+  outline-offset: 2px;
+}
+input.simulator-phone__dialer-number:focus-visible {
+  outline: none;
+  box-shadow: none;
 }

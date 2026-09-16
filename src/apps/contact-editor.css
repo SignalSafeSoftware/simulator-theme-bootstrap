@@ -1,0 +1,358 @@
+/* Shared contact editor groups and responsive action layout. */
+.simulator-root .simulator-contact-editor {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  color: var(--simulator-text);
+}
+.simulator-root .simulator-contact-editor label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  margin: 0;
+  color: var(--simulator-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.simulator-root
+  .simulator-contact-editor
+  :is(input:not([type='hidden']):not([type='checkbox']), select, textarea) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: var(--simulator-button-min-height);
+  box-sizing: border-box;
+  margin: 0;
+  padding: var(--simulator-input-padding);
+  border: 1px solid var(--simulator-input-border);
+  border-radius: var(--simulator-input-radius);
+  background: var(--simulator-input-bg);
+  color: var(--simulator-input-color);
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.simulator-root .simulator-contact-editor textarea {
+  resize: vertical;
+}
+.simulator-root .simulator-contact-values-editor {
+  gap: 0.75rem;
+  padding: 0;
+  border: 0;
+}
+.simulator-root .simulator-contact-values-editor > legend {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  color: var(--simulator-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.simulator-root .simulator-contact-value-editor {
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--simulator-border);
+}
+.simulator-root
+  .simulator-contact-editor
+  label:has(> input[type='checkbox']) {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.simulator-root .simulator-contact-editor input[type='checkbox'] {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--simulator-accent);
+}
+.simulator-root .simulator-contact-editor button {
+  width: auto;
+  min-height: var(--simulator-button-min-height);
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--simulator-neutral-button-border);
+  border-radius: var(--simulator-button-radius);
+  background: var(--simulator-neutral-button-bg);
+  color: var(--simulator-neutral-button-color);
+  font-size: 0.875rem;
+  font-weight: var(--simulator-button-font-weight);
+  justify-self: start;
+}
+.simulator-root .simulator-editor-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.simulator-root .simulator-editor-actions button {
+  width: 100%;
+}
+.simulator-root .simulator-contact-editor .simulator-editor-save {
+  background: var(--simulator-accent);
+  border-color: var(--simulator-accent);
+  color: var(--simulator-phone-dialer-call-color, #fff);
+}
+
+/* Contact editing uses distinct list groups over the selected wallpaper. */
+.simulator-root .simulator-phone-contact-detail--editing,
+.simulator-root
+  .simulator-phone-contact-detail--editing
+  > .simulator-phone-contact-detail__panel {
+  background: transparent;
+  overflow: visible;
+}
+.simulator-root .contact-editor-panels {
+  padding: 0;
+  gap: 0.75rem;
+}
+.simulator-root :is(.contact-identity-panel, .contact-values-panel) {
+  min-width: 0;
+  padding: 0.75rem;
+  border-radius: var(--simulator-radius);
+  background: var(--simulator-bg);
+  box-sizing: border-box;
+}
+.simulator-root .contact-identity-fields {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+}
+.simulator-root .contact-current-image {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  color: var(--simulator-muted);
+  background: var(--simulator-panel-bg);
+}
+.simulator-root .contact-current-image .contact-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.simulator-root .contact-editor-panels .contact-photo-editor {
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.simulator-root .contact-editor-panels .contact-photo-editor legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
+}
+.simulator-root .contact-editor-panels input[type='file'] {
+  font-size: 0.75rem;
+  padding: 0.5rem;
+}
+.simulator-root
+  .contact-editor-panels
+  input[type='file']::file-selector-button {
+  border: 0;
+  padding: 0.35rem;
+  margin-right: 0.5rem;
+  border-radius: 4px;
+  background: var(--simulator-neutral-button-bg);
+  color: var(--simulator-neutral-button-color);
+}
+.simulator-root .contact-editor-panels .contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.simulator-root .contact-values-heading,
+.simulator-root .contact-value-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.simulator-root .contact-values-panel {
+  padding: 0;
+  border: 1px solid var(--simulator-border);
+  overflow: hidden;
+}
+.simulator-root .contact-values-heading {
+  padding: 0.5rem 0.75rem;
+  background: var(--simulator-panel-bg);
+  border-bottom: 1px solid var(--simulator-border);
+}
+.simulator-root .contact-values-heading:last-child {
+  border-bottom: 0;
+}
+.simulator-root .contact-values-panel .simulator-contact-value-editor {
+  padding: 0.75rem;
+}
+.simulator-root .contact-values-heading h3 {
+  margin: 0;
+  color: var(--simulator-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.simulator-root .contact-values-heading button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--simulator-button-min-height);
+  padding: 0;
+  flex-shrink: 0;
+}
+.simulator-root
+  .contact-values-panel
+  .simulator-contact-value-editor:last-child {
+  border-bottom: 0;
+  padding-bottom: 0.75rem;
+}
+.simulator-root .contact-value-actions button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+.simulator-root .contact-editor-panels .simulator-editor-actions {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  padding: 0.75rem;
+  background: var(--simulator-bg);
+  border-top: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+}
+
+/* The editor already owns the outer inset; list groups must not add another. */
+.simulator-root
+  .contact-editor-panels
+  > .contact-values-panel.simulator-list-group {
+  margin-inline: 0;
+  width: 100%;
+}
+.simulator-root .contact-identity-panel {
+  display: grid;
+  gap: 1rem;
+}
+.simulator-root .contact-identity-fields {
+  align-items: start;
+}
+.simulator-root .contact-photo-controls {
+  min-width: 0;
+}
+.simulator-root .contact-photo-label {
+  display: block;
+  color: var(--simulator-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+.simulator-root .contact-editor-panels .contact-photo-editor--compact {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.simulator-root .contact-photo-editor--compact .contact-photo-file-label {
+  display: none;
+}
+.simulator-root
+  .contact-editor-panels
+  .contact-photo-editor--compact
+  button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0;
+}
+.simulator-root
+  .contact-editor-panels
+  .contact-photo-editor--compact
+  .contact-actions {
+  margin: 0;
+  padding: 0;
+}
+
+.simulator-root
+  .contact-editor-panels
+  .contact-photo-editor--compact
+  .contact-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+}
+.simulator-root
+  .contact-editor-panels
+  .contact-photo-editor--compact
+  .contact-actions
+  button {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  padding: 0;
+  flex: 0 0 40px;
+}
+
+.simulator-root .contact-current-image img { width: 100%; height: 100%; object-fit: cover; }
+.simulator-root .simulator-contact-photo-actions { display: flex; flex-wrap: wrap; gap: .5rem; min-width: 0; }
+.simulator-root .simulator-action-reason { display: block; overflow-wrap: anywhere; }
+.simulator-root .simulator-contact-editor :focus-visible { outline: 2px solid var(--simulator-accent); outline-offset: 2px; }
+@media (max-width: 360px) { .simulator-root .contact-value-actions { flex-wrap: wrap; } }
+
+.simulator-phone-contact-detail__form { border: 0; padding: 0; margin: 0; min-width: 0; }
+
+/* Each value family is its own list group, with space around the whole group. */
+.simulator-root .contact-editor-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: transparent;
+}
+.simulator-root .contact-editor-panels > .contact-values-panel {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--simulator-border, #c9d2ce);
+  border-radius: 0.75rem;
+  background: var(--simulator-panel-bg, #edf0ed);
+}
+.simulator-root .contact-values-panel .contact-values-heading {
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+.simulator-root .contact-values-panel .simulator-contact-value-editor {
+  border-radius: 0;
+  border-top: 1px solid var(--simulator-border, #c9d2ce);
+}
+
+
+/* One inset for the full-width editor inside the centered phone detail screen. */
+.simulator-root .simulator-contact-editor-layout {
+  --contact-editor-inset: var(--simulator-phone-content-pad-x, 0.75rem);
+  width: calc(100% - 2 * var(--contact-editor-inset));
+  margin: 0.75rem var(--contact-editor-inset) 1rem;
+  min-width: 0;
+  box-sizing: border-box;
+}
+.simulator-root .simulator-contact-photo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.simulator-root .simulator-contact-photo-actions > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  padding: 0;
+}

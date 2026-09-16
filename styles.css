@@ -26,3 +26,12 @@
 @import './src/modals.css';
 @import './src/apps/phone-controls.css';
 @import './src/host-device.css';
+
+@import './src/apps/appearance.css';
+
+@import './src/primitives/list-group.css';
+
+@import './src/apps/contact-editor.css';
+
+/* HTML hidden remains authoritative over component display rules. */
+.simulator-root [hidden] { display: none !important; }

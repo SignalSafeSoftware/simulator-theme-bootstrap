@@ -101,6 +101,10 @@
     --simulator-phone-history-row-gap: 0.5rem;
     --simulator-phone-history-row-padding: 0.75rem 0.5rem;
     --simulator-phone-history-actions-gap: 0.5rem;
+    --simulator-phone-dialer-key-size: min(4.5rem, 20vw);
+    --simulator-phone-dialer-key-aspect: 1;
+    --simulator-phone-dialer-key-gap: 0.75rem;
+    --simulator-phone-dialer-focus-width: 2px;
     --simulator-phone-dialer-padding: 0;
     --simulator-phone-dialer-gap: var(--simulator-phone-section-gap);
     --simulator-phone-dialer-row-gap: 0.5rem;

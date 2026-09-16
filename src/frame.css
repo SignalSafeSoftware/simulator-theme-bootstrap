@@ -7,7 +7,7 @@
     flex-direction: column;
     border: 1.5px solid var(--simulator-border-strong);
     border-radius: 0.75rem;
-    background: var(--simulator-bg);
+    background: var(--simulator-content-bg, var(--simulator-bg));
     overflow: hidden;
     box-shadow: var(--simulator-shadow);
     max-height: var(--simulator-device-max-height);
@@ -18,7 +18,7 @@
     flex-direction: column;
     flex: 1 1 auto;
     min-height: 0;
-    background: var(--simulator-bg);
+    background: var(--simulator-content-bg, var(--simulator-bg));
     padding: 0.75rem;
     overflow: auto;
 }

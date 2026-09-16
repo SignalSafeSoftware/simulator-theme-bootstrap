@@ -95,3 +95,16 @@
     align-items: center;
     gap: var(--simulator-phone-history-actions-gap);
 }
+
+.simulator-root .simulator-history-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.simulator-root .simulator-history-detail > :is(h3, p) { margin: 0; }
+.simulator-root .simulator-history-detail__caller { font-size: 1.25rem; line-height: 1.3; }
+.simulator-root .simulator-history-detail__number { overflow-wrap: anywhere; }
+.simulator-root .simulator-history-detail__time,
+.simulator-root .simulator-history-detail__metadata { font-size: 0.875rem; line-height: 1.5; color: var(--simulator-muted); }
+.simulator-root .simulator-history-detail__summary { margin-top: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--simulator-border); }
+.simulator-root .simulator-history-detail__summary > h3 { margin: 0; font-size: 0.875rem; line-height: 1.5; font-weight: 600; }
