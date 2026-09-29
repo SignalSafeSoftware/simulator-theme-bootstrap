@@ -42,8 +42,7 @@
         .simulator-device-shell--screen-messages-threads
     )
     .simulator-messages__thread-row
-    > .simulator-min-w-0
-    > span:first-child {
+    .simulator-messages__thread-title {
     grid-column: 2;
     grid-row: 1;
     min-width: 0;
@@ -55,7 +54,7 @@
         .simulator-device-shell--screen-messages-threads
     )
     .simulator-messages__thread-row
-    > span {
+    .simulator-messages__thread-time {
     grid-column: 3;
     grid-row: 1;
     white-space: nowrap;
@@ -69,8 +68,7 @@
         .simulator-device-shell--screen-messages-threads
     )
     .simulator-messages__thread-row
-    > .simulator-min-w-0
-    > span:nth-child(2) {
+    .simulator-messages__thread-preview {
     grid-column: 2 / 4;
     grid-row: 2;
     min-width: 0;
@@ -79,7 +77,7 @@
     line-height: 1.25;
 }
 
-.simulator-shell__body .simulator-list--plain {
+.simulator-shell__body .simulator-messages__message-timeline {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -88,21 +86,21 @@
     gap: 0.5rem;
 }
 
-.simulator-shell__body .simulator-list--plain > li {
+.simulator-shell__body .simulator-messages__message-timeline > li[data-message-direction] {
     display: flex;
     flex-direction: column;
     max-width: 88%;
 }
 
-.simulator-shell__body .simulator-list--plain > li[style*='flex-end'] {
+.simulator-shell__body .simulator-messages__message-timeline > li[data-message-direction='me'] {
     align-self: flex-end;
 }
 
-.simulator-shell__body .simulator-list--plain > li[style*='flex-start'] {
+.simulator-shell__body .simulator-messages__message-timeline > li[data-message-direction='them'] {
     align-self: flex-start;
 }
 
-.simulator-shell__body .simulator-list--plain > li > div {
+.simulator-shell__body .simulator-messages__message-timeline .simulator-messages__bubble {
     padding: 0.5rem 0.625rem;
     border: 1px solid var(--simulator-border);
     border-radius: 0;

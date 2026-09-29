@@ -108,3 +108,13 @@
 .simulator-root .simulator-history-detail__metadata { font-size: 0.875rem; line-height: 1.5; color: var(--simulator-muted); }
 .simulator-root .simulator-history-detail__summary { margin-top: 0.5rem; padding-top: 0.75rem; border-top: 1px solid var(--simulator-border); }
 .simulator-root .simulator-history-detail__summary > h3 { margin: 0; font-size: 0.875rem; line-height: 1.5; font-weight: 600; }
+
+.simulator-root .simulator-history-detail__body {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.simulator-root .simulator-history-detail__body > :is(h3, p) {
+  margin: 0;
+}

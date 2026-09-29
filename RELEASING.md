@@ -1,6 +1,6 @@
 # Releasing `@signalsafe/simulator-theme-bootstrap`
 
-Releases are produced by `.github/workflows/ci.yml` from a pushed `vX.Y.Z` tag. The tag must match `package.json`. The workflow also supports manual dispatch on main; use tags for the documented release sequence. Do not publish from a developer machine or move an existing release tag.
+Releases are produced by `.github/workflows/ci.yml` from a pushed `vX.Y.Z` tag. The tag must match `package.json`. Manual dispatch validates only; publication requires a matching version tag. Do not publish from a developer machine or move an existing release tag.
 
 ## Preparation
 
@@ -18,3 +18,23 @@ Core and React require checks, coverage tests, Sonar scanning and artifact smoke
 ## Consumer adoption
 
 Verify the exact version and registry integrity after the tag workflow succeeds. Update consumers to exact registry versions, regenerate their lockfiles, and run a clean install plus consumer validation. Remove local archives only after registry installation succeeds. Keep published tags immutable; corrections use a new version.
+
+## September 29 local-app migration release candidate
+
+Prepared versions are core `0.4.0`, React `0.17.0`, device `0.17.0` and theme
+`0.10.0`. Inspection approval was recorded in PhoneMe before extraction.
+The Node runtime contract remains unchanged.
+
+Publish core first, then React, then device through matching version-tag CI;
+theme can publish independently. Refresh React's registry Yarn lock after core
+is available, and device's after core, React and theme are available. Those
+unpublished upstream resolutions cannot yet be certified by a frozen registry
+install. Never invent integrity values or substitute sibling paths in release
+manifests. Run the registry smoke/runtime matrix and Sonar gates as documented
+above before publication; local tarball validation is not registry evidence.
+
+The `simulator-device/examples/local-apps` example builds under React 18 and has
+a browser workflow (`npm run test:browser`). Before publication, copy it to an
+isolated temporary directory and install all four packed artifacts explicitly.
+Its memory adapter intentionally resets on reload; durable storage, imports,
+regional formatting and live services belong to the consuming application.

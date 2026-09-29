@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.10.0 — prepared September 29, 2026 (unpublished)
+
+- Add scoped Vault, Photos, local Mail, settings and browser styles and plain error-list rows.
+- Style call detail body media and number labels. Preserve existing semantic hooks and appearance tokens.
+- Keep CSS imports consecutive and the final HTML `hidden` rule authoritative so overlays and scrolling retain their behavior.
+
+- Require an exact version-tag match before CI publication; manual dispatch validates only.
+
 ## 0.9.2 — 2026-09-16
 
 - Complete release documentation and include changelog/release instructions in the package.

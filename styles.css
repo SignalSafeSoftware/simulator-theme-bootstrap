@@ -33,5 +33,7 @@
 
 @import './src/apps/contact-editor.css';
 
+@import './src/apps/local-apps.css';
+
 /* HTML hidden remains authoritative over component display rules. */
 .simulator-root [hidden] { display: none !important; }

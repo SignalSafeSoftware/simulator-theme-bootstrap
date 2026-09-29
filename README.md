@@ -104,3 +104,13 @@ Call color overrides: `--simulator-call-avatar-bg`, `--simulator-call-avatar-col
 Use `.simulator-contact-editor-layout` around a host-controlled editor inside a contact screen. Its width uses `--simulator-phone-content-pad-x` (12px by default), preventing centered flex shells from shrinking the form. Contact value groups have separate panels; photo actions are 44px square buttons. Icons come from simulator-react, not from this CSS package. The theme does not fetch data, upload photos, store settings, or call providers.
 
 See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md). This documentation patch follows 0.9.1 without moving its published tag.
+
+## Local app migration (0.10.0, release candidate)
+
+- Add scoped Vault, Photos, local Mail, settings and browser styles and plain error-list rows.
+- Style call detail body media and number labels. Preserve existing semantic hooks and appearance tokens.
+- Keep CSS imports consecutive and the final HTML `hidden` rule authoritative so overlays and scrolling retain their behavior.
+
+This version is prepared locally; it is not a claim of registry publication. See
+[RELEASING.md](RELEASING.md) for the coordinated release order. PhoneMe validates
+normal packed artifacts; installed package files are never patched.
