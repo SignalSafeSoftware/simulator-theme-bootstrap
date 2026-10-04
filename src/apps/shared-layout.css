@@ -224,11 +224,6 @@
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
-  .simulator-messages__thread-detail {
-  gap: 0;
-}
-.simulator-root
-  .simulator-device-shell--screen-messages-thread-detail
   .simulator-messages__thread-detail
   > .simulator-overflow-auto {
   padding: 0 var(--simulator-phone-content-pad-x);
@@ -337,6 +332,7 @@
   box-sizing: border-box;
   position: sticky;
   bottom: 0;
+  flex: 1 0 auto;
 }
 .simulator-root .simulator-email__body-field > label {
   padding-inline: 0;
@@ -350,6 +346,7 @@
   border-radius: 0;
   margin: 0;
   resize: none !important;
+  flex: 1 0 auto;
 }
 .simulator-root
   .simulator-device-shell__screen:has(.simulator-email__message-detail),
@@ -368,14 +365,6 @@
   > .simulator-overflow-auto
   > div {
   flex: 1 1 auto !important;
-}
-.simulator-root .simulator-email__message-detail .simulator-email__body-field {
-  flex: 1 0 auto;
-}
-.simulator-root
-  .simulator-email__body-field
-  .simulator-email__message-detail-body {
-  flex: 1 0 auto;
 }
 
 .simulator-root .simulator-new-thread__fields {
@@ -535,4 +524,11 @@
     white-space: normal;
     overflow-wrap: anywhere;
   }
+}
+
+/* Links and attachment rows sit beside the inset fields, above the sticky body. */
+.simulator-root .simulator-email__message-detail .simulator-email__message-detail-extras {
+  margin-inline: 0.75rem;
+  position: relative;
+  background: var(--simulator-bg);
 }

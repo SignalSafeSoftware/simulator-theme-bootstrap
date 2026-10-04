@@ -170,3 +170,11 @@
         min-height: 2.75rem;
     }
 }
+
+/* Explains why a nav action is unavailable without clipping the nav buttons. */
+.simulator-root .simulator-device-nav > .simulator-action-reason {
+  padding: 0.25rem 0.75rem 0.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--simulator-muted);
+}

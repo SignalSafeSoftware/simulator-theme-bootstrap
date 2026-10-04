@@ -58,3 +58,7 @@
 .simulator-choice {
     cursor: pointer;
 }
+
+.simulator-root .simulator-row--selectable {
+  cursor: pointer;
+}

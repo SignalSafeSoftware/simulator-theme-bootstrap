@@ -107,7 +107,6 @@
 }
 .simulator-root .contact-editor-panels {
   padding: 0;
-  gap: 0.75rem;
 }
 .simulator-root :is(.contact-identity-panel, .contact-values-panel) {
   min-width: 0;
