@@ -11,7 +11,7 @@
 }
 
 .simulator-surface--avatar {
-    background: var(--bs-primary-bg-subtle, #cfe2ff);
+    background: var(--simulator-avatar-bg);
 }
 
 .simulator-surface--secondary {
@@ -25,3 +25,17 @@
 .simulator-surface--selected {
     background: var(--bs-primary-bg-subtle, #e7f1ff);
 }
+
+.simulator-root .simulator-profile-avatar {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: var(--simulator-avatar-radius);
+    background: var(--simulator-avatar-bg);
+    color: var(--simulator-avatar-color);
+}
+.simulator-root .simulator-profile-avatar svg { width: 60%; height: 60%; }
+.simulator-root .simulator-profile-avatar img { width: 100%; height: 100%; object-fit: cover; }

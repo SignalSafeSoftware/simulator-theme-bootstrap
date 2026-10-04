@@ -35,5 +35,7 @@
 
 @import './src/apps/local-apps.css';
 
+@import './src/apps/shared-layout.css';
+
 /* HTML hidden remains authoritative over component display rules. */
 .simulator-root [hidden] { display: none !important; }

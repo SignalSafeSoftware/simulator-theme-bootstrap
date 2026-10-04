@@ -1,0 +1,538 @@
+/* Canonical screen layouts shared by scenario and device hosts. */
+
+.simulator-root :is(button, input, textarea, select):focus-visible {
+  outline: 3px solid #83b9a4;
+  outline-offset: 3px;
+}
+.simulator-root [data-simulator-app="home"] .simulator-border {
+  border-color: var(--simulator-border);
+  border-radius: 14px;
+  background: var(--simulator-content-bg, var(--simulator-bg));
+  color: var(--simulator-text);
+}
+.simulator-root .simulator-phone-contact-detail {
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+  border-radius: var(--simulator-screen-header-radius);
+}
+
+.simulator-root .simulator-phone-contact-detail__form label,
+.simulator-root .simulator-phone-contact-detail__form legend,
+.simulator-root .simulator-phone-contact-detail__value {
+  color: var(--simulator-text);
+}
+
+.simulator-root .simulator-phone-contact-detail input {
+  background: var(--simulator-input-bg);
+  color: var(--simulator-input-color);
+  border-color: var(--simulator-input-border);
+}
+
+.simulator-root .simulator-history-detail {
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-screen-header-radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.simulator-root .simulator-history-actions > .simulator-contact-editor {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+.simulator-root .simulator-phone__contact-list {
+  gap: 0;
+  border-radius: 0;
+  background: var(--simulator-contact-row-bg);
+}
+
+.simulator-root .simulator-phone__contact-row:last-child {
+  border-bottom: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-phone-contacts
+  .simulator-shell__body
+  .simulator-input[data-simulator-search] {
+  margin-bottom: 0;
+  border-radius: var(--simulator-radius) var(--simulator-radius) 0 0;
+  border: 1px solid var(--simulator-border);
+}
+
+.simulator-root
+  .simulator-device-shell--screen-phone-contacts
+  .simulator-shell__body
+  .simulator-input[data-simulator-search]
+  + * {
+  margin-top: 0;
+  border: 1px solid var(--simulator-border);
+  border-top: 0;
+  border-radius: 0 0 var(--simulator-radius) var(--simulator-radius);
+  overflow: hidden;
+  background: var(--simulator-bg);
+}
+.simulator-root.simulator-host-device {
+  background-color: var(--simulator-bg);
+  background-image: var(--simulator-background-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.simulator-root .simulator-messages-list-group {
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+  overflow: hidden;
+  background: var(--simulator-bg);
+}
+.simulator-root
+  .simulator-shell__body
+  .simulator-messages-list-group
+  .simulator-input[type="search"] {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--simulator-border);
+  border-radius: 0;
+}
+.simulator-root .simulator-messages-list-group .simulator-list--flush {
+  margin: 0;
+}
+.simulator-root .simulator-messages-list-group button {
+  border-radius: 0;
+}
+.simulator-root .simulator-messages-list-group :focus-visible {
+  outline-offset: -3px;
+}
+.simulator-root
+  .simulator-messages__thread-detail
+  .simulator-messages__message-timeline
+  .simulator-messages__bubble--me {
+  background: var(--simulator-accent);
+  color: var(--simulator-phone-dialer-call-color);
+  border-color: var(--simulator-accent);
+}
+
+.simulator-root
+  .simulator-messages__thread-detail
+  .simulator-messages__message-timeline
+  .simulator-messages__bubble--them {
+  background: var(--simulator-panel-bg);
+  color: var(--simulator-text);
+  border-color: var(--simulator-border);
+}
+
+.simulator-root .simulator-messages__composer {
+  position: sticky;
+  bottom: 0;
+  background: transparent;
+  padding: 0;
+  border: 0;
+}
+
+.simulator-root .simulator-messages__composer .simulator-textarea {
+  padding: 0.5rem 0.75rem;
+  margin: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-device-shell__screen {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-shell__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+  padding-bottom: 0 !important;
+}
+.simulator-root .simulator-shell__body .simulator-messages__thread-detail {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden !important;
+}
+.simulator-root
+  .simulator-shell__body
+  .simulator-messages__thread-detail
+  > .simulator-overflow-auto {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto !important;
+}
+.simulator-root
+  .simulator-messages__thread-detail
+  > .simulator-messages__composer {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  :is(.simulator-device-shell__screen, .simulator-device-shell__session-column, .simulator-runtime, .simulator-runtime__screen, .simulator-shell, .simulator-shell__frame) {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden !important;
+}
+
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-runtime__app-root,
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-runtime__app-root
+  > div,
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-runtime__app-root
+  > div
+  > div,
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-shell__frame,
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow: hidden !important;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail
+  > .simulator-overflow-auto {
+  flex: 1 1 0% !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-shell__body,
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-runtime__screen {
+  padding: 0 !important;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail {
+  gap: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail
+  > .simulator-overflow-auto {
+  padding: 0 var(--simulator-phone-content-pad-x);
+  box-sizing: border-box;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__composer {
+  width: 100%;
+  gap: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__composer
+  .simulator-input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  outline-offset: -3px;
+}
+
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail
+  > .simulator-overflow-auto {
+  padding: 0;
+  gap: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail
+  .simulator-screen__header {
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__message-timeline {
+  padding: 1rem var(--simulator-phone-content-pad-x);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail {
+  gap: 0 !important;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail
+  > .simulator-overflow-auto {
+  margin: 0;
+}
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__composer
+  textarea.simulator-input {
+  display: block;
+  line-height: 1.5;
+  height: calc(4.5em + 1rem + 2px);
+  min-height: 0;
+  max-height: none;
+  resize: none;
+}
+.simulator-root .simulator-shell__body,
+.simulator-root .simulator-runtime__screen {
+  padding: 0 !important;
+}
+
+.simulator-root .simulator-phone-contact-detail {
+  background: transparent;
+}
+.simulator-root
+  .simulator-phone-contact-detail
+  > .simulator-phone-contact-detail__panel {
+  margin: 0.75rem;
+  width: calc(100% - 1.5rem);
+  box-sizing: border-box;
+  background: var(--simulator-bg);
+  border-radius: var(--simulator-radius);
+  overflow: hidden;
+}
+.simulator-root
+  .simulator-phone-contact-detail__panel
+  .simulator-phone-contact-detail__form {
+  margin: 0;
+}
+.simulator-root
+  .simulator-phone-contact-detail
+  > .simulator-phone-contact-detail__header {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.simulator-root .simulator-email__message-detail .simulator-field {
+  margin-inline: 0.75rem;
+}
+.simulator-root .simulator-email__message-detail .simulator-email__body-field {
+  margin: 0 0.75rem;
+  width: calc(100% - 1.5rem) !important;
+  min-width: 0;
+  box-sizing: border-box;
+  position: sticky;
+  bottom: 0;
+}
+.simulator-root .simulator-email__body-field > label {
+  padding-inline: 0;
+}
+.simulator-root
+  .simulator-email__body-field
+  .simulator-email__message-detail-body {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  box-sizing: border-box;
+  border-radius: 0;
+  margin: 0;
+  resize: none !important;
+}
+.simulator-root
+  .simulator-device-shell__screen:has(.simulator-email__message-detail),
+.simulator-root
+  .simulator-device-shell__screen:has(.simulator-email__message-detail)
+  :is(.simulator-device-shell__session-column, .simulator-runtime, .simulator-runtime__app-root, .simulator-runtime__app-root > div, .simulator-runtime__app-root > div > div, .simulator-shell__frame, .simulator-shell__body, .simulator-runtime__screen) {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto !important;
+  min-height: 0;
+}
+.simulator-root .simulator-email__message-detail,
+.simulator-root .simulator-email__message-detail > .simulator-overflow-auto,
+.simulator-root
+  .simulator-email__message-detail
+  > .simulator-overflow-auto
+  > div {
+  flex: 1 1 auto !important;
+}
+.simulator-root .simulator-email__message-detail .simulator-email__body-field {
+  flex: 1 0 auto;
+}
+.simulator-root
+  .simulator-email__body-field
+  .simulator-email__message-detail-body {
+  flex: 1 0 auto;
+}
+
+.simulator-root .simulator-new-thread__fields {
+  padding: 0.75rem;
+  border: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.simulator-root .simulator-phone-contact-detail__identity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+.simulator-root .simulator-phone-contact-detail__identity > div,
+.simulator-root .simulator-phone-contact-detail__value {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.simulator-root
+  .simulator-phone-contact-detail__values
+  .simulator-phone-contact-detail__field {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.25rem 0.5rem;
+  text-align: left;
+}
+.simulator-root
+  .simulator-phone-contact-detail__values
+  .simulator-phone-contact-detail__label {
+  grid-column: 1 / -1;
+}
+.simulator-root .simulator-phone-contact-detail__values {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.simulator-root
+  .simulator-phone-contact-detail__form
+  > .simulator-phone-contact-detail__identity {
+  width: 100%;
+  align-self: stretch;
+}
+.simulator-root
+  .simulator-phone-contact-detail__identity
+  > .simulator-phone-contact-detail__field {
+  flex: 1;
+  width: auto;
+  max-width: none;
+}
+.simulator-root
+  .simulator-email
+  div:has(> .simulator-screen__header):has(input[aria-label="Recipient"])
+  > :not(.simulator-screen__header) {
+  margin-inline: 0.75rem;
+  width: calc(100% - 1.5rem);
+  min-width: 0;
+  box-sizing: border-box;
+}
+.simulator-root
+  .simulator-email
+  div:has(> .simulator-screen__header):has(input[aria-label="Recipient"])
+  :is(input, textarea) {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* Headers and shared panels have the same geometry with or without a host bezel. */
+.simulator-root
+  :is(.simulator-screen__header, .simulator-screen__header-row, .simulator-phone-contact-detail__header) {
+  border-radius: 0;
+  width: 100%;
+  margin-top: 0;
+  margin-inline: 0;
+  text-align: center;
+}
+.simulator-root :is(.simulator-list-group, .simulator-history-detail) {
+  margin-inline: var(--simulator-phone-content-pad-x, 0.75rem);
+  width: auto;
+}
+.simulator-root .simulator-phone__incoming-call-history .simulator-list-group {
+  margin-block: 0.75rem;
+}
+
+.simulator-root .simulator-phone__dialer {
+  padding: 14px;
+}
+.simulator-root .simulator-phone-contact-detail__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: var(--simulator-screen-header-min-height);
+  margin: var(--simulator-screen-header-margin);
+  padding: var(--simulator-screen-header-padding);
+  background: var(--simulator-screen-header-bg);
+  color: var(--simulator-screen-header-color);
+  text-align: center;
+}
+.simulator-root .simulator-phone-contact-detail__title {
+  width: 100%;
+  margin: 0;
+  font-size: var(--simulator-screen-header-font-size);
+  font-weight: var(--simulator-screen-header-font-weight);
+  line-height: var(--simulator-screen-header-line-height);
+  letter-spacing: var(--simulator-screen-header-letter-spacing);
+  text-align: center;
+}
+/* Narrow devices and enlarged text must keep call history and URL controls reachable. */
+.simulator-root .simulator-phone__incoming-call-history table {
+  table-layout: fixed;
+}
+.simulator-root .simulator-phone__incoming-call-history :is(th, td) {
+  overflow-wrap: anywhere;
+}
+.simulator-root .simulator-browser {
+  min-width: 0;
+  border: 0;
+}
+.simulator-root .simulator-browser__toolbar {
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.simulator-root .simulator-browser__toolbar > button {
+  flex: 1 1 0;
+  min-width: 0;
+}
+.simulator-root .simulator-browser__address {
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Reflow row metadata before avatars and badges squeeze the text column away. */
+.simulator-root .simulator-list-group {
+  container-type: inline-size;
+}
+@container (max-width: 18rem) {
+  .simulator-root .simulator-list-group :is(.simulator-phone-history-row, .simulator-email__message-row) {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+    align-items: start;
+  }
+  .simulator-root .simulator-list-group :is(.simulator-phone-history-row, .simulator-email__message-row) > .simulator-avatar {
+    grid-row: 1 / 3;
+  }
+  .simulator-root .simulator-list-group :is(.simulator-phone-history-row, .simulator-email__message-row) > .simulator-badge {
+    grid-column: 2;
+    justify-self: start;
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .simulator-root .simulator-list-group .simulator-text--truncate {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}

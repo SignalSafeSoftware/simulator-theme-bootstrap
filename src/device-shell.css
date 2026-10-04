@@ -5,17 +5,17 @@
 .simulator-device-shell {
     display: flex;
     flex-direction: column;
-    width: min(100%, 420px);
-    height: min(78vh, 760px);
+    width: var(--simulator-device-width);
+    height: var(--simulator-device-height);
     min-height: var(--simulator-device-min-height);
     max-height: var(--simulator-device-max-height);
     margin-inline: auto;
     flex-shrink: 0;
     box-sizing: border-box;
-    border: 1.5px solid var(--simulator-border-strong);
-    border-radius: 0.75rem;
+    border: var(--simulator-host-border);
+    border-radius: var(--simulator-host-radius);
     background: var(--simulator-bg);
-    box-shadow: var(--simulator-shadow);
+    box-shadow: var(--simulator-host-shadow);
     overflow: hidden;
 }
 
@@ -128,21 +128,6 @@
     background: transparent;
     padding: 0;
     overflow: hidden;
-}
-
-/* Developer-tools panel rendered outside diagnostics-band (legacy path) */
-.simulator-device-shell--host-nav .simulator-runtime > *:not(.simulator-runtime__app-root):not(:last-child) {
-    flex: 0 0 auto;
-    flex-shrink: 0;
-    width: 100%;
-    max-height: min(18vh, 160px);
-    margin: 0;
-    padding: 0.25rem 0.5rem;
-    overflow: auto;
-    border-bottom: 1px solid var(--simulator-border);
-    background: var(--simulator-panel-bg);
-    font-size: 0.75rem;
-    box-sizing: border-box;
 }
 
 .simulator-device-shell--host-nav .simulator-runtime__diagnostics-band > .simulator-card,

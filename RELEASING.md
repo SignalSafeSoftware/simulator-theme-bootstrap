@@ -21,7 +21,7 @@ Verify the exact version and registry integrity after the tag workflow succeeds.
 
 ## September 29 local-app migration release candidate
 
-Prepared versions are core `0.4.0`, React `0.17.0`, device `0.17.0` and theme
+Prepared versions are core `0.4.1`, React `0.17.0`, device `0.17.0` and theme
 `0.10.0`. Inspection approval was recorded in PhoneMe before extraction.
 The Node runtime contract remains unchanged.
 
@@ -38,3 +38,6 @@ a browser workflow (`npm run test:browser`). Before publication, copy it to an
 isolated temporary directory and install all four packed artifacts explicitly.
 Its memory adapter intentionally resets on reload; durable storage, imports,
 regional formatting and live services belong to the consuming application.
+
+Core 0.4.0 failed its runtime release check; its tag remains unchanged. The corrected
+core 0.4.1 release is the upstream dependency for React/device 0.17.0.

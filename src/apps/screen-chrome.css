@@ -149,3 +149,10 @@
     gap: 0.5rem;
     justify-content: space-between;
 }
+
+.simulator-root [data-simulator-app='home'] .simulator-border {
+    border-color: var(--simulator-border);
+    border-radius: var(--simulator-radius);
+    background: var(--simulator-content-bg, var(--simulator-bg));
+    color: var(--simulator-text);
+}

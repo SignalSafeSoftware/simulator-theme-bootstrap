@@ -6,7 +6,7 @@
     overflow: hidden;
     width: 100%;
 }
-.simulator-root .simulator-shell__body .simulator-list-group__search .simulator-input[type='search'] {
+.simulator-root .simulator-list-group__search .simulator-input[type='search'] {
     margin: 0;
     border: 0;
     border-bottom: 1px solid var(--simulator-border);
