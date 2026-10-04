@@ -1,6 +1,8 @@
 # Changelog
 
-## 0.12.0-cleanup.3 (local, unpublished)
+## 0.12.0 — October 4, 2026
+
+- Style the shared class names used by simulator-react and simulator-device 0.19.0.
 
 Remove legacy conversion, wire and presentation aliases; migrate consumers to canonical contracts. See MIGRATION.md.
 
