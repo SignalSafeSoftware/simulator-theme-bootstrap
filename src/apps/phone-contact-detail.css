@@ -3,8 +3,6 @@
  */
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail {
     display: flex;
     flex-direction: column;
@@ -15,8 +13,6 @@
     padding: 0;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__header,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__header {
     display: var(--simulator-contact-detail-header-display);
@@ -34,8 +30,6 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__title,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__title {
     margin: 0;
     text-align: center;
@@ -45,8 +39,6 @@
     letter-spacing: var(--simulator-contact-detail-title-letter-spacing);
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__form,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__form {
     display: flex;
@@ -59,15 +51,11 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__field,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__field {
     width: min(72%, 16rem);
     max-width: 16rem;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__label,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__label {
     display: block;
@@ -81,18 +69,12 @@
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__input,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__input,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__value,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__value {
     width: 100%;
     box-sizing: border-box;
     font-size: 0.875rem;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__input,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__input {
     padding: 0.35rem 0.5rem;
@@ -102,8 +84,6 @@
     color: var(--simulator-text);
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__actions,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__actions {
     display: flex;
@@ -117,8 +97,6 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__button,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__button {
     width: 100%;
     padding: 0.45rem 0.75rem;
@@ -130,8 +108,6 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__button--back,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__button--back {
     border: 0;
     background: transparent;
@@ -140,16 +116,12 @@
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__button--save,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__button--save {
     border: 1px solid var(--simulator-accent);
     background: var(--simulator-accent);
     color: #fff;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
-    .simulator-phone-contact-detail__button--delete,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
     .simulator-phone-contact-detail__button--delete {
     border: 1px solid var(--simulator-border-strong);

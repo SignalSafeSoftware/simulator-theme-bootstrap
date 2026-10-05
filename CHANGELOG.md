@@ -11,6 +11,7 @@ Remove legacy conversion, wire and presentation aliases; migrate consumers to ca
 - Use one shared call view, avatar/navigation primitives, and full-width history-row presentation across scenario and provider hosts.
 - Move the default PhoneMe palette and screen layout into the theme package; preserve host data, callbacks, and explicit appearance configuration.
 - Verify narrow devices and enlarged text, and prevent duplicate message actions when shell navigation renders them.
+- Merge duplicate selectors and a repeated property declaration (SonarCloud); computed styles are unchanged.
 - Local `ui` prereleases are packed integration artifacts, not registry releases.
 
 ## 0.10.0 — prepared September 29, 2026 (unpublished)

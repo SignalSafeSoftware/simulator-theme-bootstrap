@@ -18,6 +18,11 @@
     margin-inline: auto;
     padding: var(--simulator-phone-dialer-padding);
     gap: var(--simulator-phone-dialer-gap);
+    --simulator-phone-dialer-call-radius: var(--simulator-input-radius);
+    --simulator-phone-dialer-call-font-size: 0.875rem;
+    --simulator-phone-dialer-call-font-weight: 600;
+    --simulator-phone-dialer-call-letter-spacing: normal;
+    --simulator-phone-dialer-entry-margin-bottom: 0.5rem;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
@@ -25,10 +30,12 @@
     > .simulator-flex--row:first-child {
     width: 100%;
     min-height: 2.75rem;
-    align-items: stretch;
     margin-bottom: var(--simulator-phone-dialer-entry-margin-bottom);
-    border: var(--simulator-phone-dialer-entry-border);
-    background: var(--simulator-phone-dialer-entry-bg);
+    border: 1px solid var(--simulator-input-border);
+    border-radius: var(--simulator-input-radius);
+    background: var(--simulator-input-bg);
+    padding: 0.25rem;
+    align-items: center;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
@@ -49,13 +56,18 @@
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
     .simulator-phone__dialer
     .simulator-btn--dark-outline {
-    width: 4.5rem;
-    height: 3.25rem;
     padding: 0.25rem;
     border-color: var(--simulator-phone-dialer-key-border);
-    border-radius: var(--simulator-phone-dialer-key-radius);
     background: var(--simulator-phone-dialer-key-bg);
     color: var(--simulator-phone-dialer-key-color);
+    width: min(var(--simulator-phone-dialer-key-size, 4.5rem), calc((100cqw - 2 * min(var(--simulator-phone-dialer-key-gap, 0.75rem), 12px)) / 3));
+    min-width: 0;
+    min-height: 0;
+    --simulator-phone-dialer-letters-font-size: min(0.65rem, 4cqw);
+    height: auto;
+    aspect-ratio: var(--simulator-phone-dialer-key-aspect, 1);
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
@@ -169,18 +181,6 @@
 }
 
 /* Editable entry and responsive keypad geometry. */
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
-  .simulator-phone__dialer
-  .simulator-btn--dark-outline {
-  width: min(var(--simulator-phone-dialer-key-size, 4.5rem), calc((100cqw - 2 * min(var(--simulator-phone-dialer-key-gap, 0.75rem), 12px)) / 3));
-  min-width: 0;
-  min-height: 0;
-  --simulator-phone-dialer-letters-font-size: min(0.65rem, 4cqw);
-  height: auto;
-  aspect-ratio: var(--simulator-phone-dialer-key-aspect, 1);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
   .simulator-phone__dialer
@@ -190,23 +190,6 @@
 }
 
 /* Match the dial controls to the shared form and button theme. */
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
-  .simulator-phone__dialer {
-  --simulator-phone-dialer-call-radius: var(--simulator-input-radius);
-  --simulator-phone-dialer-call-font-size: 0.875rem;
-  --simulator-phone-dialer-call-font-weight: 600;
-  --simulator-phone-dialer-call-letter-spacing: normal;
-  --simulator-phone-dialer-entry-margin-bottom: 0.5rem;
-}
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
-  .simulator-phone__dialer
-  > .simulator-flex--row:first-child {
-  border: 1px solid var(--simulator-input-border);
-  border-radius: var(--simulator-input-radius);
-  background: var(--simulator-input-bg);
-  padding: 0.25rem;
-  align-items: center;
-}
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
   .simulator-phone__dialer
   .simulator-phone__dialer-number {

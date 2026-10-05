@@ -4,7 +4,6 @@
  * into the avatar column. Clickable rows use full-width .simulator-list__item-button.
  */
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-list,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-list {
     width: 100%;
 }
@@ -12,12 +11,6 @@
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list--flush
     > button.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list--flush
-    > button.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list
-    > .simulator-list__item.simulator-phone__contact-row,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list
     > .simulator-list__item.simulator-phone__contact-row {
@@ -36,9 +29,6 @@
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list
-    > .simulator-list__item.simulator-phone__contact-row:has(> .simulator-list__item-button),
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list
     > .simulator-list__item.simulator-phone__contact-row:has(> .simulator-list__item-button) {
     display: block;
 }
@@ -46,12 +36,6 @@
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list--flush
     > button.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list--flush
-    > button.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list
-    > .simulator-list__item.simulator-phone__contact-row:not(:has(> .simulator-list__item-button)),
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list
     > .simulator-list__item.simulator-phone__contact-row:not(:has(> .simulator-list__item-button)) {
@@ -66,13 +50,6 @@
     > .simulator-list__item.simulator-phone__contact-row
     > .simulator-list__item-button,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list
-    > .simulator-list__item.simulator-phone__contact-row
-    > .simulator-list__item-button,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list--flush
-    > button.simulator-phone__contact-row,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list--flush
     > button.simulator-phone__contact-row {
     display: flex;
@@ -84,7 +61,6 @@
     box-sizing: border-box;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-avatar,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-avatar {
     flex: 0 0 auto;
     width: 2.5rem;
@@ -97,7 +73,6 @@
     color: var(--simulator-avatar-color);
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-main,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-main {
     flex: 1 1 auto;
     min-width: 0;
@@ -107,9 +82,6 @@
     gap: 0.125rem;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-list__item-button
-    .simulator-phone__contact-row-main,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-list__item-button
     .simulator-phone__contact-row-main {
@@ -125,9 +97,6 @@
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
-    .simulator-phone__contact-row-main,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
     .simulator-phone__contact-row-main {
     flex-direction: column;
     align-items: flex-start;
@@ -135,7 +104,6 @@
     gap: 0.125rem;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-name,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-name {
     display: block;
     flex: 1 1 auto;
@@ -149,7 +117,6 @@
     text-overflow: ellipsis;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-number,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts .simulator-phone__contact-row-number {
     display: block;
     flex: 0 1 auto;
@@ -169,12 +136,6 @@
     .simulator-phone__contact-row-name,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
-    .simulator-phone__contact-row-name,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
-    .simulator-phone__contact-row-number,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row:has(.simulator-phone__contact-row-avatar)
     .simulator-phone__contact-row-number {
     flex: unset;
     white-space: normal;
@@ -184,18 +145,12 @@
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-phone__contact-row
-    > .simulator-btn,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
     > .simulator-btn {
     flex: 0 0 auto;
     margin-left: auto;
     align-self: center;
 }
 
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
-    .simulator-phone__contact-row
-    .simulator-text--truncate,
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contacts
     .simulator-phone__contact-row
     .simulator-text--truncate {

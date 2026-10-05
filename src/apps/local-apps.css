@@ -620,7 +620,6 @@
   .simulator-messages__message-timeline
   .compact-attachment-notice {
   border: none;
-  padding: 0;
   background: var(--bs-secondary-bg, #edf0ed);
   color: var(--bs-danger-text-emphasis, #a12020);
   border-radius: 0.2rem;

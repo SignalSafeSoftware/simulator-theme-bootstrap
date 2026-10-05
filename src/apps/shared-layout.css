@@ -11,9 +11,9 @@
   color: var(--simulator-text);
 }
 .simulator-root .simulator-phone-contact-detail {
-  background: var(--simulator-bg);
   color: var(--simulator-text);
   border-radius: var(--simulator-screen-header-radius);
+  background: transparent;
 }
 
 .simulator-root .simulator-phone-contact-detail__form label,
@@ -213,6 +213,10 @@
   flex: 1 1 0% !important;
   min-height: 0 !important;
   overflow-y: auto !important;
+  box-sizing: border-box;
+  padding: 0;
+  gap: 0;
+  margin: 0;
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
@@ -221,13 +225,6 @@
   .simulator-device-shell--screen-messages-thread-detail
   .simulator-runtime__screen {
   padding: 0 !important;
-}
-.simulator-root
-  .simulator-device-shell--screen-messages-thread-detail
-  .simulator-messages__thread-detail
-  > .simulator-overflow-auto {
-  padding: 0 var(--simulator-phone-content-pad-x);
-  box-sizing: border-box;
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
@@ -243,14 +240,6 @@
   box-sizing: border-box;
   border-radius: 0;
   outline-offset: -3px;
-}
-
-.simulator-root
-  .simulator-device-shell--screen-messages-thread-detail
-  .simulator-messages__thread-detail
-  > .simulator-overflow-auto {
-  padding: 0;
-  gap: 0;
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
@@ -277,12 +266,6 @@
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
-  .simulator-messages__thread-detail
-  > .simulator-overflow-auto {
-  margin: 0;
-}
-.simulator-root
-  .simulator-device-shell--screen-messages-thread-detail
   .simulator-messages__composer
   textarea.simulator-input {
   display: block;
@@ -295,10 +278,6 @@
 .simulator-root .simulator-shell__body,
 .simulator-root .simulator-runtime__screen {
   padding: 0 !important;
-}
-
-.simulator-root .simulator-phone-contact-detail {
-  background: transparent;
 }
 .simulator-root
   .simulator-phone-contact-detail

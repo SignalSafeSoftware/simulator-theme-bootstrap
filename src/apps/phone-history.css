@@ -15,6 +15,10 @@
   border-radius: 0;
   background: var(--simulator-bg);
   text-align: start;
+  margin: 0;
+  color: var(--simulator-text);
+  font: inherit;
+  font-size: 0.875rem;
 }
 
 .simulator-root
@@ -126,13 +130,6 @@
 
 .simulator-root .simulator-history-detail__body > :is(h3, p) {
   margin: 0;
-}
-
-.simulator-root .simulator-list-group .simulator-phone-history-row {
-  margin: 0;
-  color: var(--simulator-text);
-  font: inherit;
-  font-size: 0.875rem;
 }
 .simulator-root .simulator-list-group .simulator-phone-history-row[aria-current] {
   background: var(--simulator-nav-active-bg);
