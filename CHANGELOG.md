@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.13.0 — October 7, 2026
+
+- Style the shared contact editor form, contact detail actions and editor screen, including the Back, Save and Delete controls.
+- Style the shared phone-history layout, per-row Call button and summary title; keep the history search field consistent with the other search inputs (`.simulator-phone-history-screen`).
+- Add `.prototype-page--plain` for app pages that render without the default content padding.
+- Move `MIGRATION.md` and `RELEASING.md` into `docs/`.
+- Own palette presets, the Night default, contrast selection and appearance token mapping in the explicit `appearance` runtime/type subpath.
+- Add a single settings content inset and responsive card/form styles for shared Appearance, Screen password and Regional settings sections.
+- Use the PhoneMe Night palette by default while retaining explicit appearance-token overrides.
+- Consolidate Home clock and tile spacing in a shared Home stylesheet; let long localized dates and enlarged clock text wrap.
+- Keep mint action and selected-state text legible with the shared contrast foreground.
+
 ## 0.12.1 — October 4, 2026
 
 - Merge duplicate selectors and a repeated property declaration (SonarCloud); computed styles are unchanged.

@@ -1,10 +1,10 @@
 # @signalsafe/simulator-theme-bootstrap
 
-CSS-only Bootstrap-token theme for SignalSafe simulator semantic classes emitted by `@signalsafe/simulator-device` and `@signalsafe/simulator-react`.
+Bootstrap-token theme for SignalSafe simulator semantic classes emitted by `@signalsafe/simulator-device` and `@signalsafe/simulator-react`.
 
 ## Usage
 
-Import the shared theme once. It includes the default PhoneMe palette and does not require a host Bootstrap or Bootswatch stylesheet:
+Import the shared theme once. It includes the default PhoneMe Night palette and does not require a host Bootstrap or Bootswatch stylesheet:
 
 ```ts
 import '@signalsafe/simulator-theme-bootstrap/styles.css';
@@ -13,7 +13,7 @@ import '@signalsafe/simulator-theme-bootstrap/styles.css';
 Then render simulator components as usual:
 
 ```tsx
-import { SimulatorDevice } from '@signalsafe/simulator-device';
+import { SimulatorDevice } from '@signalsafe/simulator-device/SimulatorDevice';
 
 <SimulatorDevice value={simulatorJson} />
 ```
@@ -26,7 +26,24 @@ Row headers, compose actions, Settings back bars, and native history use `.simul
 
 The `--simulator-nav-{bg,color,active-bg,active-color,button-radius}` values apply to device navigation, shell tabs, and local navigation. Device-nav padding, border, gap, height, typography, and icon size use the more specific `--simulator-nav-{padding,border-color,button-*,icon-font-size}` values.
 
-The PhoneMe palette, compose icon, navigation, full-width banners, avatars, and call controls are package defaults. No host recipe or external compose SVG is needed.
+The PhoneMe Night palette (dark surfaces and mint actions), Home clock panel and tile spacing, compose icon, navigation, full-width banners, avatars, and call controls are package defaults. No host recipe or external compose SVG is needed.
+
+### Appearance settings
+
+The optional `@signalsafe/simulator-theme-bootstrap/appearance` ESM subpath exports
+`appearancePresets`, `defaultAppearance`, `appearanceStyle` and `appearanceTextColor`,
+with TypeScript declarations. Presets carry stable IDs and colors; translate their labels
+in the host or shared settings component. Import helpers from their owning subpath directly.
+
+Apply `appearanceStyle(savedSelection)` to the scoped simulator root only when a user has
+saved an explicit choice. With no saved choice, or after Reset, omit this style to inherit
+the current shared default. The mapper emits `none` for an explicitly saved appearance
+without a wallpaper, preserving that choice. Hosts validate persisted six-digit colors and
+wallpaper URLs, manage storage and render storage errors; the theme has no persistence.
+
+The shared settings sections grid owns the single page inset. Place Appearance, Screen
+password, Region and formats and other cards directly inside `.simulator-settings__sections`.
+Do not wrap those cards in another inset card.
 
 ## What this package includes
 
@@ -37,7 +54,8 @@ The PhoneMe palette, compose icon, navigation, full-width banners, avatars, and 
 
 ## Requirements
 
-- No React components, ThemeProvider, or runtime logic.
+- No React components, ThemeProvider, or browser storage.
+- Optional dependency-free `appearance` helpers map explicit user selections to theme tokens.
 - No Bootstrap JavaScript dependency.
 - No npm dependency on Bootstrap — the theme maps `--simulator-*` tokens from `--bs-*` when present.
 
@@ -47,6 +65,7 @@ The PhoneMe palette, compose icon, navigation, full-width banners, avatars, and 
 styles.css              # public entry (@import chain)
 src/tokens.css
 src/primitives/*.css
+src/apps/home.css      # shared Home layout
 ```
 
 ## Optional host phone presentation (0.4)
@@ -61,7 +80,14 @@ Call color overrides: `--simulator-call-avatar-bg`, `--simulator-call-avatar-col
 
 Use `.simulator-contact-editor-layout` around a host-controlled editor inside a contact screen. Its width uses `--simulator-phone-content-pad-x` (12px by default), preventing centered flex shells from shrinking the form. Contact value groups have separate panels; photo actions are 44px square buttons. Icons come from simulator-react, not from this CSS package. The theme does not fetch data, upload photos, store settings, or call providers.
 
-See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md). This documentation patch follows 0.9.1 without moving its published tag.
+## Shared history, contact editor and plain pages (0.13.0)
+
+- `.simulator-phone-history-screen` wraps the shared call-history layout. The search field, per-row Call button and summary title use the same tokens as the other screens.
+- The shared contact editor screen reuses `.simulator-contact-editor-layout`; Back, Save and Delete follow the screen-header and button tokens.
+- Add `.prototype-page--plain` to an app page that supplies its own padding; it removes the default content inset.
+- Import the `appearance` subpath for palette presets and token mapping; the CSS itself stays data-free.
+
+See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](docs/RELEASING.md). This documentation patch follows 0.9.1 without moving its published tag.
 
 ## Local app migration (0.10.0, release candidate)
 
@@ -70,5 +96,16 @@ See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](RELEASING.md). This document
 - Keep CSS imports consecutive and the final HTML `hidden` rule authoritative so overlays and scrolling retain their behavior.
 
 This version is prepared locally; it is not a claim of registry publication. See
-[RELEASING.md](RELEASING.md) for the coordinated release order. PhoneMe validates
+[RELEASING.md](docs/RELEASING.md) for the coordinated release order. PhoneMe validates
 normal packed artifacts; installed package files are never patched.
+
+
+## Shared contact details
+
+`simulator-react/views/contacts/ContactDetailPanel` owns the read-only contact
+layout used by scenario contacts, the portable demo, and PhoneMe. The theme styles
+its photo header, identity card, actions, and labeled phone/email/postal groups.
+The `simulator-contact-detail__content` wrapper supplies the single content inset;
+headers remain flush to the screen. Hosts supply data and feature actions through
+the panel's slots, without additional card styles or margins. Contact editing
+continues to use the separate shared editor layout.

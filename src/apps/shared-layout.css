@@ -1,7 +1,7 @@
 /* Canonical screen layouts shared by scenario and device hosts. */
 
 .simulator-root :is(button, input, textarea, select):focus-visible {
-  outline: 3px solid #83b9a4;
+  outline: 3px solid var(--simulator-focus-color);
   outline-offset: 3px;
 }
 .simulator-root [data-simulator-app="home"] .simulator-border {

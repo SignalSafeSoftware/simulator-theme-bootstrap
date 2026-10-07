@@ -1,36 +1,75 @@
-
 .simulator-appearance {
-    display: grid;
-    gap: 0.75rem;
-    padding: 1rem;
-    color: var(--simulator-text);
-    background: var(--simulator-bg);
-    border: 1px solid var(--simulator-border);
-    border-radius: var(--simulator-radius);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  box-sizing: border-box;
+  min-width: 0;
+  gap: 0.75rem;
+  padding: 1rem;
+  color: var(--simulator-text);
+  background: var(--simulator-bg);
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
 }
-.simulator-appearance label { display: grid; gap: 0.35rem; }
-.simulator-appearance input[type='color'] { width: 100%; min-height: 2.75rem; padding: 0.2rem; }
-.simulator-appearance__actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
-.simulator-appearance__actions > button { width: 100%; min-width: 0; white-space: normal; }
+/* Grid tracks must shrink with their card at narrow widths and enlarged text. */
+.simulator-appearance > * {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.simulator-appearance label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+  min-width: 0;
+  margin: 0;
+}
+.simulator-appearance input[type='color'] {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.2rem;
+}
+.simulator-appearance__actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(8rem, 100%), 1fr));
+  gap: 0.5rem;
+}
+.simulator-appearance__actions > button {
+  width: 100%;
+  min-width: 0;
+  white-space: normal;
+}
 
-.simulator-appearance :is(label, span, p) { color: inherit; }
+.simulator-appearance :is(label, span, p) {
+  color: inherit;
+}
 .simulator-appearance select,
 .simulator-appearance input,
 .simulator-appearance button {
-    color: var(--simulator-text);
-    background: var(--simulator-panel-bg);
-    border: 1px solid var(--simulator-border);
-    border-radius: var(--simulator-radius);
-    min-height: 2.75rem;
-    padding: 0.5rem 0.75rem;
+  color: var(--simulator-text);
+  background: var(--simulator-panel-bg);
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
 }
-.simulator-appearance button { cursor: pointer; }
+.simulator-appearance button {
+  cursor: pointer;
+}
 
 .simulator-device-shell > .simulator-device-shell__screen {
-    background-image: var(--simulator-background-image, none);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: var(--simulator-background-image, none);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.simulator-background-image { display: grid; gap: 0.5rem; }
-.simulator-background-image input[type='file'] { max-width: 100%; box-sizing: border-box; }
+.simulator-background-image {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+  min-width: 0;
+}
+.simulator-background-image input[type='file'] {
+  max-width: 100%;
+  box-sizing: border-box;
+}

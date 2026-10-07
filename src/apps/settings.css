@@ -1,0 +1,88 @@
+/* The page banner has no inset; this grid owns the single settings content inset. */
+.simulator-root .simulator-settings__sections {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin: 1rem var(--simulator-phone-content-pad-x, 0.75rem);
+  min-width: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.simulator-root
+  .simulator-settings__sections
+  > :is(.simulator-appearance, .prototype-page, .simulator-settings-section) {
+  margin: 0;
+  min-width: 0;
+  max-width: 100%;
+}
+.simulator-root .simulator-settings-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+  overflow-wrap: anywhere;
+}
+.simulator-settings-section > h3,
+.simulator-appearance > h3 {
+  margin: 0;
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 650;
+}
+.simulator-root .simulator-settings__sections fieldset {
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.simulator-settings-section__group,
+.simulator-settings-section fieldset {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  min-width: 0;
+}
+.simulator-settings-section label {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.35rem;
+  min-width: 0;
+  margin: 0;
+}
+.simulator-settings-section :is(select, input, button),
+.simulator-appearance :is(select, input, button) {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  font: inherit;
+}
+.simulator-settings-section :is(p, output),
+.simulator-appearance :is(p, output) {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.simulator-root .simulator-settings__sections button {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.simulator-settings-section input[type='file']::file-selector-button,
+.simulator-background-image input[type='file']::file-selector-button {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding: 0.35rem 0.5rem;
+  margin-inline-end: 0.5rem;
+  border: 1px solid var(--simulator-neutral-button-border);
+  border-radius: var(--simulator-button-radius);
+  background: var(--simulator-neutral-button-bg);
+  color: var(--simulator-neutral-button-color);
+  font: inherit;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

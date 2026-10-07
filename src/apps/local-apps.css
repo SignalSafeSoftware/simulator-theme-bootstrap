@@ -17,6 +17,15 @@
   line-height: 1.5;
   overflow-wrap: anywhere;
 }
+/* Content that sits directly on the wallpaper, without a panel. */
+.simulator-root .prototype-page.prototype-page--plain {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.simulator-root .prototype-page--plain > label {
+  text-shadow: 0 1px 3px rgb(0 0 0 / 0.75);
+}
 .prototype-page :is(h3, h4) {
   margin: 0 0 0.75rem;
   color: var(--simulator-text);
@@ -111,16 +120,6 @@
   align-items: center;
   gap: 0.5rem;
   margin-block: 0.75rem;
-}
-.simulator-root .simulator-home-screen {
-  min-width: 0;
-  padding: 0;
-}
-.simulator-root .prototype-home {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(6rem, 100%), 1fr));
-  gap: 0.75rem;
-  padding: 0 0.75rem 1rem;
 }
 .prototype-list {
   list-style: none;
@@ -526,6 +525,20 @@
   gap: 1rem;
   min-width: 0;
 }
+.simulator-root .vault-entry-form > label,
+.simulator-root .vault-entry-form .vault-entry-field {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+  margin: 0;
+}
+.simulator-root .vault-entry-form .vault-entry-field > label {
+  margin: 0;
+  color: var(--simulator-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
 .simulator-root .vault-entry-form :is(input, select) {
   margin-block: 0;
 }
@@ -533,57 +546,42 @@
   margin: 0;
 }
 
-.prototype-home-clock {
-  display: grid;
-  gap: 0.25rem;
-  margin: 1rem 0.75rem 0.75rem;
-  padding: 0.75rem;
-  text-align: center;
-  border-radius: var(--simulator-radius-lg);
-  background: var(--simulator-bg);
-  color: var(--simulator-text);
-  font-size: 0.875rem;
-}
-.prototype-home-clock strong {
-  font-size: 1.75rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.compact-attachment-host {
-  display: contents;
-}
-.simulator-root .compact-attachment-row {
+.simulator-root .simulator-messages__attachment-row {
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  max-width: 100%;
   border: 0;
   padding: 0;
   background: transparent;
 }
-.simulator-root .compact-attachment-notice {
+.simulator-root .simulator-messages__attachment-notice {
   display: inline-block;
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   font-size: 0;
   color: var(--simulator-muted);
   cursor: help;
 }
-.compact-attachment-notice::before {
+.simulator-messages__attachment-notice::before {
   content: '';
   display: block;
-  width: 16px;
-  height: 16px;
-  margin: 4px;
+  width: 1rem;
+  height: 1rem;
+  margin: 0.25rem;
   background: currentColor;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m10.3 3.9-8.1 14a2 2 0 0 0 1.7 3h16.2a2 2 0 0 0 1.7-3l-8.1-14a2 2 0 0 0-3.4 0Z'/%3E%3Cpath d='M12 9v4m0 4h.01'/%3E%3C/svg%3E")
     center / contain no-repeat;
 }
-.compact-attachment-notice:focus-visible {
+.simulator-messages__attachment-notice:focus-visible {
   outline: 2px solid var(--simulator-accent);
 }
-.compact-attachment-notice:focus::after {
+.simulator-messages__attachment-notice:focus:not([aria-expanded="true"])::after {
   content: attr(aria-label);
   position: absolute;
   bottom: 100%;
-  right: 0;
+  left: 0;
   width: min(260px, 65vw);
   padding: 0.5rem;
   background: var(--simulator-bg);
@@ -597,7 +595,7 @@
 .smartphone-device.simulator-root
   .simulator-messages__thread-detail
   .simulator-messages__message-timeline
-  .compact-attachment-row {
+  .simulator-messages__attachment-row {
   display: flex;
   justify-content: flex-start;
   align-self: flex-start;
@@ -612,21 +610,21 @@
 .smartphone-device.simulator-root
   .simulator-messages__thread-detail
   .simulator-messages__message-timeline
-  .compact-attachment-row--sent {
+  .simulator-messages__attachment-row--sent {
   align-self: flex-end;
   justify-content: flex-end;
 }
 .smartphone-device.simulator-root
   .simulator-messages__message-timeline
-  .compact-attachment-notice {
+  .simulator-messages__attachment-notice {
   border: none;
   background: var(--bs-secondary-bg, #edf0ed);
   color: var(--bs-danger-text-emphasis, #a12020);
   border-radius: 0.2rem;
-  padding: 0.1rem;
+  padding: 0;
 }
-.compact-attachment-row:not(.compact-attachment-row--sent)
-  .compact-attachment-notice:focus::after {
+.simulator-messages__attachment-row:not(.simulator-messages__attachment-row--sent)
+  .simulator-messages__attachment-notice:focus:not([aria-expanded="true"])::after {
   left: 0;
   right: auto;
 }
@@ -724,4 +722,20 @@
 /* The device page already supplies the shared content inset. */
 .simulator-root .simulator-app-page .prototype-mail-page > .simulator-list-group {
   margin-inline: 0;
+}
+
+.simulator-messages__attachment-row--sent .simulator-messages__attachment-notice:focus:not([aria-expanded="true"])::after {
+  left: auto;
+  right: 0;
+}
+
+.simulator-root .simulator-messages__attachment-row--sent {
+  align-items: flex-end;
+}
+.simulator-root .simulator-messages__attachment-description {
+  max-width: 100%;
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.75rem;
+  line-height: 1.4;
 }

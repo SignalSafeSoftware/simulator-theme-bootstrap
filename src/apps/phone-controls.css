@@ -96,11 +96,11 @@
 }
 .simulator-call-round.success {
   background: var(--simulator-success);
-  color: white;
+  color: var(--simulator-phone-dialer-call-color);
 }
 .simulator-call-round.selected {
   background: var(--simulator-call-selected, var(--simulator-accent));
-  color: white;
+  color: var(--simulator-phone-dialer-call-color);
 }
 .simulator-call-view .simulator-call-keypad {
   width: 100%;

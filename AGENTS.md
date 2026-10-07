@@ -12,4 +12,4 @@ Shared device pages use `simulator-app-page`, never a host's generic `screen-con
 
 ## Canonical input and presentation contracts
 
-Follow MIGRATION.md. Do not restore the synthetic template conversion, label-derived call kinds, old phone-shell CSS selectors, Bootstrap tone aliases, or old serialized field readers. Migrations belong in offline tooling, outside runtime code. Update package owner imports, both hosts, tests and theme together. Preserve distinct telemetry/navigation and editable-value/datasource behavior.
+Follow docs/MIGRATION.md. Do not restore the synthetic template conversion, label-derived call kinds, old phone-shell CSS selectors, Bootstrap tone aliases, or old serialized field readers. Migrations belong in offline tooling, outside runtime code. Update package owner imports, both hosts, tests and theme together. Preserve distinct telemetry/navigation and editable-value/datasource behavior.

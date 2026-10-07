@@ -119,7 +119,7 @@
     .simulator-phone-contact-detail__button--save {
     border: 1px solid var(--simulator-accent);
     background: var(--simulator-accent);
-    color: #fff;
+    color: var(--simulator-phone-dialer-call-color);
 }
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-contact-detail
@@ -188,4 +188,235 @@
 .simulator-contact-value-editor input[type="checkbox"] {
   width: auto;
   flex: 0 0 auto;
+}
+
+/* Shared read-only contact cards. The content wrapper owns the only inset. */
+.simulator-root .simulator-contact-detail {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  box-sizing: border-box;
+  background: transparent;
+  color: var(--simulator-text);
+}
+.simulator-root .simulator-contact-detail .simulator-contact-detail__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.simulator-root .simulator-contact-detail__header .simulator-phone-contact-detail__title {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.simulator-root .simulator-contact-detail__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.75rem var(--simulator-phone-content-pad-x, 0.75rem) 1rem;
+  box-sizing: border-box;
+}
+.simulator-root .contact-detail-card {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+}
+.simulator-root .contact-detail-card__photo {
+  position: relative;
+  container-type: inline-size;
+  display: grid;
+  place-items: center;
+  aspect-ratio: 4 / 3;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: calc(var(--simulator-radius) - 1px) calc(var(--simulator-radius) - 1px) 0 0;
+  background: var(--simulator-panel-bg);
+  color: var(--simulator-muted);
+}
+.simulator-root .contact-detail-card__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  border-radius: 0;
+  object-fit: cover;
+}
+.simulator-root .contact-detail-card__photo .simulator-avatar {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+}
+.simulator-root .contact-detail-card__photo svg {
+  width: min(5rem, 60cqi);
+  height: min(5rem, 60cqi);
+  aspect-ratio: 1;
+}
+.simulator-root .contact-detail-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+}
+.simulator-root .contact-detail-card__body h2 {
+  margin: 0;
+  color: var(--simulator-text);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+.simulator-root .contact-detail-card__body p {
+  margin: 0;
+}
+.simulator-root .contact-detail-card__actions,
+.simulator-root .contact-detail-card__actions .contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+.simulator-root .contact-detail-card__actions :is(button, a),
+.simulator-root .contact-detail-list__value :is(button, a) {
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.simulator-root .contact-detail-groups,
+.simulator-root .contact-detail-groups .contact-additional-details {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  min-width: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+.simulator-root .contact-detail-groups:empty,
+.simulator-root .contact-detail-groups .contact-additional-details:empty {
+  display: none;
+}
+.simulator-root .contact-detail-list {
+  min-width: 0;
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+}
+.simulator-root .contact-detail-list h3 {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--simulator-border);
+  border-radius: calc(var(--simulator-radius) - 1px) calc(var(--simulator-radius) - 1px) 0 0;
+  background: var(--simulator-panel-bg);
+  color: var(--simulator-text);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.simulator-root .contact-detail-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.simulator-root .contact-detail-list li {
+  min-width: 0;
+  padding: 1rem;
+  overflow-wrap: anywhere;
+}
+.simulator-root .contact-detail-list li + li {
+  border-top: 1px solid var(--simulator-border);
+}
+.simulator-root .contact-detail-list p {
+  margin: 0.5rem 0 0;
+}
+.simulator-root .contact-detail-list__value {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-width: 0;
+  margin-top: 0.5rem;
+}
+.simulator-root .contact-detail-list__value > span {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.simulator-root .contact-detail-list__postal-value {
+  white-space: pre-wrap;
+}
+.simulator-root .simulator-contact-detail :focus-visible {
+  outline: 2px solid var(--simulator-accent);
+  outline-offset: 2px;
+}
+
+.simulator-root .contact-detail-groups .contact-additional-details > section:not(.contact-detail-list) {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius);
+  background: var(--simulator-bg);
+  color: var(--simulator-text);
+}
+.simulator-root .contact-detail-groups .contact-additional-details > section:not(.contact-detail-list) h3 {
+  margin: 0 0 0.5rem;
+  color: var(--simulator-text);
+  font-size: 1rem;
+  line-height: 1.4;
+}
+.simulator-root .contact-detail-groups .contact-additional-details > p,
+.simulator-root .contact-detail-groups .contact-additional-details > section:not(.contact-detail-list) p {
+  margin: 0;
+}
+
+/* Standalone contacts own their scroll region so the local menu stays visible. */
+.simulator-root .simulator-contact-detail--local-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.simulator-root .simulator-contact-detail--local-nav > :is(.simulator-contact-detail__header, .simulator-contact-detail__footer) {
+  flex: 0 0 auto;
+}
+.simulator-root .simulator-contact-detail--local-nav > .simulator-contact-detail__content {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  align-content: start;
+}
+.simulator-root .simulator-contact-detail__header > button {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }

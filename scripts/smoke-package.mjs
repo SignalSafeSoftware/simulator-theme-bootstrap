@@ -28,6 +28,8 @@ const required = [
     'src/apps/phone-contact-detail.css',
     'src/apps/email.css',
     'src/apps/messages.css',
+    'src/apps/home.css',
+    'src/apps/settings.css',
     'src/diagnostics.css',
     'src/modals.css',
 ];
@@ -83,4 +85,46 @@ for (const hook of [
     }
 }
 
+// Read the root palette so default action foregrounds remain legible on mint.
+const token = (name) => {
+    const value = tokens.match(new RegExp(`--${name}: ([^;]+);`))?.[1];
+    if (!value) throw new Error(`Expected a default palette color for ${name}`);
+    if (/^#[0-9a-f]{6}$/i.test(value)) return value;
+    const reference = value.match(/^var\(--([a-z-]+)\)$/)?.[1];
+    if (reference) return token(reference);
+    throw new Error(`Unsupported default palette value: ${value}`);
+};
+const luminance = (hex) => {
+    const channel = (offset) => {
+        const value = Number.parseInt(hex.slice(offset, offset + 2), 16) / 255;
+        return value <= 0.04045 ? value / 12.92 : ((value + 0.055) / 1.055) ** 2.4;
+    };
+    return channel(1) * 0.2126 + channel(3) * 0.7152 + channel(5) * 0.0722;
+};
+for (const [foreground, background] of [
+    ['simulator-text', 'simulator-bg'],
+    ['simulator-muted', 'simulator-panel-bg'],
+    ['simulator-accent', 'simulator-panel-bg'],
+    ['simulator-nav-active-color', 'simulator-nav-active-bg'],
+    ['simulator-phone-dialer-call-color', 'simulator-phone-dialer-call-bg'],
+]) {
+    const values = [luminance(token(foreground)), luminance(token(background))];
+    const ratio = (Math.max(...values) + 0.05) / (Math.min(...values) + 0.05);
+    if (ratio < 4.5) throw new Error(`${foreground} against ${background}: ${ratio.toFixed(2)}:1 contrast`);
+}
+
+const manifest = JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'));
+for (const file of ['appearance.js', 'appearance.d.ts']) {
+    if (!manifest.files.includes(file) || !readFileSync(join(root, file), 'utf8').trim()) {
+        throw new Error(`Appearance package artifact missing: ${file}`);
+    }
+}
+const appearanceExport = manifest.exports['./appearance'];
+if (appearanceExport?.types !== './appearance.d.ts' || appearanceExport?.import !== './appearance.js') {
+    throw new Error('Appearance must have explicit runtime and type exports.');
+}
+const appearance = await import('../appearance.js');
+if (appearance.appearanceStyle(appearance.defaultAppearance)['--simulator-bg'] !== token('simulator-bg')) {
+    throw new Error('Runtime and CSS appearance defaults must agree.');
+}
 console.log('simulator-theme-bootstrap smoke:package OK');

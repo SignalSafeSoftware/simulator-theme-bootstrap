@@ -1,6 +1,6 @@
 {
   "name": "@signalsafe/simulator-theme-bootstrap",
-  "version": "0.12.1",
+  "version": "0.13.0",
   "type": "module",
   "description": "Bootstrap-token simulator theme for @signalsafe/simulator-device and @signalsafe/simulator-react semantic classes.",
   "license": "MIT",
@@ -9,23 +9,30 @@
     "**/*.css"
   ],
   "exports": {
-    "./styles.css": "./styles.css"
+    "./styles.css": "./styles.css",
+    "./appearance": {
+      "types": "./appearance.d.ts",
+      "import": "./appearance.js",
+      "default": "./appearance.js"
+    }
   },
   "files": [
     "styles.css",
+    "appearance.js",
+    "appearance.d.ts",
     "src/**/*.css",
     "README.md",
     "LICENSE",
     "CHANGELOG.md",
-    "RELEASING.md",
-    "MIGRATION.md"
+    "docs"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "smoke:package": "node scripts/smoke-package.mjs",
-    "publish:dry-run": "npm pack --dry-run"
+    "publish:dry-run": "npm pack --dry-run",
+    "test": "node --test tests/*.test.mjs"
   },
   "keywords": [
     "simulator",

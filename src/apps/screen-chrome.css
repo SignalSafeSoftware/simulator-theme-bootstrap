@@ -82,7 +82,8 @@
 
 .simulator-shell__body .simulator-input[type='search'],
 .simulator-shell__body .simulator-input[data-simulator-search],
-.simulator-shell__body [data-simulator-search] .simulator-input {
+.simulator-shell__body [data-simulator-search] .simulator-input,
+.simulator-phone-history-screen .simulator-input[type='search'] {
     display: block;
     width: 100%;
     max-width: 100%;

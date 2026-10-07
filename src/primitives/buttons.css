@@ -32,7 +32,7 @@
 .simulator-btn--primary {
     background: var(--simulator-accent);
     border-color: var(--simulator-accent);
-    color: #fff;
+    color: var(--simulator-phone-dialer-call-color);
 }
 
 .simulator-btn--primary-outline {
@@ -56,7 +56,7 @@
 .simulator-btn--success {
     background: var(--simulator-success);
     border-color: var(--simulator-success);
-    color: #fff;
+    color: var(--simulator-phone-dialer-call-color);
 }
 
 .simulator-btn--success:disabled {

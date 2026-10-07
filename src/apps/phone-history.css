@@ -141,3 +141,18 @@
 .simulator-root .simulator-phone-history-row > .simulator-badge {
   border-radius: var(--simulator-radius);
 }
+
+/* Search shares the outer rounding supplied by the list group. */
+.simulator-root .simulator-phone-history-screen .simulator-phone-history-search {
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid var(--simulator-border);
+  border-radius: 0;
+}
+.simulator-root .simulator-phone-history-screen .simulator-phone-history-search:focus-within {
+  outline: 2px solid var(--simulator-accent);
+  outline-offset: -2px;
+}
+.simulator-root .simulator-phone-history-screen .simulator-phone-history-entry:last-child {
+  border-bottom: 0;
+}
