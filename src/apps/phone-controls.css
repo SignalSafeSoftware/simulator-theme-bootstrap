@@ -66,7 +66,8 @@
   animation: simulator-call-pulse 2s infinite;
 }
 .simulator-call-view h2 {
-  word-break: break-word;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 .simulator-call-status {
   font-size: 12px;
