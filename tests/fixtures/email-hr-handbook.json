@@ -1,0 +1,82 @@
+{
+  "entry_point": {
+    "app": "email",
+    "screen": "detail"
+  },
+  "device": {
+    "main_menu_items": [
+      {
+        "id": "phone",
+        "label": "Phone",
+        "app": "phone"
+      },
+      {
+        "id": "email",
+        "label": "Email",
+        "app": "email"
+      },
+      {
+        "id": "internet",
+        "label": "Internet",
+        "app": "internet"
+      },
+      {
+        "id": "messages",
+        "label": "Messages",
+        "app": "messages"
+      },
+      {
+        "id": "home",
+        "label": "Home",
+        "app": "home"
+      }
+    ],
+    "secondary_defaults": {
+      "email": "list",
+      "internet": "trusted-hr",
+      "messages": "threads",
+      "phone": "history",
+      "home": "home"
+    }
+  },
+  "email": {
+    "folders": [
+      {
+        "id": "inbox",
+        "name": "Inbox",
+        "type": "inbox"
+      }
+    ],
+    "messages": [
+      {
+        "id": "hr-handbook",
+        "folder_id": "inbox",
+        "subject": "Action required: Acknowledge updated employee handbook",
+        "from": "hr@company-portal.example.test",
+        "snippet": "Enable editing and content to acknowledge the handbook.",
+        "attachment_name": "Employee_Handbook_2026.docm",
+        "attachment_type": "application/vnd.ms-word.document.macroEnabled.12",
+        "attachment_behavior": "macro_prompt"
+      }
+    ],
+    "detail": {
+      "id": "hr-handbook",
+      "subject": "Action required: Acknowledge updated employee handbook",
+      "from": "hr@company-portal.example.test",
+      "body": "Please review the attached Employee Handbook and acknowledge it by Friday. Enable editing and content to sign the document. If you have questions, verify independently through the saved HR portal; do not rely on contact details in this message.",
+      "attachment_name": "Employee_Handbook_2026.docm",
+      "attachment_type": "application/vnd.ms-word.document.macroEnabled.12",
+      "attachment_behavior": "macro_prompt"
+    }
+  },
+  "internet": {
+    "pages": [
+      {
+        "id": "trusted-hr",
+        "url": "https://hr.example.test/handbook",
+        "title": "Independently saved HR portal \u2014 verify handbook request",
+        "layout": "centered"
+      }
+    ]
+  }
+}

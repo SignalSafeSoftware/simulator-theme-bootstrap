@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.2 — release approved 2026-10-21
+
+- Keep email fields and body in normal scroll flow so enlarged content cannot
+  collapse the field group or pull the body over From/Subject.
+- Add an actual public Device browser regression for narrow screens, enlarged
+  text, long metadata and scroll reachability; retain all prior release gates.
+- Preserve shared insets/navigation and all appearance JavaScript/declarations.
+
 ## [0.13.1] - Release approved 2026-10-21
 
 Publication now waits for the existing hosted Sonar scan; the matching-tag-only publication condition is unchanged.
