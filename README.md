@@ -1,6 +1,6 @@
 # @signalsafe/simulator-theme-bootstrap
 
-## Coordinated release candidate (pending publication approval)
+## Coordinated release — approved 2026-10-21
 
 | Package | Prepared version | Required simulator dependencies |
 | --- | --- | --- |
@@ -113,7 +113,7 @@ Use `.simulator-contact-editor-layout` around a host-controlled editor inside a 
 - Add `.prototype-page--plain` to an app page that supplies its own padding; it removes the default content inset.
 - Import the `appearance` subpath for palette presets and token mapping; the CSS itself stays data-free.
 
-See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](docs/RELEASING.md). Published tags remain immutable; this candidate is not published until its gated release is approved.
+See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](docs/RELEASING.md). Published tags remain immutable; this release is approved; publication remains subject to its successful gated workflow.
 
 ## Historical local app migration (0.10.0, release candidate)
 

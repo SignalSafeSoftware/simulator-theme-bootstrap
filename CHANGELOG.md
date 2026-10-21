@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.13.1] - Unreleased candidate
+## [0.13.1] - Release approved 2026-10-21
 
 Publication now waits for the existing hosted Sonar scan; the matching-tag-only publication condition is unchanged.
 
