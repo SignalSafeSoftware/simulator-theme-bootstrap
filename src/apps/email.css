@@ -56,11 +56,11 @@
 .simulator-device-shell--host-nav
     .simulator-email__message-detail-body {
     flex: 0 0 auto;
-    min-height: 11rem !important;
+    min-height: 11rem;
     height: 11rem;
     max-height: 16rem;
     overflow-y: auto;
-    resize: vertical !important;
+    resize: vertical;
 }
 
 .simulator-root .simulator-email__message-detail-body {

@@ -48,9 +48,7 @@
   box-shadow: none;
   background: transparent;
 }
-.simulator-host-device .simulator-device-shell__screen {
-  overflow: auto;
-}
+/* SimulatorPhoneShell owns screen scrolling in each navigation mode. */
 .simulator-host-device .simulator-runtime__screen {
   padding: var(--simulator-host-screen-padding, 12px);
 }

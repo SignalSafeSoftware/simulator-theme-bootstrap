@@ -42,8 +42,8 @@
 }
 
 .simulator-device-shell--host-nav .simulator-device-shell__screen {
-    overflow-x: hidden !important;
-    overflow-y: auto !important;
+    overflow-x: hidden;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -86,7 +86,7 @@
 }
 
 .simulator-device-shell--host-nav .simulator-shell__nav {
-    display: none !important;
+    display: none;
 }
 
 /* Runtime diagnostics band + app root rhythm inside host-nav shells */
