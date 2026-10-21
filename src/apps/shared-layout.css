@@ -320,8 +320,8 @@
   width: calc(100% - 1.5rem);
   min-width: 0;
   box-sizing: border-box;
-  position: sticky;
-  bottom: 0;
+  position: static;
+  min-height: min-content;
   flex: 1 0 auto;
 }
 .simulator-root .simulator-shell__body .simulator-email__message-detail .simulator-email__body-field {
@@ -526,7 +526,15 @@
   }
 }
 
-/* Links and attachment rows sit beside the inset fields, above the sticky body. */
+/* Keep the message fields in normal scroll flow when enlarged attachment metadata
+   consumes the remaining viewport. A shrinking field group would let extras
+   overlap the From/Subject inputs and collapse the message body. */
+.simulator-root .simulator-email__message-detail > .simulator-overflow-auto > div,
+.simulator-root .simulator-shell__body .simulator-email__message-detail > .simulator-overflow-auto > div {
+  min-height: min-content;
+}
+
+/* Links and attachments follow the fields and body in the same scroll flow. */
 .simulator-root .simulator-email__message-detail .simulator-email__message-detail-extras {
   margin-inline: 0.75rem;
   position: relative;

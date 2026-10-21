@@ -1,5 +1,24 @@
 # Releasing `@signalsafe/simulator-theme-bootstrap`
 
+## Email layout patch — approved 2026-10-21
+
+Theme 0.13.2 is a CSS-only compatible fix; Device 0.21.2 is the approved exact
+`@signalsafe/simulator-theme-bootstrap: 0.13.2` dependency follow-up. Core 0.7.1 and
+React 0.21.1 remain unchanged. Device 0.21.1 pins 0.13.1 and must not silently load
+another theme through a second copy or an undocumented override.
+
+Preparation evidence compares exact archives and runs the browser regression
+against the unmodified public 0.13.1 archive (must fail) and the prepared 0.13.2
+archive (must pass), while retaining existing smoke/appearance coverage gates. The new
+Node 24 Chromium email-layout gate is also required by publication. Hosted checks,
+Sonar and both actual host integrations remain explicit release gates.
+
+Release approval was recorded on 2026-10-21. After required checks, publish and
+download-verify theme first. Only then finalize the
+Device registry locks with genuine 0.13.2 metadata and rerun frozen full checks,
+packed/gallery checks and Sonar before publishing the dependency follow-up. Do
+not fabricate future registry integrity values or reuse either existing tag.
+
 ## Coordinated release — approved 2026-10-21
 
 | Package | Prepared version | Required simulator dependencies |

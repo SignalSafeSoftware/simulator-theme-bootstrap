@@ -1,5 +1,28 @@
 # @signalsafe/simulator-theme-bootstrap
 
+## 0.13.2 — release approved 2026-10-21
+
+This patch keeps email fields, body, links and attachments in one
+normal scroll flow. It prevents the body from sticking over From/Subject when
+long attachment metadata and enlarged text exceed the device viewport. Existing
+insets, shared navigation, appearance API and runtime dependencies are unchanged.
+
+`npm run test:layout` mounts the published public `SimulatorDevice` with synthetic
+HR-handbook data in default Chromium. It checks 320/430-pixel widths at 100/200%
+text, original and long-content variants, ordered child bounds, a bounded
+scrollport and attachment/field reachability. Native readonly input values retain
+horizontal scrolling; wrapping labels/buttons and the body must fit their bounds.
+`EMAIL_LAYOUT_THEME_ROOT` can point at an unpacked archive for regression checks;
+`EMAIL_LAYOUT_EVIDENCE_DIR` optionally saves measured geometry and screenshots.
+Run `node node_modules/playwright/cli.js install chromium --only-shell` first.
+The browser gate uses Node 24; existing appearance coverage and Node 19–24 package
+smoke gates remain required.
+
+Device 0.21.1 pins theme 0.13.1 exactly. The approved Device 0.21.2 dependency
+patch must adopt 0.13.2 before hosts can use one theme copy without an override.
+Both patch releases and coherent host adoption were approved on 2026-10-21.
+Publication remains conditional on all required checks and verified registry artifacts.
+
 ## Coordinated release — approved 2026-10-21
 
 | Package | Prepared version | Required simulator dependencies |
