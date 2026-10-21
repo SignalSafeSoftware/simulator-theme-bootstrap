@@ -32,7 +32,8 @@
   "scripts": {
     "smoke:package": "node scripts/smoke-package.mjs",
     "publish:dry-run": "npm pack --dry-run",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "test:coverage": "c8 --all --include=appearance.js --reporter=text --reporter=lcov node --test tests/*.test.mjs"
   },
   "keywords": [
     "simulator",
@@ -40,5 +41,8 @@
     "css",
     "bootstrap",
     "signalsafe"
-  ]
+  ],
+  "devDependencies": {
+    "c8": "^12.0.0"
+  }
 }

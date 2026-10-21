@@ -53,6 +53,38 @@ jobs:
             - name: Smoke-test packed artifact
               run: npm run smoke:package
 
+    scan:
+        name: SonarCloud scan
+        if: |
+            github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v7
+              with:
+                  fetch-depth: 0
+
+            - uses: actions/setup-node@v7
+              with:
+                  node-version: "24"
+
+            - name: Install coverage tooling
+              run: npm ci --ignore-scripts
+
+            - name: Test executable appearance contracts with coverage
+              run: npm run test:coverage
+
+            - name: Verify JavaScript coverage report
+              run: |
+                  test -f coverage/lcov.info
+                  grep '^SF:appearance.js$' coverage/lcov.info
+
+            - name: SonarCloud scan
+              uses: SonarSource/sonarqube-scan-action@d209202bc7d53ff1cc128f7f907dac145c9d6ae9 # v8.3.0
+              with:
+                  args: -Dsonar.qualitygate.wait=true
+              env:
+                  SONAR_TOKEN: ${{ secrets.PACKAGES_SONAR_TOKEN }}
+
     publish:
         name: Publish
         needs: [checks, smoke-package]

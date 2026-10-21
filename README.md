@@ -109,3 +109,13 @@ The `simulator-contact-detail__content` wrapper supplies the single content inse
 headers remain flush to the screen. Hosts supply data and feature actions through
 the panel's slots, without additional card styles or margins. Contact editing
 continues to use the separate shared editor layout.
+
+## Automated quality checks
+
+`npm ci --ignore-scripts` and `npm run test:coverage` run the existing appearance
+contract tests and produce real V8-based LCOV for the executable `appearance.js`
+module. CSS files receive Sonar static analysis; JavaScript execution coverage does
+not measure CSS layout or visual behavior. Package smoke tests and packed artifact
+checks remain separate gates, and host/gallery visual verification remains required
+for presentation changes. The CI scanner waits for the configured Sonar quality
+gate and uses the organization `PACKAGES_SONAR_TOKEN` secret.
