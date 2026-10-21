@@ -139,6 +139,8 @@
   .simulator-device-shell__screen {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
 }
 .simulator-root
@@ -148,13 +150,13 @@
   min-height: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden !important;
-  padding-bottom: 0 !important;
+  overflow: hidden;
+  padding-bottom: 0;
 }
 .simulator-root .simulator-shell__body .simulator-messages__thread-detail {
   flex: 1;
   min-height: 0;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 .simulator-root
   .simulator-shell__body
@@ -162,7 +164,7 @@
   > .simulator-overflow-auto {
   flex: 1;
   min-height: 0;
-  overflow-y: auto !important;
+  overflow-y: auto;
 }
 .simulator-root
   .simulator-messages__thread-detail
@@ -174,12 +176,12 @@
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
-  :is(.simulator-device-shell__screen, .simulator-device-shell__session-column, .simulator-runtime, .simulator-runtime__screen, .simulator-shell, .simulator-shell__frame) {
+  :is(.simulator-device-shell__session-column, .simulator-runtime, .simulator-runtime__screen, .simulator-shell, .simulator-shell__frame) {
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  overflow: hidden !important;
+  overflow: hidden;
 }
 
 .simulator-root
@@ -199,20 +201,25 @@
   .simulator-shell__frame,
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
+  .simulator-shell__body
   .simulator-messages__thread-detail {
   display: flex;
   flex-direction: column;
-  flex: 1 1 0% !important;
-  min-height: 0 !important;
-  overflow: hidden !important;
+  flex: 1 1 0%;
+  min-height: 0;
+}
+.simulator-root .simulator-device-shell--screen-messages-thread-detail .simulator-runtime__app-root,
+.simulator-root .simulator-device-shell--screen-messages-thread-detail .simulator-runtime__app-root > div,
+.simulator-root .simulator-device-shell--screen-messages-thread-detail .simulator-runtime__app-root > div > div {
+  overflow: hidden;
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
   .simulator-messages__thread-detail
   > .simulator-overflow-auto {
-  flex: 1 1 0% !important;
-  min-height: 0 !important;
-  overflow-y: auto !important;
+  flex: 1 1 0%;
+  min-height: 0;
+  overflow-y: auto;
   box-sizing: border-box;
   padding: 0;
   gap: 0;
@@ -224,7 +231,7 @@
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
   .simulator-runtime__screen {
-  padding: 0 !important;
+  padding: 0;
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
@@ -261,8 +268,12 @@
 
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
+  .simulator-messages__thread-detail,
+.simulator-root
+  .simulator-device-shell--screen-messages-thread-detail
+  .simulator-shell__body
   .simulator-messages__thread-detail {
-  gap: 0 !important;
+  gap: 0;
 }
 .simulator-root
   .simulator-device-shell--screen-messages-thread-detail
@@ -277,7 +288,7 @@
 }
 .simulator-root .simulator-shell__body,
 .simulator-root .simulator-runtime__screen {
-  padding: 0 !important;
+  padding: 0;
 }
 .simulator-root
   .simulator-phone-contact-detail
@@ -306,12 +317,15 @@
 }
 .simulator-root .simulator-email__message-detail .simulator-email__body-field {
   margin: 0 0.75rem;
-  width: calc(100% - 1.5rem) !important;
+  width: calc(100% - 1.5rem);
   min-width: 0;
   box-sizing: border-box;
   position: sticky;
   bottom: 0;
   flex: 1 0 auto;
+}
+.simulator-root .simulator-shell__body .simulator-email__message-detail .simulator-email__body-field {
+  width: calc(100% - 1.5rem);
 }
 .simulator-root .simulator-email__body-field > label {
   padding-inline: 0;
@@ -324,7 +338,7 @@
   box-sizing: border-box;
   border-radius: 0;
   margin: 0;
-  resize: none !important;
+  resize: none;
   flex: 1 0 auto;
 }
 .simulator-root
@@ -334,16 +348,23 @@
   :is(.simulator-device-shell__session-column, .simulator-runtime, .simulator-runtime__app-root, .simulator-runtime__app-root > div, .simulator-runtime__app-root > div > div, .simulator-shell__frame, .simulator-shell__body, .simulator-runtime__screen) {
   display: flex;
   flex-direction: column;
-  flex: 1 1 auto !important;
+  flex: 1 1 auto;
   min-height: 0;
 }
 .simulator-root .simulator-email__message-detail,
+.simulator-root .simulator-device-shell--host-nav .simulator-shell__body .simulator-email__message-detail,
 .simulator-root .simulator-email__message-detail > .simulator-overflow-auto,
+.simulator-root .simulator-shell__body .simulator-email__message-detail > .simulator-overflow-auto,
 .simulator-root
   .simulator-email__message-detail
   > .simulator-overflow-auto
+  > div,
+.simulator-root
+  .simulator-shell__body
+  .simulator-email__message-detail
+  > .simulator-overflow-auto
   > div {
-  flex: 1 1 auto !important;
+  flex: 1 1 auto;
 }
 
 .simulator-root .simulator-new-thread__fields {
@@ -510,4 +531,36 @@
   margin-inline: 0.75rem;
   position: relative;
   background: var(--simulator-bg);
+}
+
+/* Email attachment metadata and links reflow inside the shared screen at enlarged text. */
+.simulator-root .simulator-email__message-detail .simulator-email__message-detail-extras {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+  max-width: calc(100% - 1.5rem);
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+.simulator-root .simulator-email__message-detail-extras > span {
+  flex: 1 1 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.simulator-root .simulator-email__message-detail-extras > button {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+/* The screen owns its detail scrollport even when its host uses external navigation. */
+.simulator-root .simulator-email__message-detail > .simulator-overflow-auto,
+.simulator-root .simulator-shell__body .simulator-email__message-detail > .simulator-overflow-auto {
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 0;
+  min-width: 0;
 }

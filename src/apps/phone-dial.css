@@ -137,7 +137,7 @@
 
 .simulator-device-shell--host-nav.simulator-device-shell--screen-phone-dial
     .simulator-phone__dialer-backspace {
-    display: inline-flex !important;
+    display: inline-flex;
     flex: 0 0 auto;
     align-items: center;
     justify-content: center;

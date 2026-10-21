@@ -80,7 +80,7 @@
   flex-grow: 1;
 }
 .simulator-root .simulator-shell__frame:has(.simulator-call-view) {
-  flex-grow: 1 !important;
+  flex-grow: 1;
 }
 .simulator-root .simulator-phone__incoming-call-scene {
   width: 100%;

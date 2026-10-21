@@ -40,4 +40,5 @@
 @import './src/apps/settings.css';
 
 /* HTML hidden remains authoritative over component display rules. */
+.simulator-root[hidden],
 .simulator-root [hidden] { display: none !important; }

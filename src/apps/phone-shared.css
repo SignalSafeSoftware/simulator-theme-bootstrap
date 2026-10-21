@@ -40,7 +40,7 @@
 
 /* Host secondary nav provides Back — hide in-content screen back control */
 .simulator-device-shell--host-nav .simulator-btn--screen-back {
-    display: none !important;
+    display: none;
 }
 
 /* Call history status badge tones */
