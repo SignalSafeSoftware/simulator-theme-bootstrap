@@ -531,10 +531,7 @@
   margin-inline: 0.75rem;
   position: relative;
   background: var(--simulator-bg);
-}
-
-/* Email attachment metadata and links reflow inside the shared screen at enlarged text. */
-.simulator-root .simulator-email__message-detail .simulator-email__message-detail-extras {
+  /* Reflow attachment metadata and links inside the screen at enlarged text. */
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
