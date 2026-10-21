@@ -87,7 +87,7 @@ jobs:
 
     publish:
         name: Publish
-        needs: [checks, smoke-package]
+        needs: [checks, scan, smoke-package]
         if: |
             startsWith(github.ref, 'refs/tags/v') &&
             needs.checks.result == 'success' &&

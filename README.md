@@ -1,5 +1,31 @@
 # @signalsafe/simulator-theme-bootstrap
 
+## Coordinated release candidate (pending publication approval)
+
+| Package | Prepared version | Required simulator dependencies |
+| --- | --- | --- |
+| `@signalsafe/simulator-core` | `0.7.1` | none |
+| `@signalsafe/simulator-theme-bootstrap` | `0.13.1` | none |
+| `@signalsafe/simulator-react` | `0.21.1` | core `0.7.1`; optional default theme `^0.13.1` |
+| `@signalsafe/simulator-device` | `0.21.1` | core `0.7.1`, React `0.21.1`, theme `0.13.1` (exact) |
+
+These compatible patches preserve the existing public runtime API and shared UI.
+React and the default theme must be adopted together: the corrected frame markup
+requires the matching CSS. A custom theme remains an explicit host responsibility.
+The optional theme peer does not install or require the default theme for unstyled
+integrations. Node runtime support remains `>=19.0.0`; build tools use Node 22/24.
+
+Publish core and theme first, then React, then device, only after explicit approval
+and successful gated tag workflows. Download and verify each upstream registry
+artifact before refreshing downstream Yarn locks and the device demo npm lock.
+Future registry integrity values must never be fabricated. Before upstream
+publication, coherent packed-artifact installs provide candidate evidence only;
+frozen standalone registry installs remain a separate release gate.
+
+Existing local host archives retain their recorded provenance until the approved
+registry artifacts pass all host checks. Historical release notes below describe
+their original checkpoints and do not authorize publication or host replacement.
+
 Bootstrap-token theme for SignalSafe simulator semantic classes emitted by `@signalsafe/simulator-device` and `@signalsafe/simulator-react`.
 
 ## Usage
@@ -87,9 +113,9 @@ Use `.simulator-contact-editor-layout` around a host-controlled editor inside a 
 - Add `.prototype-page--plain` to an app page that supplies its own padding; it removes the default content inset.
 - Import the `appearance` subpath for palette presets and token mapping; the CSS itself stays data-free.
 
-See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](docs/RELEASING.md). This documentation patch follows 0.9.1 without moving its published tag.
+See [CHANGELOG.md](CHANGELOG.md) and [RELEASING.md](docs/RELEASING.md). Published tags remain immutable; this candidate is not published until its gated release is approved.
 
-## Local app migration (0.10.0, release candidate)
+## Historical local app migration (0.10.0, release candidate)
 
 - Add scoped Vault, Photos, local Mail, settings and browser styles and plain error-list rows.
 - Style call detail body media and number labels. Preserve existing semantic hooks and appearance tokens.

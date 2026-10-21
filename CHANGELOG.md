@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.13.1] - Unreleased candidate
+
+Publication now waits for the existing hosted Sonar scan; the matching-tag-only publication condition is unchanged.
+
+Includes the verified shared frame cascade and Step 6 email attachment layout/scroll ownership fixes. Pair with React `0.21.1`. The semantic `[hidden]` priority declaration remains intentional and its Sonar finding remains open.
+
 ## 0.13.0 — October 7, 2026
 
 - Style the shared contact editor form, contact detail actions and editor screen, including the Back, Save and Delete controls.
