@@ -1,6 +1,6 @@
 {
   "name": "@signalsafe/simulator-theme-bootstrap",
-  "version": "0.13.2",
+  "version": "0.13.3",
   "type": "module",
   "description": "Bootstrap-token simulator theme for @signalsafe/simulator-device and @signalsafe/simulator-react semantic classes.",
   "license": "MIT",
@@ -33,7 +33,7 @@
     "smoke:package": "node scripts/smoke-package.mjs",
     "publish:dry-run": "npm pack --dry-run",
     "test": "node --test tests/*.test.mjs",
-    "test:coverage": "c8 --all --include=appearance.js --reporter=text --reporter=lcov node --test tests/*.test.mjs",
+    "test:coverage": "c8 --all --include=appearance.js --check-coverage --lines=100 --branches=100 --functions=100 --statements=100 --reporter=text --reporter=lcov node --test tests/*.test.mjs",
     "test:layout": "node --test tests/email-layout.browser.mjs"
   },
   "keywords": [
@@ -48,8 +48,23 @@
     "playwright": "1.55.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "@signalsafe/simulator-react": "0.21.1",
-    "@signalsafe/simulator-device": "0.21.1",
-    "vite": "8.3.5"
+    "@signalsafe/simulator-react": "file:tests/vendor/npm/signalsafe-simulator-react-0.21.2.tgz",
+    "@signalsafe/simulator-device": "file:tests/vendor/npm/signalsafe-simulator-device-0.21.3.tgz",
+    "vite": "8.3.5",
+    "@signalsafe/simulator-core": "file:tests/vendor/npm/signalsafe-simulator-core-0.7.2.tgz"
+  },
+  "homepage": "https://signalsafesoftware.github.io/simulator-device/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SignalSafeSoftware/simulator-theme-bootstrap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/issues"
+  },
+  "overrides": {
+    "@signalsafe/simulator-core": "$@signalsafe/simulator-core",
+    "@signalsafe/simulator-react": "$@signalsafe/simulator-react",
+    "@signalsafe/simulator-device": "$@signalsafe/simulator-device",
+    "@signalsafe/simulator-theme-bootstrap": "file:tests/vendor/npm/signalsafe-simulator-theme-bootstrap-0.13.3.tgz"
   }
 }

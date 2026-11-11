@@ -181,3 +181,12 @@
   color: var(--simulator-phone-dialer-call-color);
   font: inherit;
 }
+
+/* Conversation previews are visually limited; retain full text for accessibility. */
+.simulator-messages__thread-preview {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}

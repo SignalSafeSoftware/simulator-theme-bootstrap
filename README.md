@@ -1,5 +1,9 @@
 # @signalsafe/simulator-theme-bootstrap
 
+[Repository](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap) · [Live shared device example](https://signalsafesoftware.github.io/simulator-device/) · [Package links and examples](docs/links.md)
+
+Prepared source: **0.13.3**. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
+
 ## 0.13.2 — release approved 2026-10-21
 
 This patch keeps email fields, body, links and attachments in one
@@ -23,7 +27,7 @@ patch must adopt 0.13.2 before hosts can use one theme copy without an override.
 Both patch releases and coherent host adoption were approved on 2026-10-21.
 Publication remains conditional on all required checks and verified registry artifacts.
 
-## Coordinated release — approved 2026-10-21
+## Historical coordinated release — approved 2026-10-21
 
 | Package | Prepared version | Required simulator dependencies |
 | --- | --- | --- |
@@ -48,6 +52,8 @@ frozen standalone registry installs remain a separate release gate.
 Existing local host archives retain their recorded provenance until the approved
 registry artifacts pass all host checks. Historical release notes below describe
 their original checkpoints and do not authorize publication or host replacement.
+
+Current source and planned customer-subdomain impact: [current-state summary](docs/current-state-summary.md).
 
 Bootstrap-token theme for SignalSafe simulator semantic classes emitted by `@signalsafe/simulator-device` and `@signalsafe/simulator-react`.
 
@@ -168,3 +174,5 @@ not measure CSS layout or visual behavior. Package smoke tests and packed artifa
 checks remain separate gates, and host/gallery visual verification remains required
 for presentation changes. The CI scanner waits for the configured Sonar quality
 gate and uses the organization `PACKAGES_SONAR_TOKEN` secret.
+
+Development CI uses the checked-in candidate archives documented in [verification](docs/verification-2026-11-11.md); npm publication is a separate release step.

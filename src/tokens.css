@@ -36,7 +36,7 @@
   --simulator-call-danger: #bf6a55;
   --simulator-call-control-color: var(--simulator-accent);
   --simulator-call-control-bg: #26333e;
-  --simulator-call-status-color: var(--simulator-muted);
+  --simulator-call-status-color: var(--simulator-text);
   --simulator-call-avatar-color: var(--simulator-accent);
   --simulator-call-avatar-bg: var(--simulator-panel-bg);
   --simulator-host-shadow: 0 0 0 2px #c9cfc4, 0 22px 45px -20px #2d4b3550;
