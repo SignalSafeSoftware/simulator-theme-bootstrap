@@ -34,7 +34,10 @@
   color: var(--simulator-muted);
 }
 .simulator-call-number {
-  color: var(--simulator-muted);
+  color: var(--simulator-text);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.5;
 }
 .simulator-call-view {
   text-align: center;
@@ -70,8 +73,10 @@
   word-break: normal;
 }
 .simulator-call-status {
-  font-size: 12px;
-  color: var(--simulator-call-status-color, var(--simulator-muted));
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--simulator-call-status-color, var(--simulator-text));
   margin: 14px 0 20px;
 }
 .simulator-call-actions {

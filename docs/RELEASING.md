@@ -1,5 +1,7 @@
 # Releasing `@signalsafe/simulator-theme-bootstrap`
 
+Current prepared version: **0.13.3**. Follow [the November 10 release plan](release-2026-11-10.md). Earlier approvals below are historical. No new publication is authorized by this source update.
+
 ## Email layout patch — approved 2026-10-21
 
 Theme 0.13.2 is a CSS-only compatible fix; Device 0.21.2 is the approved exact
@@ -19,7 +21,7 @@ Device registry locks with genuine 0.13.2 metadata and rerun frozen full checks,
 packed/gallery checks and Sonar before publishing the dependency follow-up. Do
 not fabricate future registry integrity values or reuse either existing tag.
 
-## Coordinated release — approved 2026-10-21
+## Historical coordinated release — approved 2026-10-21
 
 | Package | Prepared version | Required simulator dependencies |
 | --- | --- | --- |

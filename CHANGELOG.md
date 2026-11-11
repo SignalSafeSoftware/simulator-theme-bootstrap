@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.13.3 — prepared 2026-11-10
+
+- Expose shared scrollbars and stable scrollbar space for bounded simulator panels.
+- Preserve full-width SMS composers, shared call controls and responsive incoming-call layout.
+- Retain the merged email normal-flow fix and its browser regression gate.
+
+Prepared source version; npm publication and downstream registry-lock refresh are separate steps.
+
 ## 0.13.2 — release approved 2026-10-21
 
 - Keep email fields and body in normal scroll flow so enlarged content cannot
@@ -13,6 +21,15 @@
 Publication now waits for the existing hosted Sonar scan; the matching-tag-only publication condition is unchanged.
 
 Includes the verified shared frame cascade and Step 6 email attachment layout/scroll ownership fixes. Pair with React `0.21.1`. The semantic `[hidden]` priority declaration remains intentional and its Sonar finding remains open.
+
+## 0.13.3-local.20261109.2 — November 9, 2026
+
+- Keep previous calls visible beneath the primary call buttons, without a collapse control. Increase caller number/status size and default contrast using shared theme tokens.
+
+## 0.13.3-local.20261109.1 — November 9, 2026
+
+- Present incoming caller history as a readable disclosure above call actions on every route. Remove route-dependent table styling while preserving the shared PhoneMe palette and phone layout.
+
 
 ## 0.13.0 — October 7, 2026
 

@@ -1,5 +1,7 @@
 # @signalsafe/simulator-theme-bootstrap
 
+Prepared source: **0.13.3**. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
+
 ## 0.13.2 — release approved 2026-10-21
 
 This patch keeps email fields, body, links and attachments in one
@@ -23,7 +25,7 @@ patch must adopt 0.13.2 before hosts can use one theme copy without an override.
 Both patch releases and coherent host adoption were approved on 2026-10-21.
 Publication remains conditional on all required checks and verified registry artifacts.
 
-## Coordinated release — approved 2026-10-21
+## Historical coordinated release — approved 2026-10-21
 
 | Package | Prepared version | Required simulator dependencies |
 | --- | --- | --- |
@@ -48,6 +50,8 @@ frozen standalone registry installs remain a separate release gate.
 Existing local host archives retain their recorded provenance until the approved
 registry artifacts pass all host checks. Historical release notes below describe
 their original checkpoints and do not authorize publication or host replacement.
+
+Current source and planned customer-subdomain impact: [current-state summary](docs/current-state-summary.md).
 
 Bootstrap-token theme for SignalSafe simulator semantic classes emitted by `@signalsafe/simulator-device` and `@signalsafe/simulator-react`.
 

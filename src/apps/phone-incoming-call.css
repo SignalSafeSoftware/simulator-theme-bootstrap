@@ -1,71 +1,49 @@
-/**
- * Phone > Incoming call scene and call-history table below actions.
- */
-
-.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-extra,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-after-actions,
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-history {
-  width: min(100%, var(--simulator-phone-content-max));
-  max-width: var(--simulator-phone-content-max);
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-}
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-history
-  > h3 {
-  margin: 0 0 0.375rem;
-  font-size: 0.6875rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: var(--simulator-muted);
-}
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-history
-  > table {
+/** Secondary caller history remains readable on every incoming-call route. */
+.simulator-root .simulator-call-context {
   width: 100%;
-  border-collapse: collapse;
-  font-size: 0.6875rem;
-  line-height: 1.25;
+  min-width: 0;
+  margin-top: 1rem;
 }
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-history
-  > table
-  thead
-  th {
-  padding: 0.25rem 0.375rem;
-  border-bottom: 1px solid var(--simulator-border);
-  font-weight: 600;
-  color: var(--simulator-muted);
-  text-align: center;
-}
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-history
-  > table
-  tbody
-  td {
-  padding: 0.25rem 0.375rem;
-  border-bottom: 1px solid var(--simulator-border);
+.simulator-root section.simulator-phone__incoming-call-history {
+  width: 100%;
+  min-width: 0;
+  text-align: left;
+  border: 1px solid var(--simulator-border);
+  border-radius: var(--simulator-radius, 0.75rem);
+  background: var(--simulator-surface, transparent);
   color: var(--simulator-text);
-  text-align: center;
-  vertical-align: top;
+  font-size: 0.875rem;
 }
-
-.simulator-device-shell--host-nav.simulator-device-shell--screen-phone-incoming-call
-  .simulator-phone__incoming-call-history
-  > table
-  tbody
-  tr:last-child
-  td {
-  border-bottom: 0;
+.simulator-root section.simulator-phone__incoming-call-history > h3 {
+  padding: 0.625rem 0.75rem;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.simulator-root section.simulator-phone__incoming-call-history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.simulator-root section.simulator-phone__incoming-call-history li {
+  border-top: 1px solid var(--simulator-border);
+  padding: 0.625rem 0.75rem;
+  overflow-wrap: anywhere;
+}
+.simulator-root section.simulator-phone__incoming-call-history p {
+  margin: 0 0 0.25rem;
+}
+.simulator-root section.simulator-phone__incoming-call-history dl {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  color: var(--simulator-muted);
+}
+.simulator-root section.simulator-phone__incoming-call-history dd {
+  margin: 0;
 }
 
 /* Every scenario call uses PhoneCallView, which fills the available device screen. */

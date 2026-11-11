@@ -1,0 +1,19 @@
+# simulator-theme-bootstrap current-state summary
+
+Prepared source version: **0.13.3** (2026-11-10). This is not a claim of npm publication.
+
+- Expose shared scrollbars and stable scrollbar space for bounded simulator panels.
+- Preserve full-width SMS composers, shared call controls and responsive incoming-call layout.
+- Retain the merged email normal-flow fix and its browser regression gate.
+
+## Coordinated versions
+
+| Package | Prepared version |
+| --- | --- |
+| `@signalsafe/simulator-core` | `0.7.2` |
+| `@signalsafe/simulator-react` | `0.21.2` |
+| `@signalsafe/simulator-device` | `0.21.3` |
+| `@signalsafe/simulator-theme-bootstrap` | `0.13.3` |
+| `@signalsafe/simulator-editor-react` | `0.1.0` |
+
+The source includes the current GitHub main branch plus the reviewed local simulator work. Existing merged release fixes are preserved. Source manifests and packaged declarations use the coordinated version set. See [release preparation](release-2026-11-10.md) for dependency and verification status.
