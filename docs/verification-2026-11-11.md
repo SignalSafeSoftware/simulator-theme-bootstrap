@@ -24,3 +24,10 @@ The editor example carries exact local review archives and a SHA-256 manifest. I
 The coordinated versions are absent from npm. Registry dependency lock entries, public-device-demo pins and host registry requirements retain their last real published versions until dependency-order npm publication is authorized and succeeds. Local review artifacts and the editor example explicitly opt into the prepared versions. No registry integrity values were fabricated, release tags created or npm publication performed. Registry/frozen-lock CI and Sonar release certification remain separate gates; draft PRs must not be represented as publish-ready.
 
 Earlier November 10 reports retain their historical results. This report supersedes their package coverage findings.
+
+
+### Clean CI dependency installation — November 11
+
+The browser-layout and Sonar jobs previously failed before testing because npm could not resolve the unpublished simulator-device 0.21.3 candidate. Development dependencies now use checked-in core 0.7.2, React 0.21.2, device 0.21.3 and theme 0.13.3 archives under `tests/vendor/npm`, with SHA-256 hashes in `manifest.json`. Root overrides keep transitive candidate dependencies on those same archives. The theme archive is a finite review snapshot used by the device dependency; layout tests load this checkout's theme source. Test archives are excluded from the published package.
+
+A fresh clone passed npm ci --ignore-scripts, all four appearance tests with 100% statements/branches/functions/lines, smoke:package, publish:dry-run and the real Chromium email layout test at 320/430 pixels and 100%/200% text. Browser, coverage, Sonar and publication gates remain unchanged. Registry publication remains separate.

@@ -174,3 +174,5 @@ not measure CSS layout or visual behavior. Package smoke tests and packed artifa
 checks remain separate gates, and host/gallery visual verification remains required
 for presentation changes. The CI scanner waits for the configured Sonar quality
 gate and uses the organization `PACKAGES_SONAR_TOKEN` secret.
+
+Development CI uses the checked-in candidate archives documented in [verification](docs/verification-2026-11-11.md); npm publication is a separate release step.

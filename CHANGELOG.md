@@ -92,3 +92,5 @@ Remove legacy conversion, wire and presentation aliases; migrate consumers to ca
 - Add opt-in host bezel/scrolling and scoped controlled call, contact editor, history and Home tile styles.
 - Include reviewed screen-header, compose, navigation and row token hooks used by PhoneMe local prereleases.
 - Preserve default classes and host token overrides; include reduced-motion and focus treatments.
+
+- Fix release candidate CI installation with checked-in development archives and a regenerated npm lockfile; retain browser and Sonar release gates.
