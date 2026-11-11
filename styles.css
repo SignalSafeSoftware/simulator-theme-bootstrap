@@ -38,6 +38,7 @@
 
 @import './src/apps/shared-layout.css';
 @import './src/apps/settings.css';
+@import './src/scrollbars.css';
 
 /* HTML hidden remains authoritative over component display rules. */
 .simulator-root[hidden],

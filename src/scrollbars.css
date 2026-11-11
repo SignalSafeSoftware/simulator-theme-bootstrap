@@ -1,0 +1,45 @@
+/* Every shared panel and nested editor uses the same discoverable scrollbars.
+   Existing screen/list scroll owners retain their sizing and navigation layout. */
+:where(.simulator-root, .simulator-root *) {
+  scrollbar-width: auto;
+  scrollbar-color: var(--simulator-scrollbar-thumb, var(--simulator-muted))
+    var(--simulator-scrollbar-track, var(--simulator-panel-bg));
+}
+
+:where(.simulator-root, .simulator-root *)::-webkit-scrollbar {
+  width: var(--simulator-scrollbar-size, 10px);
+  height: var(--simulator-scrollbar-size, 10px);
+}
+
+:where(.simulator-root, .simulator-root *)::-webkit-scrollbar-track,
+:where(.simulator-root, .simulator-root *)::-webkit-scrollbar-corner {
+  background: var(--simulator-scrollbar-track, var(--simulator-panel-bg));
+}
+
+:where(.simulator-root, .simulator-root *)::-webkit-scrollbar-thumb {
+  background: var(--simulator-scrollbar-thumb, var(--simulator-muted));
+  border: 2px solid var(--simulator-scrollbar-track, var(--simulator-panel-bg));
+  border-radius: 999px;
+}
+
+/* Chromium/WebKit otherwise let standardized colors restore auto-hiding
+   overlay scrollbars, ignoring the explicitly sized track below. */
+@supports selector(::-webkit-scrollbar) {
+  :where(.simulator-root, .simulator-root *) {
+    scrollbar-color: auto;
+  }
+}
+
+@media (forced-colors: active) {
+  :where(.simulator-root, .simulator-root *) {
+    scrollbar-color: auto;
+  }
+  :where(.simulator-root, .simulator-root *)::-webkit-scrollbar-track,
+  :where(.simulator-root, .simulator-root *)::-webkit-scrollbar-corner {
+    background: Canvas;
+  }
+  :where(.simulator-root, .simulator-root *)::-webkit-scrollbar-thumb {
+    background: CanvasText;
+    border-color: Canvas;
+  }
+}

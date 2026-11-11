@@ -30,3 +30,8 @@ The browser-layout and Sonar jobs previously failed before testing because npm c
 A fresh clone passed npm ci --ignore-scripts, all four appearance tests with 100% statements/branches/functions/lines, smoke:package, publish:dry-run and the real Chromium email layout test at 320/430 pixels and 100%/200% text. Browser, coverage, Sonar and publication gates remain unchanged. Registry publication remains separate.
 
 The subsequent GitHub run confirmed installation succeeds, then exposed Playwright 1.55.1 incompatibility with the new ubuntu-latest (26.04) image. The Chromium job now pins ubuntu-24.04, retaining its full browser test.
+
+
+## Registry release follow-up — November 11
+
+Version 0.13.3 is published through the gated GitHub tag workflow. Version 0.13.4 carries the existing local scrollbar patch into the registry theme without replacing newer shared layout fixes with older review CSS. Publication is explicitly authorized for the four public simulator packages; the editor remains private and unpublished.

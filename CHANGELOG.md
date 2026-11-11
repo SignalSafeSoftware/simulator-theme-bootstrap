@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.4
+
+- Preserve the reviewed scrollbar patch when replacing local review artifacts with registry packages. Shared nested panels use visible, sized scrollbars with forced-colors support.
+
+
 ## 0.13.3 — prepared 2026-11-10
 
 - Add repository, live example and related-package links; document the coordinated 100% coverage verification and synthetic editor example.
