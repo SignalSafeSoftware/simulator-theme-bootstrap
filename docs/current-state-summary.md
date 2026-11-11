@@ -35,3 +35,5 @@ The subsequent GitHub run confirmed installation succeeds, then exposed Playwrig
 ## Registry release follow-up — November 11
 
 Version 0.13.3 is published through the gated GitHub tag workflow. Version 0.13.4 carries the existing local scrollbar patch into the registry theme without replacing newer shared layout fixes with older review CSS. Publication is explicitly authorized for the four public simulator packages; the editor remains private and unpublished.
+
+The registry adoption follow-up replaces checked-in public development archives with core 0.7.2, React 0.21.2 and device 0.21.4; the theme override selects published 0.13.4. Historical candidate descriptions above are retained as verification history.

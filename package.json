@@ -48,10 +48,10 @@
     "playwright": "1.55.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "@signalsafe/simulator-react": "file:tests/vendor/npm/signalsafe-simulator-react-0.21.2.tgz",
-    "@signalsafe/simulator-device": "file:tests/vendor/npm/signalsafe-simulator-device-0.21.3.tgz",
+    "@signalsafe/simulator-react": "0.21.2",
+    "@signalsafe/simulator-device": "0.21.4",
     "vite": "8.3.5",
-    "@signalsafe/simulator-core": "file:tests/vendor/npm/signalsafe-simulator-core-0.7.2.tgz"
+    "@signalsafe/simulator-core": "0.7.2"
   },
   "homepage": "https://signalsafesoftware.github.io/simulator-device/",
   "repository": {
@@ -65,6 +65,6 @@
     "@signalsafe/simulator-core": "$@signalsafe/simulator-core",
     "@signalsafe/simulator-react": "$@signalsafe/simulator-react",
     "@signalsafe/simulator-device": "$@signalsafe/simulator-device",
-    "@signalsafe/simulator-theme-bootstrap": "file:tests/vendor/npm/signalsafe-simulator-theme-bootstrap-0.13.3.tgz"
+    "@signalsafe/simulator-theme-bootstrap": "0.13.4"
   }
 }
