@@ -1,5 +1,7 @@
 # @signalsafe/simulator-theme-bootstrap
 
+[Repository](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap) · [Live shared device example](https://signalsafesoftware.github.io/simulator-device/) · [Package links and examples](docs/links.md)
+
 Prepared source: **0.13.3**. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
 
 ## 0.13.2 — release approved 2026-10-21

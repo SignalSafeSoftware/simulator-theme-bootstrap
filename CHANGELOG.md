@@ -2,6 +2,8 @@
 
 ## 0.13.3 — prepared 2026-11-10
 
+- Add repository, live example and related-package links; document the coordinated 100% coverage verification and synthetic editor example.
+
 - Expose shared scrollbars and stable scrollbar space for bounded simulator panels.
 - Preserve full-width SMS composers, shared call controls and responsive incoming-call layout.
 - Retain the merged email normal-flow fix and its browser regression gate.
