@@ -1,6 +1,12 @@
 # Current state
 
-## Unpublished follow-up — 2026-11-15
+## Published registry release — 0.13.5 (2026-11-15)
+
+The immutable `v0.13.5` [tag workflow](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/actions/runs/43796520933) passed all required checks and publication. The actual public npm archive was downloaded and its SHA-512 integrity verified; its 46 packed files match the reviewed candidate exactly. Archive SHA-256: `006407e8b1ec98ae127fcc9474dbcbbe1dc5535a0146ffd623961234e0b69201`. Release commit: `4b38f69ede25c173dd265ff532247ce7eea0b0b3`.
+
+The combined source passes four appearance tests with 100% executable-source coverage, packed smoke and Chromium layout checks. Shared dialog geometry and footer wrapping are included; the theme retains no runtime dependencies. One existing medium development-only minimatch advisory remains outside the published archive and is not described as resolved.
+
+## Historical local review — 2026-11-15
 
 Remove the extra shell body inset when a shared simulator-app-page owns its own header and content spacing. Preserve the default PhoneMe theme and shared scrolling behavior. Lesson column sizing remains owned by DeliveryPlus, not by this theme.
 
