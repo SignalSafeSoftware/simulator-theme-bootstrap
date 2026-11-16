@@ -2,7 +2,9 @@
 
 [Repository](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap) · [Live shared device example](https://signalsafesoftware.github.io/simulator-device/) · [Package links and examples](docs/links.md)
 
-Prepared source: **0.13.3**. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
+Source, registry releases and unpublished review artifacts are tracked separately. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
+
+Latest unpublished work: [November 15 summary](docs/current-state-summary.md#unpublished-follow-up--2026-11-15) and [unreleased changes](CHANGELOG.md). Review artifact `0.13.5-mail-ui.0` is local only; it does not replace registry pins.
 
 ## 0.13.2 — release approved 2026-10-21
 
@@ -176,3 +178,10 @@ for presentation changes. The CI scanner waits for the configured Sonar quality
 gate and uses the organization `PACKAGES_SONAR_TOKEN` secret.
 
 Development CI uses the checked-in candidate archives documented in [verification](docs/verification-2026-11-11.md); npm publication is a separate release step.
+
+## Shared dialog geometry
+
+The shared dialog styles constrain overlays to the viewport, let long content
+scroll independently and retain reachable wrapping footer actions at enlarged
+text. Pair the footer markup from `@signalsafe/simulator-react` 0.22.0 with this
+prepared theme release; custom appearance tokens remain supported.

@@ -1,19 +1,65 @@
-/**
- * Simulator dialog / overlay chrome.
- */
-
-.simulator-modal::backdrop {
+/** Shared simulator dialog geometry. */
+.simulator-modal {
+    position: fixed;
+    inset: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: min(1rem, 16px);
+    border: 0;
     background: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.simulator-modal--open {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .simulator-modal__dialog {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    width: min(100%, 420px);
+    max-width: 100%;
+    max-height: 100%;
     border: var(--bs-border-width, 1px) solid var(--simulator-border);
     border-radius: var(--simulator-radius-lg);
     background: var(--simulator-bg);
-    padding: 0;
-    max-width: min(92vw, 420px);
+    overflow: hidden;
 }
 
 .simulator-modal__body {
+    min-width: 0;
+    min-height: 0;
+    overflow: auto;
+    overflow-wrap: anywhere;
     padding: 1rem;
+}
+
+.simulator-modal__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    max-height: 40dvh;
+    overflow: auto;
+    border-top: var(--bs-border-width, 1px) solid var(--simulator-border);
+    padding: 0.75rem 1rem;
+}
+
+.simulator-modal__footer > * {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Screen content already owns its header and content inset. */
+.simulator-modal__body:has(.simulator-screen__header) {
+    padding: 0;
 }

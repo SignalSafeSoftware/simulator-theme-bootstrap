@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.13.5 — prepared 2026-11-15 (not published)
+
+- Constrain shared dialogs to the viewport, scroll long bodies independently and keep wrapping footer actions reachable; screen headers retain one content inset.
+- Remove the extra shell-body inset when the shared app page owns header and content spacing.
+- Preserve the default PhoneMe palette, appearance tokens and shared scrollbar behavior; surrounding lesson layout remains host-owned.
+
+Prepared release candidate only. Existing local review evidence remains historical; publication requires explicit approval and the gated version-tag workflow.
+
+## Unreleased — local review 2026-11-15
+
+- Remove the extra shell body inset when a shared simulator-app-page owns its own header and content spacing. Preserve the default PhoneMe theme and shared scrolling behavior. Lesson column sizing remains owned by DeliveryPlus, not by this theme.
+- Verified as unpublished review artifact `0.13.5-mail-ui.0`. Registry version `0.13.4` and release authorization are separate from this checkpoint.
+
+
 ## 0.13.4
 
 - Preserve the reviewed scrollbar patch when replacing local review artifacts with registry packages. Shared nested panels use visible, sized scrollbars with forced-colors support.

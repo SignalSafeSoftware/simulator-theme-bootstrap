@@ -122,3 +122,8 @@
     min-height: 0;
     max-height: none;
 }
+
+/* Device pages own their header and content inset, including scenario email. */
+.simulator-device-shell .simulator-shell__body:has(.simulator-app-page) {
+    padding: 0;
+}
