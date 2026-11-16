@@ -16,8 +16,7 @@ insets, shared navigation, appearance API and runtime dependencies are unchanged
 `npm run test:layout` mounts the published public `SimulatorDevice` with synthetic
 HR-handbook data in default Chromium. It checks 320/430-pixel widths at 100/200%
 text, original and long-content variants, ordered child bounds, a bounded
-scrollport and attachment/field reachability. Native readonly input values retain
-horizontal scrolling; wrapping labels/buttons and the body must fit their bounds.
+scrollport and attachment/field reachability. The current shared read-only message uses semantic text fields; subject, addresses, body, attachment metadata and buttons must wrap inside their bounds. The actual device screen owns the bounded scrollport.
 `EMAIL_LAYOUT_THEME_ROOT` can point at an unpacked archive for regression checks;
 `EMAIL_LAYOUT_EVIDENCE_DIR` optionally saves measured geometry and screenshots.
 Run `node node_modules/playwright/cli.js install chromium --only-shell` first.

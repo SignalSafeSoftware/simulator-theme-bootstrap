@@ -4,7 +4,11 @@
 
 The immutable `v0.13.5` [tag workflow](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/actions/runs/43796520933) passed all required checks and publication. The actual public npm archive was downloaded and its SHA-512 integrity verified; its 46 packed files match the reviewed candidate exactly. Archive SHA-256: `006407e8b1ec98ae127fcc9474dbcbbe1dc5535a0146ffd623961234e0b69201`. Release commit: `4b38f69ede25c173dd265ff532247ce7eea0b0b3`.
 
-The combined source passes four appearance tests with 100% executable-source coverage, packed smoke and Chromium layout checks. Shared dialog geometry and footer wrapping are included; the theme retains no runtime dependencies. One existing medium development-only minimatch advisory remains outside the published archive and is not described as resolved.
+The combined source passes four appearance tests with 100% executable-source coverage, packed smoke and Chromium layout checks. Shared dialog geometry and footer wrapping are included; the theme retains no runtime dependencies. The current npm audit reports four moderate development-only dependency findings (the c8/test-exclude/glob/minimatch chain, with two underlying advisories). They remain outside the published archive. Latest supported c8 12.0.0 still uses that upstream chain; no unsupported override or tooling downgrade was added.
+
+### Normal current-cohort layout verification
+
+The development manifest and genuine npm lock now use published core 0.7.3, React 0.22.0 and device 0.22.0 with theme 0.13.5 and TreeSpec 0.4.5. The browser test follows the package-owned semantic message content and actual device scrollport, replacing obsolete readonly-input selectors without removing ordered-flow, child clipping, complete message/attachment reachability or fixed navigation assertions. All eight 320/430px × 100/200% text × original/stress cases pass. Runtime CSS and the immutable published archive are unchanged by this test/dependency follow-up.
 
 ## Historical local review — 2026-11-15
 

@@ -62,7 +62,7 @@ async function serverFixture() {
 async function geometry(page) {
     return page.evaluate(() => {
         const detail = document.querySelector('.simulator-email__message-detail');
-        const scroll = detail.querySelector(':scope > .simulator-overflow-auto');
+        const scroll = document.querySelector('.simulator-device-shell__screen');
         const rect = (element) => {
             const bounds = element.getBoundingClientRect();
             const viewport = scroll.getBoundingClientRect();
@@ -74,22 +74,22 @@ async function geometry(page) {
             };
         };
         return {
-            fields: [...detail.querySelectorAll('.simulator-field')].map(rect),
+            fields: [...detail.querySelectorAll(':scope > h3, :scope > p')].map(rect),
             extras: [...detail.querySelectorAll('.simulator-email__message-detail-extras')].map(rect),
-            controls: [...detail.querySelectorAll('input, textarea, .simulator-email__message-detail-extras button, .simulator-email__message-detail-extras span')].map(rect),
+            controls: [...detail.querySelectorAll(':scope > h3, :scope > p, .simulator-email__message-detail-extras button, .simulator-email__message-detail-extras span')].map(rect),
             nav: document.querySelector('.simulator-device-nav').getBoundingClientRect().toJSON(),
             device: document.querySelector('.simulator-device-shell').getBoundingClientRect().toJSON(),
-            header: detail.querySelector('.simulator-screen__header').getBoundingClientRect().toJSON(),
+            header: rect(document.querySelector('.simulator-app-page > .simulator-screen__header')),
             scroll: { viewportTop: scroll.getBoundingClientRect().top, viewportBottom: scroll.getBoundingClientRect().bottom, top: scroll.scrollTop, height: scroll.clientHeight, total: scroll.scrollHeight, left: scroll.getBoundingClientRect().left, right: scroll.getBoundingClientRect().right },
-            body: rect(detail.querySelector('textarea')),
+            body: rect(detail.querySelector('.prototype-message-body')),
             deviceHeight: document.querySelector('.simulator-device-shell').getBoundingClientRect().height,
-            group: rect(scroll.firstElementChild),
+            group: rect(detail.parentElement),
         };
     });
 }
 
 function assertFlow(result) {
-    assert.equal(result.fields.length, 5, 'From, To, Bcc, Subject and Body must remain present');
+    assert.ok(result.fields.length >= 5, 'Subject, From, To, date and message body must remain present');
     assert.ok(result.extras.length >= 1, 'Attachment controls must remain present');
     const ordered = [...result.fields, ...result.extras];
     for (let index = 1; index < ordered.length; index += 1) {
@@ -98,24 +98,25 @@ function assertFlow(result) {
     }
     assert.ok(result.group.bottom >= result.body.bottom - tolerance, 'The field group must contain its body');
     assert.ok(result.scroll.height > 0 && result.scroll.height < result.deviceHeight, 'The message needs a bounded device scrollport');
-    assert.ok(result.scroll.viewportTop >= result.header.bottom - tolerance && result.scroll.viewportBottom <= result.nav.top + tolerance, 'The header and navigation must not overlap the message scrollport');
+    assert.ok(result.fields[0].top >= result.header.bottom - tolerance, 'The banner must precede the message card');
+    assert.ok(result.scroll.viewportTop >= result.device.top - tolerance && result.scroll.viewportBottom <= result.nav.top + tolerance, 'The shared scrollport must stay inside the device and above its navigation');
     assert.ok(result.nav.bottom <= result.device.bottom + tolerance, 'Navigation must remain inside the device');
     assert.ok(result.body.height > 30, 'The body must not collapse');
     for (const control of result.controls) {
         assert.ok(control.left >= result.scroll.left - tolerance && control.right <= result.scroll.right + tolerance, 'Child controls must stay within the scrollport');
-        if (control.tag !== 'INPUT') assert.ok(control.scrollWidth <= control.clientWidth + tolerance, 'Wrapping child text must not clip horizontally');
+        assert.ok(control.scrollWidth <= control.clientWidth + tolerance, 'Wrapping message and attachment child text must not clip horizontally');
     }
 }
 
-async function assertReadonlyValues(page) {
-    // Native single-line readonly inputs scroll long values instead of wrapping.
-    for (const input of await page.locator('.simulator-email__message-detail input').all()) {
-        await input.evaluate((element) => {
-            element.scrollLeft = element.scrollWidth;
-            if (element.scrollWidth > element.clientWidth + 1 && element.scrollLeft === 0) throw new Error('Long readonly field value cannot be reached');
-            element.scrollLeft = 0;
-        });
-    }
+async function assertMessageContent(page, stress) {
+    const detail = page.locator('article.simulator-email__message-detail');
+    await detail.getByRole('heading', { name: 'Action required: Acknowledge updated employee handbook', exact: true }).waitFor();
+    assert.equal(await detail.locator(':scope > p').filter({ hasText: 'From: hr@company-portal.example.test' }).count(), 1);
+    assert.equal(await detail.locator(':scope > p').filter({ hasText: stress ? /^To: employee-with-a-long-address@example\.test$/ : /^To: $/ }).count(), 1);
+    assert.equal(await detail.getByText('Date not set', { exact: true }).count(), 1);
+    assert.equal(await detail.locator(':scope > h3, :scope > p').count(), stress ? 6 : 5);
+    assert.equal(await detail.locator('.prototype-message-body').count(), 1);
+    if (stress) assert.equal(await detail.locator(':scope > p').filter({ hasText: 'Bcc: reviewer-with-a-long-address@example.test' }).count(), 1);
 }
 
 async function assertScenario(browser, origin, scenario) {
@@ -124,11 +125,10 @@ async function assertScenario(browser, origin, scenario) {
     try {
         page.on('pageerror', (error) => console.error(error.message));
         await page.goto(`${origin}/fixture?width=${width}&enlarged=${enlarged ? 1 : 0}&variant=${variant}`);
-        await page.getByRole('textbox', { name: 'From', exact: true }).waitFor();
-        await assertReadonlyValues(page);
+        await assertMessageContent(page, variant === 'stress');
         const first = await geometry(page);
         assertFlow(first);
-        const scroll = page.locator('.simulator-email__message-detail > .simulator-overflow-auto');
+        const scroll = page.locator('.simulator-device-shell__screen');
         await scroll.evaluate((element) => { element.scrollTop = element.scrollHeight; });
         const last = await geometry(page);
         assertFlow(last);
@@ -145,7 +145,7 @@ async function assertScenario(browser, origin, scenario) {
         await scroll.evaluate((element) => { element.scrollTop = 0; });
         const restored = await geometry(page);
         assert.equal(restored.scroll.top, 0, 'From must remain reachable again');
-        const from = await page.getByRole('textbox', { name: 'From', exact: true }).boundingBox();
+        const from = await page.locator('article.simulator-email__message-detail > p').filter({ hasText: 'From: hr@company-portal.example.test' }).boundingBox();
         assert.ok(from && from.y >= restored.scroll.viewportTop - tolerance && from.y + from.height <= restored.scroll.viewportBottom + tolerance, 'From must be visible when restored to the top');
         assert.deepEqual(restored.nav, first.nav, 'Scrolling message content must not move its navigation');
         if (evidenceDirectory) {
