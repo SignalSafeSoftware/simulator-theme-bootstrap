@@ -176,6 +176,13 @@ checks remain separate gates, and host/gallery visual verification remains requi
 for presentation changes. The CI scanner waits for the configured Sonar quality
 gate and uses the organization `PACKAGES_SONAR_TOKEN` secret.
 
+The coverage-only `c8` → `test-exclude` dependency subtree pins patched `glob`
+14.0.6 and `minimatch` 11.0.7 until upstream adopts those versions. Their public
+CommonJS APIs are compatible with `test-exclude`; file-selection parity and
+byte-identical appearance LCOV were checked without changing the 100% coverage
+thresholds or `--all` behavior. These development overrides are not published
+runtime dependencies. Remove them once an upstream update resolves the advisories.
+
 Development CI uses the checked-in candidate archives documented in [verification](docs/verification-2026-11-11.md); npm publication is a separate release step.
 
 ## Shared dialog geometry
