@@ -1,5 +1,9 @@
 # Current state
 
+## Development dependency repair — 2026-11-22
+
+The coverage-only `c8` → `test-exclude` subtree now pins `glob` 14.0.6 and `minimatch` 11.0.7 to resolve the development dependency advisories recorded below. `npm audit` reports zero vulnerabilities. File-selection parity, byte-identical appearance LCOV, and rejection of unloaded source at every existing 100% threshold were verified. The coverage command, runtime source, published version and immutable registry artifact are unchanged.
+
 ## Published registry release — 0.13.5 (2026-11-15)
 
 The immutable `v0.13.5` [tag workflow](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/actions/runs/43796520933) passed all required checks and publication. The actual public npm archive was downloaded and its SHA-512 integrity verified; its 46 packed files match the reviewed candidate exactly. Archive SHA-256: `006407e8b1ec98ae127fcc9474dbcbbe1dc5535a0146ffd623961234e0b69201`. Release commit: `4b38f69ede25c173dd265ff532247ce7eea0b0b3`.
