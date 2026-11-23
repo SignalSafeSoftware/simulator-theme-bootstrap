@@ -162,12 +162,15 @@ async function assertScenario(browser, origin, scenario) {
 
 test('actual shared email fields, body and extras remain ordered and reachable', async () => {
     const { server, origin } = await serverFixture();
-    const browser = await chromium.launch();
     try {
-        const scenarios = [320, 430].flatMap((width) => [false, true].flatMap((enlarged) => ['approved', 'stress'].map((variant) => ({ width, enlarged, variant }))));
-        for (const scenario of scenarios) await assertScenario(browser, origin, scenario);
+        const browser = await chromium.launch();
+        try {
+            const scenarios = [320, 430].flatMap((width) => [false, true].flatMap((enlarged) => ['approved', 'stress'].map((variant) => ({ width, enlarged, variant }))));
+            for (const scenario of scenarios) await assertScenario(browser, origin, scenario);
+        } finally {
+            await browser.close();
+        }
     } finally {
-        await browser.close();
         server.closeAllConnections();
         await new Promise((resolve, reject) => server.close((error) => error ? reject(error) : resolve()));
     }
