@@ -1,4 +1,20 @@
-# Current state
+# Current npm release: @signalsafe/simulator-theme-bootstrap 0.13.6
+
+The trusted-publishing migration prepares patch `0.13.6` under immutable
+GitHub tag `v0.13.6`. Current release and authentication instructions are in
+[RELEASING.md](../RELEASING.md); the migration uses GitHub Actions OIDC rather than
+a permanent npm publishing token. Runtime exports and dependency ranges are
+unchanged by this patch. Host adoption and Python releases remain independent.
+
+The release workflow is the source of publication evidence. This documentation
+follow-up does not reseal or republish an immutable package archive or move a tag.
+
+## Historical release and state record
+
+The previous snapshot below is retained for context; its version and publication
+status statements apply to that earlier snapshot.
+
+### Current state
 
 ## Development dependency repair — 2026-11-22
 
