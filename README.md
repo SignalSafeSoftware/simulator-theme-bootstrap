@@ -11,7 +11,7 @@
 
 Source, registry releases and unpublished review artifacts are tracked separately. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
 
-Current npm release: **0.13.5**. See the [verified November 15 registry receipt](docs/current-state-summary.md) and [changelog](CHANGELOG.md). Earlier local review artifacts remain historical provenance.
+Historical npm release checkpoint: **0.13.5**. See the [verified November 15 registry receipt](docs/current-state-summary.md) and [changelog](CHANGELOG.md). Earlier local review artifacts remain historical provenance.
 
 ## 0.13.2 — release approved 2026-10-21
 
