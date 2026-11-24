@@ -1,10 +1,17 @@
 # @signalsafe/simulator-theme-bootstrap
 
+[![Build](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/actions/workflows/ci.yml/badge.svg?branch=main&event=push)](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/actions/workflows/ci.yml)
+[![Quality gate](https://sonarcloud.io/api/project_badges/measure?project=SignalSafeSoftware_simulator-theme-bootstrap&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=SignalSafeSoftware_simulator-theme-bootstrap)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=SignalSafeSoftware_simulator-theme-bootstrap&metric=coverage)](https://sonarcloud.io/summary/new_code?id=SignalSafeSoftware_simulator-theme-bootstrap)
+[![npm version](https://img.shields.io/npm/v/@signalsafe/simulator-theme-bootstrap?logo=npm)](https://www.npmjs.com/package/@signalsafe/simulator-theme-bootstrap)
+[![npm downloads per month](https://img.shields.io/npm/dm/@signalsafe/simulator-theme-bootstrap?label=downloads%2Fmonth)](https://www.npmjs.com/package/@signalsafe/simulator-theme-bootstrap)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap/blob/main/LICENSE)
+
 [Repository](https://github.com/SignalSafeSoftware/simulator-theme-bootstrap) · [Live shared device example](https://signalsafesoftware.github.io/simulator-device/) · [Package links and examples](docs/links.md)
 
 Source, registry releases and unpublished review artifacts are tracked separately. See [current summary](docs/current-state-summary.md), [changelog](CHANGELOG.md) and [coordinated release preparation](docs/release-2026-11-10.md). Publication status and installed host versions are tracked separately.
 
-Current npm release: **0.13.5**. See the [verified November 15 registry receipt](docs/current-state-summary.md) and [changelog](CHANGELOG.md). Earlier local review artifacts remain historical provenance.
+Historical npm release checkpoint: **0.13.5**. See the [verified November 15 registry receipt](docs/current-state-summary.md) and [changelog](CHANGELOG.md). Earlier local review artifacts remain historical provenance.
 
 ## 0.13.2 — release approved 2026-10-21
 
