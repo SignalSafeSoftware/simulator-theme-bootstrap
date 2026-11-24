@@ -1,6 +1,6 @@
 {
   "name": "@signalsafe/simulator-theme-bootstrap",
-  "version": "0.13.5",
+  "version": "0.13.6",
   "type": "module",
   "description": "Bootstrap-token simulator theme for @signalsafe/simulator-device and @signalsafe/simulator-react semantic classes.",
   "license": "MIT",

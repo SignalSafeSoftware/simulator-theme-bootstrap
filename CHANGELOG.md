@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.13.6 — 2026-11-23
+
+- Publish npm releases through GitHub Actions OIDC trusted publishing.
+- Document the designated publisher, validation and token retirement process.
+
 ## 0.13.5 — prepared 2026-11-15 (not published)
 
 - Constrain shared dialogs to the viewport, scroll long bodies independently and keep wrapping footer actions reachable; screen headers retain one content inset.
